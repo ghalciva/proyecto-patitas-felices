@@ -842,3 +842,15 @@ a.sidebarsubt:hover{
     width: 820px;
     left: 150px;
 }
+
+.newOne{
+    position: absolute;
+    left: 320px;
+    top: 270px;
+}
+
+.op{
+    color: gainsboro;
+    font-size: 17px;
+    
+}
