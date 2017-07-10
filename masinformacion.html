@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" type="text/css" href="../Patitas-felices/css/style-agenda.css">
+<link rel="stylesheet" type="text/css" href="../Patitas-felices/css/slider.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <!-- Js -->
@@ -34,6 +35,8 @@
 <script type="text/vbscript5" src="js/jquery.counterup.js"></script>
 <script type="text/vbscript6" src="js/plugins.js"></script>
 <script type="text/vbscript7" src="js/main.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/vbscript8" src="functions.js"></script>
 </head>
 <body>
 
@@ -91,28 +94,10 @@
 <div class="block">
 <h1>AGENDA</h1>
 <h1>JUNIO</h1>
+<div class="w3-content" style="max-width:500px">
 
-<div class="container2">
-
-<div class="tipo_1">
-<img src="img/bailaton.jpg" alt= bailaton class="imagenes1">
-<p> Una mañana para mover el esqueleto por los animales! #BailatónRA, este 24 de Junio en ESPOL, los fondos recaudados serán para el proyecto COLA. Contaremos con un animador que realizará distintas coreografías durante 2 horas y tendremos premios para las últimas 3 personas que lleguen al final de la competencia y resistan más tiempo bailando! Puntos de inscripción: Mansion Mascota y Kangoo Club Bounce, ambos en Urdesa. Valor de la inscripción $10
-
-Horario de atención:
-Mansión Mascota: 9h00-19h30
-Kangoo Club Bounce: 8h00-12h00 y 17:30-20:30
-
-Los 3 ganadores se llevarán premios de nuestros auspiciantes:
-- Membresías de Kangoo Club Bounce
-- Aceesorios de House of Lilo
-- Jugos de Green Soul Juice
-- Gift card de maquillaje tutorial y limpieza facial valorada en $80 de Lindeza Spa</p>
-
-
-</div>
-
-<div class="tipo_1">
-<img src="img/adoptacanpolicia.jpg" alt= policia class="imagenes1">
+<img class="mySlides" src="img/adoptacanpolicia.jpg" style="width:100%">
+<div class="mySlides" >
 <p> ADOPTA UN HEROE
 Cumplí con mis años de servicio a la ciudadanía y ahora busco una familia responsable que me brinde su atención y afecto"
 Entrevistas : Del 26 de junio al 03 de julio
@@ -122,19 +107,33 @@ espacio adecuado
 Dir.Quito-Ponceano Bajo
 calle.Juana-Terrazas
 Mayor información (02)2479779 EXT.111
+</p>
+
+</div>
+<img class="mySlides" src="img/bailaton.jpg" style="width:100%">
+<div class="mySlides">
+<p>
+Una mañana para mover el esqueleto por los animales! #BailatónRA, este 24 de Junio en ESPOL, los fondos recaudados serán para el proyecto COLA. Contaremos con un animador que realizará distintas coreografías durante 2 horas y tendremos premios para las últimas 3 personas que lleguen al final de la competencia y resistan más tiempo bailando! Puntos de inscripción: Mansion Mascota y Kangoo Club Bounce, ambos en Urdesa. Valor de la inscripción $10
+
+Horario de atención:
+Mansión Mascota: 9h00-19h30
+Kangoo Club Bounce: 8h00-12h00 y 17:30-20:30
+
+Los 3 ganadores se llevarán premios de nuestros auspiciantes:
+- Membresías de Kangoo Club Bounce
+- Aceesorios de House of Lilo
+- Jugos de Green Soul Juice
+- Gift card de maquillaje tutorial y limpieza facial valorada en $80 de Lindeza Spa
+
+
 
 
 
 
 </p>
-
-
 </div>
-
-<div class="tipo_1">
-
-<img src="img/pae-correporellos.jpg" alt= correporellos class="imagenes1">
-
+<img class="mySlides" src="img/pae-correporellos.jpg" style="width:100%">
+<div class="mySlides">
 <p> #RetoAnimal5k
 HORA: 7:30
 FECHA: Domingo 16 de Julio del 2017
@@ -148,17 +147,31 @@ Un evento benéfico para niños, jóvenes y adultos con el objetivo de crear jun
 Los chips se entregarán el día 15 de julio desde las 10:00 - 18:00 en el Parque Bicentenario sector Cruz del Papá.
 Información e inscripciones: infonaciones5k@gmail.com o a los whatsapp: 0995477241 o al 099929725.</p>
 
+</div>
+
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("mySlides");
+for (i = 0; i < x.length; i++) {
+x[i].style.display = "none";
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}
+x[myIndex-1].style.display = "block";
+setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+
 
 </div>
 
 
-
-
-
-
-</div>
-
-</div>
 </div>
 </div>
 </div>
@@ -204,34 +217,6 @@ Información e inscripciones: infonaciones5k@gmail.com o a los whatsapp: 0995477
 
 </body>
 </html>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
     
 
     
