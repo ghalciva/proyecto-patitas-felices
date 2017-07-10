@@ -232,7 +232,6 @@ font header .navbar-default .navbar-nav li a:hover {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #fff;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -248,15 +247,42 @@ font header .navbar-default .navbar-nav li a:hover {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 30px;
+  color: #8d8f92;
 }
 #feature p {
   color: #8d8f92;
   margin-bottom: 20px;
+  
 }
+
+.container #informacion {
+  background-color: #fff;
+  background-attachment: fixed;
+  width:auto;
+  height: auto;
+  background-position: 10% 0%;
+  margin-bottom: 20px;
+  opacity:0.8;
+  padding: 20px;
+  
+}
+
 #feature .btn-view-works {
   background: #655E7A;
   color: #fff;
   padding: 10px 20px;
+}
+
+.container #informacion {
+  background-color: #fff;
+  background-attachment: fixed;
+  width:auto;
+  height: auto;
+  background-position: 10% 0%;
+  margin-bottom: 20px;
+  opacity:0.8;
+  padding: 20px;
+  
 }
 /*--
 	content Start 
