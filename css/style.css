@@ -889,3 +889,7 @@ a.sidebarsubt:hover{
     padding: 20px;
 }
 
+.tipo_1 img {
+   height: auto;
+max-width: 100%
+     }
