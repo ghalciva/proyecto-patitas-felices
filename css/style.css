@@ -897,3 +897,36 @@ max-width: 100%
 .alinear{
    text-align: center;
 }
+
+a{
+font-family: 'Emilys Candy', cursive;
+color: black;
+}
+
+a:hover, a:active {
+background-color: red;
+}
+
+h2{
+
+font-family: 'Emilys Candy', cursive;
+color: black;
+font-size:8%;
+
+}
+
+@media screen and (max-width:1000px)and (min-width:100px){
+
+
+.tipo_1 { float:none ;
+width :auto}
+}
+
+a.ifo:link, a.ifo:visited {
+background-color: blue;
+color: white;
+padding: 14px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
