@@ -898,21 +898,8 @@ max-width: 100%
    text-align: center;
 }
 
-a{
-font-family: 'Emilys Candy', cursive;
-color: black;
-}
-
 a:hover, a:active {
 background-color: red;
-}
-
-h2{
-
-font-family: 'Emilys Candy', cursive;
-color: black;
-font-size:8%;
-
 }
 
 @media screen and (max-width:1000px)and (min-width:100px){
