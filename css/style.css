@@ -893,3 +893,7 @@ a.sidebarsubt:hover{
    height: auto;
 max-width: 100%
      }
+
+.alinear{
+   text-align: center;
+}
