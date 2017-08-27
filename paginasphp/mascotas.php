@@ -135,29 +135,26 @@ session_start();
                         </tr>
                         <tr>
                             <td class="sidebartitle"> <a href="perros.html"> Perros </a> </td>
-                            <td> <a href="formularioadoptar.php"> adoptar </a></td>
-                        </tr>
+                            
                         <tr>
                             <td> 
                                 <ul> <li> &nbsp; </li>
-                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Color </a> </li>
-                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Edad </a> </li>
-                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Raza </a> </li>
-                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sexo </a> </li>
+	
+				
+                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VER </a> </li>
+                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADOPTAR </a> </li>
                                 </ul> 
                             </td>
                         </tr>
                         <tr>
                             <td class="sidebartitle"> <a href="gatos.html"> Gatos </a> </td>
-                            <td> <a href="adoptar.php"> adoptar </a></td>
+                           
                         </tr>
                         <tr>
                             <td> 
                                 <ul> <li> &nbsp; </li>
-                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Color </a> </li>
-                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Edad </a> </li>
-                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Raza </a> </li>
-                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sexo </a> </li>
+                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VER </a> </li>
+                                    <li> <a href="#" class="sidebarsubt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ADOPTAR </a> </li>
                                 </ul> 
                             </td>
                         </tr>
@@ -180,19 +177,22 @@ session_start();
                             <div class="imagenes"> 
                             <table>
                                 <tr>
-                                    <td> <img src="img/imgs/pet1.jpg" width="259" height="144" alt="Img"> </td>
-                                    <td> <img src="img/imgs/pet2.jpg" width="259" height="144" alt="Img"> </td>
-                                    <td> <img src="img/imgs/pet3.jpg" width="259" height="144" alt="Img"> </td>
+				
+
+				
+                                    <td> <img src="img/imgs/pet1.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=1"> ADOPTAR</a>   </td>
+                                    <td> <img src="img/imgs/pet2.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=2"> ADOPTAR</a> </td>
+                                    <td> <img src="img/imgs/pet3.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=3"> ADOPTAR</a>  </td>
                                 </tr>
                                 <tr>
-                                    <td> <img src="img/imgs/pet4.jpg" width="259" height="144" alt="Img"> </td>
-                                    <td> <img src="img/imgs/pet5.jpg" width="259" height="144" alt="Img"> </td>
-                                    <td> <img src="img/imgs/pet6.jpg" width="259" height="144" alt="Img"> </td>
+                                    <td> <img src="img/imgs/pet4.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=4"> ADOPTAR</a> </td>
+                                    <td> <img src="img/imgs/pet5.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=5"> ADOPTAR</a>  </td>
+                                    <td> <img src="img/imgs/pet6.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=6"> ADOPTAR</a>  </td>
                                 </tr>
                                 <tr>
-                                    <td> <img src="img/imgs/pet7.jpg" width="259" height="144" alt="Img"> </td>
-                                    <td> <img src="img/imgs/pet8.jpg" width="259" height="144" alt="Img"> </td>
-                                    <td> <img src="img/imgs/pet9.jpg" width="259" height="144" alt="Img"> </td>
+                                    <td> <img src="img/imgs/pet7.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=7"> ADOPTAR</a> </td>
+                                    <td> <img src="img/imgs/pet8.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=8"> ADOPTAR</a> </td>
+                                    <td> <img src="img/imgs/pet9.jpg" width="259" height="144" alt="Img"> <a href="formularioadoptar.php?id_mascota=9"> ADOPTAR</a> </td>
                                 </tr>
                             </table>
                             </div>
