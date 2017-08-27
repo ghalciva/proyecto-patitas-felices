@@ -99,20 +99,27 @@ else{
 ?>
 
 <h2>Reservar</h2>
-<form action="reserva.php" method="post">
+<form action="reservaCollector.php" method="post" align="center">
 <h3>Datos del propietario de la mascota</h3>
   <p> 
   <p> Nombre: <input type="text" name="nombre" value="<?php echo $ObjDemo->getNombre(); ?>" readonly /> </p>
-  <p> Apellido: <input type="text" name="apellido" value="<?php echo $ObjDemo->getNombre(); ?>" readonly /> </p>
-  <p> Nombre mascota: <input type="text" name="nombre_mascota" value="<?php echo $ObjDemo->getNombre(); ?>" readonly /> </p>
-  <p> Raza: <input type="text" name="raza" value="<?php echo $ObjDemo->getNombre(); ?>" readonly /> </p>
-  
+  <p> Apellido: <input type="text" name="apellido" value="<?php echo $ObjDemo->getApellido(); ?>" readonly /> </p>
+  <p> Nombre mascota: <input type="text" name="nombre_mascota" value="<?php echo $ObjDemo->getNombreMascota(); ?>" readonly /> </p>
+  <p> Raza: <input type="text" name="raza" value="<?php echo $ObjDemo->getRaza(); ?>" readonly /> </p>
+  <hr size="75%" align="left"> </hr>
+
+  <h3>Datos del veterinario </h3>
+  <p>
+  <p> Consultorio médico: <input type="text" name="nombre_mascota" value="<?php echo $ObjDemo->getConsultorio(); ?>" readonly /> </p>
+  <p> Nombre: <input type="text" name="nombre" value="<?php echo $ObjDemo->getNombreVet(); ?>" readonly /> </p>
+  <p> Apellido: <input type="text" name="apellido" value="<?php echo $ObjDemo->getApellidoVet(); ?>" readonly /> </p>
+  <p> Dirección: <input type="text" name="raza" value="<?php echo $ObjDemo->getDireccion(); ?>" readonly /> </p>
+  <hr size="75%" align="left"> </hr>
 
 
   <p> Fecha para reservar consulta médica: <input type="text" name="fecha" value="" autofocus /> </p>
-  <p> Dirección: <input type="text" name="direccion" value="" autofocus required/> </p>
-  <input type="submit" value="Guardar"/>
-  <a href="index.php">Cancelar</a>
+  <input type="submit" value="Reservar"/>
+  <input type="submit" value="Cancelar"/>
 </form>
 
 <?php } ?>
