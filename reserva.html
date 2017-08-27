@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
@@ -18,16 +18,6 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
-    <!-- Js -->
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/min/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
   </head>
   <body>
 
@@ -88,22 +78,16 @@
 session_start();
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title> Reserva la consulta a tu mascota</title>
-</head>
-<body>
+
 
 <?php
 
 $id= $_GET["id"];
-echo "valor de id es ". $id;
 include_once("reservaCollector.php");
 include_once("reserva.php");
 $DemoCollectorObj = new reservaCollector();
 $ObjDemo = $DemoCollectorObj->showDemo($id);
-print_r($ObjDemo);
+
 
 foreach ($DemoCollectorObj->showDemos() as $c){ 
   echo "<div>";
@@ -115,7 +99,16 @@ else{
 ?>
 
 <h2>Reservar</h2>
-<form action=".php" method="post">
+<form action="reserva.php" method="post">
+<h3>Datos del propietario de la mascota</h3>
+  <p> 
+  <p> Nombre: <input type="text" name="nombre" value="<?php echo $ObjDemo->getNombre(); ?>" readonly /> </p>
+  <p> Apellido: <input type="text" name="apellido" value="<?php echo $ObjDemo->getNombre(); ?>" readonly /> </p>
+  <p> Nombre mascota: <input type="text" name="nombre_mascota" value="<?php echo $ObjDemo->getNombre(); ?>" readonly /> </p>
+  <p> Raza: <input type="text" name="raza" value="<?php echo $ObjDemo->getNombre(); ?>" readonly /> </p>
+  
+
+
   <p> Fecha para reservar consulta médica: <input type="text" name="fecha" value="" autofocus /> </p>
   <p> Dirección: <input type="text" name="direccion" value="" autofocus required/> </p>
   <input type="submit" value="Guardar"/>
@@ -123,10 +116,6 @@ else{
 </form>
 
 <?php } ?>
-
-</body>
-</html>
-
 
 
 
