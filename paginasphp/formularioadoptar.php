@@ -185,7 +185,7 @@ include_once("animal.php");
 $DemoCollectorObj = new adoptaCollector();
 $ObjDemo = $DemoCollectorObj->showDemo($id_mascota);
 ?>
-
+<td> <img src="<?php echo $ObjDemo->getimagen();?>" width="259" height="144" alt="Img"> <a href="formularioadoptar.php"> </a>   </td>
 <form action="guardarAdopcion.php" method="post">
 <p>
 Id:<input type="text" name="id_mascota" value="<?php echo $ObjDemo->getid_mascota();?>"
