@@ -91,7 +91,7 @@ $ObjDemo = $DemoCollectorObj->showDemo($id);
 
 foreach ($DemoCollectorObj->showDemos() as $c){ 
   echo "<div>";
-  echo $c->getId_Reserva() . "  && " .$c->getFecha_Reserva();                                     
+  echo $c->getId_Reserva() . "  && " .$c->getFecha_Reserva(). "  && " .$c->getNombre_Vet();                                     
   echo "</div>"; 
 }
 
