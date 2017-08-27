@@ -34,8 +34,6 @@ class reserva
        return $this->direccion;
      } 
     
-
-
 }
 
 ?> 
