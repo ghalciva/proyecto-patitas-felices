@@ -27,7 +27,32 @@ session_start();
   </head>
   <body>
 
+<?php
+if(isset($_SESSION['MiSesion'])){
+	echo"<p>Hola usuario:(" . $_SESSION['MiSesion']. ")
+		[<a href='salir.php'>salir</a>]";
 
+
+include_once('LoginCollector.php');
+
+$id =1;
+
+$LoginCollectorObj = new LoginCollector();
+
+foreach ($LoginCollectorObj->showDemos() as $c){
+  echo "<div>";
+  echo $c->getIdPersona() . "  && " .$c->getNombre();
+
+	echo " " . "<a href='eliminar.php?id=".$c->getIdPersona()."'>ELiminar</a>";    
+ 
+}
+
+
+
+
+
+}else{
+?>
 
     <!-- Header Start -->
   <header>
@@ -161,7 +186,7 @@ session_start();
     </footer>
             
             
- 
+<?php } ?>
             
     
     </body>
