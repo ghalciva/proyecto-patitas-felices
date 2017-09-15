@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nosotros - Patitas felices</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      
+    
+    <!-- CSS -->
+   
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     
+
+
+
+
+  </head>
+  <body>
+
+
+   <!-- Header Start -->
+  <header>
+    <div class="container">
+         <div id="user">
+        <ul class="login">
+            <li class="loginu"><a href="iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+        </ul>
+        </div>
+      <div class="row">
+        <div class="col-md-12">
+          <!-- header Nav Start -->
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                  
+               
+                   <a class="navbar-brand" href="../index.php">
+                            <img class="navbar-brand" src="../img/logo.png" alt="Logo" >
+                            </a>
+                     
+              </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.php" >Inicio</a></li>
+                    <li><a href="nosotros.php" class="above">Nosotros</a></li>
+                    <li><a href="mascotas.php">Mascotas</a></li>
+                    <li><a href="agenda.php">Agenda</a></li>
+                    <li><a href="contacto.php">Contáctenos</a></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header><!-- header close -->
+        
+    <!-- Slider Start -->
+    <section id="slider">
+      <div class="container">
+        <div class="row"> 
+             <div class="col-md-6 col-sm-12">
+                <div class="block">
+                        <img src="../img/grupo.jpg" width="400" height="300" alt="img">
+                    
+                </div>
+              </div>
+             <div class="col-md-6 col-sm-12">
+                <div class="block">
+                      <h2>¿QUIÉNES SOMOS?</h2>
+                      <p>Patitas Felices es un proyecto que permite la adopcion de mascotas con el fin de encontrarles un nuevo hogar donde reciban mucho amor y cariño. 
+		      <p>Nuestro equipo ofrecemos nuestro servicio para el bien de la comunidad. Estamos ubicados en la ciudad Guayaquil - Ecuador.</p>
+		      <p>Nosotros nos interesamos en el bienestar de la comunidad y de los animales. Somos efectivos en buscar y solucionar inconvenientes al momento de elegir su mascota.</p>
+		      <p>Adaptamos nuestro proyecto a las necesidades mas importantes del cliente y nos sentimos orgullosos de los resultados.</p>
+                    </div>
+             </div>
+          
+            <div class="col-md-6 col-sm-12">
+                <div class="block">
+                      <h2>¿QUÉ HACEMOS?</h2>
+                      <p>Este servicio web que ofrecemos tiene como finalidad el registro, brindar información y adopción de mascotas en línea. Guardamos la información necesaria del animal para poder ser adoptado. Involucramos nuestra experiencia en animales para hacer que ésta página sea amigable con la comunidad.</p>
+                    </div>
+             </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
+                        <img src="../img/adopto.jpg" width="400" height="300" alt="img">
+                    
+                </div>
+              </div>
+             
+            
+            <div class="col-md-6 col-sm-12">
+                <div class="block">
+                        <img src="../img/adopto1.jpg" width="400" height="300" alt="img">
+                    
+                </div>
+              </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="block">
+                        <img src="../img/eleccion.jpg" width="320" height="300" alt="img">
+                    
+                </div>
+              </div>
+             <div class="col-md-6 col-sm-12">
+                <div class="block">
+                      <h2>¿PORQUÉ ELEGIRNOS?</h2>
+                      <p>Te ayudamos a elegir tu mascota acorde a tus gustos. Ofrecemos una interfaz predictible con fácil navegación para el cliente. Además, hacemos que la búsqueda de su nueva mascota sea rápida. Informamos a la comunidad de nuevos eventos acerca del bienestar de los animales y actividades extras. </p>
+                    </div>
+             </div>
+        </div>
+            
+         
+        </div>
+    </section>
+      
+    
+    <!-- footer Start -->
+      <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-manu">
+              <ul>
+                <li><a href="#">Mapa del sitio</a></li>
+                <li><a href="nosotros.php">Acerca de</a></li>
+                <li><a href="politicas.php">Políticas de privacidad</a></li>
+              </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+            
+            
+ 
+            
+    
+    </body>
+</html>
