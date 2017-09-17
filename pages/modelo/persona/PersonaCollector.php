@@ -22,8 +22,8 @@ class PersonaCollector extends Collector
    return $ObjPersona;   
  }
 
-function updatePersona($id_persona,$nombre) {
-   $insertrow = self::$db->updateRow("UPDATE public.persona SET nombre = ? WHERE id_persona= ? ", array("{$nombre}","$id_persona"));        
+function updatePersona($id_persona,$nombre,$apellido,$correo,$direccion,$user,$pass,$fecha_nacimiento,$id_rol) {
+   $insertrow = self::$db->updateRow("UPDATE public.persona SET nombre = ? , apellido = ? , correo = ? , direccion = ? , user = ? , pass = ? , fecha_nacimiento = ? , id_rol = ? WHERE id_persona= ? ", array("{$nombre}","{$apellido}","{$correo}","{$direccion}","{$user}","{$pass}","{$fecha_nacimiento}","{$id_rol}","$id_persona"));        
  }
 
 function deletePersona($id_persona) {
@@ -31,8 +31,8 @@ function deletePersona($id_persona) {
  }
 
 
-function createPersona($nombre) {
-   $insertrow = self::$db->insertRow("INSERT INTO public.persona (nombre) VALUES (?) ", array("{$nombre}"));        
+function createPersona($nombre,$apellido,$correo,$direccion,$user,$pass,$fecha_nacimiento,$id_rol) {
+   $insertrow = self::$db->insertRow("INSERT INTO persona (nombre, apellido, correo, direccion, user, pass, fecha_nacimiento, id_rol) VALUES (?,?,?,?,?,?,?,?) ", array("{$nombre}","{$apellido}","{$correo}","{$direccion}","{$user}","{$pass}","{$fecha_nacimiento}","{$id_rol}"));        
  }
 }
 ?>

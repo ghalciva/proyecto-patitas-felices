@@ -1,9 +1,7 @@
 <?php
 session_start();
-?>
 
-<?php
-include_once("mascotaCollector.php");
+$id_mascota=$_GET["id_mascota"];
 $nombre=$_GET["nombre"];
 $raza=$_GET["raza"];
 $color=$_GET["color"];
@@ -11,7 +9,10 @@ $sexo=$_GET["sexo"];
 $fecha_nacimiento=$_GET["fecha_nacimiento"];
 $imagen=$_GET["imagen"];
 $id_estado=$_GET["id_estado"];
+
+include_once("mascotaCollector.php");
 $mascotaCollectorObj = new mascotaCollector();
+
 ?>
 
 <!DOCTYPE html>
@@ -89,12 +90,46 @@ $mascotaCollectorObj = new mascotaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1 class="animated fadeInUp">Guardado!</h1>
-		<?php
-        		$mascotaCollectorObj->createMascota($nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-        		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
-                ?>
-		<a href="../../readMascota.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>	           
+              <form action="saveUpdateMascota.php" method="get">
+                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  M A S C O T A</h1>
+			<?php
+				echo "<label>IdMascota</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='id_mascota' class='form-control' value='". $id_mascota . "' readonly>";
+				echo "</div>";
+				echo "<label>Nombre</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $nombre . "' name='nombre'>";
+				echo "</div>";	
+				echo "<label>Raza</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $raza . "' name='raza'>";
+				echo "</div>";
+				echo "<label>Color</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $color . "' name='color'>";
+				echo "</div>";
+				echo "<label>Sexo</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $sexo . "' name='sexo'>";
+				echo "</div>";
+				echo "<label>Fecha de nacimiento</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='date' class='form-control' value='". $fecha_nacimiento . "' name='fecha_nacimiento'>";
+				echo "</div>";
+				echo "<label>Imagen</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $imagen . "' name='imagen'>";
+				echo "</div>";
+				echo "<label>Id Estado</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $id_estado . "' name='id_estado'>";
+				echo "</div>";
+				echo "<a href='saveUpdateMascota.php?id_mascota=". $id_mascota ."'><button class='btn btn-default' type='submit'> Siguiente </button>";
+
+			?>                        
+                   </form>
+		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

@@ -2,18 +2,6 @@
 session_start();
 ?>
 
-<?php
-include_once("mascotaCollector.php");
-$nombre=$_GET["nombre"];
-$raza=$_GET["raza"];
-$color=$_GET["color"];
-$sexo=$_GET["sexo"];
-$fecha_nacimiento=$_GET["fecha_nacimiento"];
-$imagen=$_GET["imagen"];
-$id_estado=$_GET["id_estado"];
-$mascotaCollectorObj = new mascotaCollector();
-?>
-
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -89,12 +77,27 @@ $mascotaCollectorObj = new mascotaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1 class="animated fadeInUp">Guardado!</h1>
 		<?php
-        		$mascotaCollectorObj->createMascota($nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-        		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
-                ?>
-		<a href="../../readMascota.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>	           
+				
+		$id_mascota=$_GET["id_mascota"];
+		$nombre=$_GET["nombre"];
+		$raza=$_GET["raza"];
+		$color=$_GET["color"];
+		$sexo=$_GET["sexo"];
+		$fecha_nacimiento=$_GET["fecha_nacimiento"];
+		$imagen=$_GET["imagen"];
+		$id_estado=$_GET["id_estado"];
+
+		include_once("mascotaCollector.php");
+		$mascotaCollectorObj = new mascotaCollector();
+
+		echo "<p>Se han modificado los cambios en la tabla Mascota!</p>";
+		$mascotaCollectorObj->updateMascota($id_mascota,$nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
+		$mascotaCollectorObj->saveMascota($id_mascota);
+        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
+
+		?>                        
+		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

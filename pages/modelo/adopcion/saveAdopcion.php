@@ -87,9 +87,10 @@ $adopcionCollectorObj = new adopcionCollector();
             <div class="block">
               <h1 class="animated fadeInUp">Guardado!</h1>
 		<?php
-        		$mascotaCollectorObj->createAdopcion($id_cliente,$id_mascota,$fecha_adopcion);
+        		$adopcionCollectorObj->createAdopcion($id_cliente,$id_mascota,$fecha_adopcion);
         		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAdopcion.php'>";
-                ?>	           
+                ?>
+		<a href="readAdopcion.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>  
             </div>
           </div>
         </div>
@@ -106,10 +107,6 @@ $adopcionCollectorObj = new adopcionCollector();
         </div>
       </div>
     </footer>
-            
-            
-  
-            
-    
+             
     </body>
 </html>
