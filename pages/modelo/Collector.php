@@ -8,7 +8,7 @@ define("DB_PASS", "postgres");
 define("DB_NAME", "patitasfelices");
 
 
-class CollectorA extends dataBase
+class Collector extends dataBase
 {
   public static $db;
   private $host      = DB_HOST;

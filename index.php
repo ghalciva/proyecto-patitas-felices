@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -26,7 +29,19 @@
     <div class="container">
          <div id="user">
        		 <ul class="login">
-             <li class="loginu col-md-2 col-md-offset-10"><a href="pages/iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+              <?php
+                if (!isset($_SESSION['user'])){
+                    echo "<li class='loginu col-md-2 col-md-offset-10'><a href='pages/iniciarsesion.php'><span class='glyphicon glyphicon-log-in'></span> Iniciar sesión</a></li>";
+                }else{
+                    echo "<li class='loginu col-md-2 col-md-offset-10'><a href='pages/logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>";
+                    if($_SESSION['rol']==2){
+                        echo "<li class='loginu col-md-2 col-md-offset-10'><a href='pages/indexAdmin.php'><span class='glyphicon glyphicon-log-in'></span>Menú</a></li>";
+                    }
+                    
+                    
+                }
+	           ?>
+             
        		 </ul>
        	 </div>
       <div class="row">
