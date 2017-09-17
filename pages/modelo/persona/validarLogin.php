@@ -1,8 +1,8 @@
 <?php
-include_once("modelo/persona/PersonaCollector.php");
+include_once("PersonaCollector.php");
 session_start();
-$user = $_POST['user'];
-$pass = $_POST['pass'];
+$user = $_GET['user'];
+$pass = $_GET['pass'];
 
 $PersonaCollectorObj = new PersonaCollector();
 
@@ -23,12 +23,13 @@ $PersonaCollectorObj = new PersonaCollector();
                 if($c->getIdRol()==2){
                     $_SESSION['user'] = $user;
                     $_SESSION['rol'] = $c->getIdRol();
-                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=indexAdmin.php'>";
-                    
+                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../indexAdmin.php'>";
+                    //echo "admin";
                 }else{
                     $_SESSION['user'] = $user;
                     $_SESSION['rol'] = $c->getIdRol();
-                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
+                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
+                    //echo "demas";
                 }
                 
                
@@ -37,11 +38,12 @@ $PersonaCollectorObj = new PersonaCollector();
                 
             }
         }
+        
         if (!isset($_SESSION['user'])){
         ?>
             
             <h4>Usuario o contraseña incorrecta</h4>
-            <a href="iniciarsesion.php"><button class="boton">Regresar</button></a>
+            <a href="../../iniciarsesion.php"><button class="boton">Regresar</button></a>
                 
         
         <?php

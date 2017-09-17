@@ -72,7 +72,7 @@
           <div class="container">
               <div class="col-md-12">
                     <div class="block">
-                    <form action="validarLogin.php" type="POST">
+                    <form action="modelo/persona/validarLogin.php" type="POST">
                           <h2>INICIAR SESIÓN</h2>
                         <div class="form-group">
                           <input type="text" class="form-control" name="user" placeholder="Usuario">
