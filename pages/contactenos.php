@@ -66,126 +66,103 @@
     </header><!-- header close -->
        
         <!-- Slider Start -->
-    <section id="global-header">
-        <div class="container">
+        <section id="global-header">
+          <div class="container">
             <div class="row">
               <div class="col-md-12">
                 <div class="block">
-                  <h2>PASOS PARA ADOPTAR</h2>
-                  <p>Adopta a tu nueva mascota en tres sencillos pasos:</p>
+                  <h2>Contáctenos</h2>
+                  <p>Damos tu opinión, sugerencia. Califica nuestra página.</p>
+                  
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Correo electrónico">
+                    </div>
+                     <div class="form-group">
+                      <input type="text" class="form-control" placeholder="País">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Ciudad">
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
+                  <form>
+                    <div class="form-group-2">
+                      <textarea class="form-control" rows="3" placeholder="Comentario"></textarea>
+                    </div>
+                    <button class="btn btn-default" type="submit">Enviar</button>
+                  </form>
                 </div>
               </div>
             </div>
-          
-                    	<div class="col-sm-6 col-md-4">
-           <h4>Encuentra a tu mascota favorita</h4>
-            <img src="../img/search.png">
-			</div>        
-                     
-           <div class="col-sm-6 col-md-4">
-              <h4>Selecciona tu próxima mascota e infómate</h4>
-              <img src="../img/cursor.png">
-            </div>
-            
-            <div class="col-sm-6 col-md-4">
-              <h4>Listo. Tu nueva mascota quiere conocerte.</h4>
-              <img src="../img/check.png">
-            </div>
-                    	
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-       
-       
-       
+            <div id="contact-box" class="row">
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
+                  <h2>Localización</h2>
+                  <ul class="address-block">
+                    <li>
+                      <i class="fa fa-map-marker"></i>Guayaquil, Ecuador
+                    </li>
+                    <li>
+                      <i class="fa fa-envelope-o"></i>Correro: pfelices@gmail.com
+                    </li>
+                    <li>
+                      <i class="fa fa-phone"></i>Phone:+593 912 34567
+                    </li>
+                  </ul>
 
-    <!-- Clients Logo Section Start -->
-    <section id="clients-logo-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="block">
-             <div class="col-sm-6 col-md-3">
-             <img src="../img/pet1.jpg">
-           <h5>Capu</h5>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <div class="block">
+                  <h2>Conoce nuestro equipo</h2>
+                    <div class="col-sm-6 col-md-3">
+           <h4>Gloria</h4>
+           <h4>Alcívar</h4>
+            <img src="../img/gloria.png">
 			</div>        
                      
            <div class="col-sm-6 col-md-3">
-             <img src="../img/pet2.jpg">
-           <h5>Fito</h5>
-			</div> 
+              <h4>Nancy</h4>
+              <h4>Chalén</h4>
+              <img src="../img/nancy.png">
+            </div>
             
-           <div class="col-sm-6 col-md-3">
-             <img src="../img/pet3.jpg">
-           <h5>George</h5>
-			</div> 
-		  
-		  <div class="col-sm-6 col-md-3">
-             <img src="../img/pet4.jpg">
-           <h5>Lolo</h5>
-			</div>        
-			  </div>
-			</div>
-		  </div>
+            <div class="col-sm-6 col-md-3">
+              <h4>Jéssica</h4>
+              <h4>Gaibor</h4>
+              <img src="../img/jessica.png">
+            </div>
           
-           <div class="row">
-          <div class="col-md-12">
-            <div class="block">
-                     
-            <div class="col-sm-6 col-md-3">
-             <img src="../img/pet5.jpg">
-           <h5>Pablo</h5>
-			</div> 
-           
-            <div class="col-sm-6 col-md-3">
-             <img src="../img/pet6.jpg">
-           <h5>Sasha</h5>
-			</div>        
-                     
-            <div class="col-sm-6 col-md-3">
-             <img src="../img/pet7.jpg">
-           <h5>Oso</h5>
-			</div> 
-            
-             <div class="col-sm-6 col-md-3">
-             <img src="../img/pet8.jpg">
-           <h5>Zeus</h5>
-			</div> 
-			  </div>
-			</div>
+          <div class="col-sm-6 col-md-3">
+              <h4>Andrea</h4>
+               <h4>Jurado</h4>
+              <img src="../img/andrea.png">
+            </div>
+          </div>
 		  </div>
-       
-       <div class="row">
-          <div class="col-md-12">
-            <div class="block">
-            
-            
-             <div class="col-sm-6 col-md-3">
-             <img src="../img/pet9.jpg">
-           <h5>Mickey</h5>
-			</div> 
-			    <div class="col-sm-6 col-md-3">
-             <img src="../img/pet10.jpg">
-           <h5>Didi</h5>
-			</div>        
-                     
-            <div class="col-sm-6 col-md-3">
-             <img src="../img/pet11.jpg">
-           <h5>Camilo</h5>
-			</div> 
-            
-             <div class="col-sm-6 col-md-3">
-             <img src="../img/pet12.jpg">
-           <h5>Luna</h5>
-			</div> 
-        
+        </div>
       </div>
     </section>
-
-  
-<!-- Call to action Start -->
+                    
+                    
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+                  
+               
+       
+      
+     
+    <!-- Call to action Start -->
     <section id="call-to-action">
       <div class="container">
         <div class="row">
@@ -208,5 +185,10 @@
         </div>
       </div>
     </footer>
-  </body>
+            
+            
+  
+            
+    
+    </body>
 </html>

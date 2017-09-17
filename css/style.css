@@ -40,6 +40,9 @@ a:focus,
 a:active {
   text-decoration: none !important;
 }
+.above:hover {
+	background: #F9DBAB;
+}
 .section-title {
   margin-bottom: 70px;
 }
@@ -65,7 +68,7 @@ header .navbar {
   border: 0px;
 }
 header .navbar-brand {
-  padding: 0px 10px;
+  padding-top: 5px;
 }
 header .navbar-default {
   background: none;
@@ -80,16 +83,16 @@ header .navbar-default .navbar-nav li a {
   font-size: 15px;
 }
 font header .navbar-default .navbar-nav li a:hover {
-  color: blanchedalmond;
+  color: #000;
 }
 /*---------------------------------------------
 					Index Start 
 -----------------------------------------------*/
 /*--
-	Slider Start 
+	PATITAS FELICES - NUESTROS ANGELITOS ESPERAN POR TI 
 --*/
 #slider {
-  background: url("../img/slider-bg.jpg") no-repeat;
+  background: url("../img/pets-background.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: 10% 0%;
@@ -106,7 +109,7 @@ font header .navbar-default .navbar-nav li a:hover {
   width: 100%;
   height: 100%;
   background: linear-gradient(to left, burlywood, saddlebrown 50%);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 #slider .block {
   color: #E3E3E4;
@@ -126,30 +129,50 @@ font header .navbar-default .navbar-nav li a:hover {
   font-weight: 300;
   letter-spacing: 3px;
 }
+
+
 /*--
-	wrapper Start 
+	SLIDER- INICIAR SESION
 --*/
-#intro {
-  padding: 100px 0;
+
+
+#slider-iniciarsesion {
+  background: url("../img/iniciarsesion.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 10% 0%;
+  padding: 200px 0 280px 0;
+  position: relative;
 }
-#intro .block h2 {
-  padding-top: 35px;
-  line-height: 27px;
-  margin: 0;
-}
-#intro .block p {
-  color: #7B7B7B;
-  padding-top: 20px;
-}
-#intro .block img {
-  padding-left: 40px;
+#slider-iniciarsesion:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, burlywood, saddlebrown 50%);
+  opacity: 0.8;
 }
-#intro .section-title {
-  margin-bottom: 0px;
+#slider-iniciarsesion .block {
+  color: #E3E3E4;
 }
-#intro .section-title p {
-  padding-top: 20px;
+#slider-iniciarsesion .block h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 45px;
+  line-height: 60px;
+  letter-spacing: 10px;
+  padding-bottom: 45px;
+}
+#slider-iniciarsesion .block p {
+  font-size: 23px;
+  line-height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 3px;
 }
 /*--
 	service Start 
@@ -157,31 +180,26 @@ font header .navbar-default .navbar-nav li a:hover {
 #service {
   text-align: center;
   padding: 90px 0;
+	
 }
+
+
+
 #service .service-item {
   padding-bottom: 30px;
 }
-#service .service-item i {
-  font-size: 60px;
-  color: #4A4656;
-}
+
 #service .service-item h4 {
   padding-top: 20px;
   margin: 0;
   color: #666;
 }
-#service .service-item p {
-  color: #888;
-  padding-top: 10px;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.8;
-}
+
 /*--
-	call-to-action Start 
+	¿YA TE ANIMASTE PARA ADOPTAR? 
 --*/
 #call-to-action {
-  background: url("../img/imgs/images.jpg") no-repeat;
+  background: url("../img/cuenta-tu-historia.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   padding: 70px 0px;
@@ -207,20 +225,10 @@ font header .navbar-default .navbar-nav li a:hover {
   margin: 0;
   font-size: 30px;
 }
-#call-to-action p {
-  font-size: 14px;
-  line-height: 1.6;
-}
-#call-to-action .btn-call-to-action {
-  padding: 15px 35px;
-  border: none;
-  background-color: #fff;
-  font-size: 15px;
-  color: #333333;
-  margin-top: 30px;
-}
+
+
 /*--
-	Feature Start 
+	¿POR QUÉ ADOPTAR?
 --*/
 #feature {
   background: url("../img/featue-bg.jpg");
@@ -232,6 +240,7 @@ font header .navbar-default .navbar-nav li a:hover {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: #fff;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -247,136 +256,64 @@ font header .navbar-default .navbar-nav li a:hover {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 30px;
-  color: #8d8f92;
 }
 #feature p {
-  color: #8d8f92;
+  color: #868686;
   margin-bottom: 20px;
-  
+  background-color:beige;
 }
-
-.container #informacion {
-  background-color: #fff;
-  background-attachment: fixed;
-  width:auto;
-  height: auto;
-  background-position: 10% 0%;
-  margin-bottom: 20px;
-  opacity:0.8;
-  padding: 20px;
-  
-}
-
 #feature .btn-view-works {
-  background: #655E7A;
+  background: #868686;
   color: #fff;
   padding: 10px 20px;
 }
 
-.container #informacion {
-  background-color: #fff;
+/*---------------------------------------------
+					NOSOTROS
+-----------------------------------------------*/
+#nosotros {
+  background: url("../img/nosotros-bg.jpg");
+  background-position: 50% 94px;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: visible;
   background-attachment: fixed;
-  width:auto;
-  height: auto;
-  background-position: 10% 0%;
-  margin-bottom: 20px;
-  opacity:0.8;
-  padding: 20px;
-  
-}
-/*--
-	content Start 
---*/
-#testimonial {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   padding: 100px 0;
 }
-#testimonial .block h2 {
-  line-height: 27px;
-  color: #5C5C5C;
-  padding-top: 110px;
-}
-#testimonial .block p {
-  padding-top: 50px;
-  color: #7B7B7B;
-}
-#testimonial .counter-box li {
-  width: 50%;
-  float: left;
-  text-align: center;
-  margin: 30px 0 30px;
-}
-#testimonial .counter-box li i {
-  font-size: 35px;
-}
-#testimonial .counter-box li h4 {
-  font-size: 30px;
-  font-weight: bold;
-}
-#testimonial .counter-box li span {
-  color: #555;
-}
-#testimonial .testimonial-carousel {
-  text-align: center;
-  width: 75%;
-  border: 1px solid #DEDEDE;
-  padding: 24px;
-  margin: 0 auto;
-}
-#testimonial .testimonial-carousel img {
-  padding-bottom: 38px;
-}
-#testimonial .testimonial-carousel p {
-  line-height: 28px;
-  font-weight: 300;
-  padding-bottom: 20px;
-}
-#testimonial .testimonial-carousel .user img {
-  padding-bottom: 0px;
-  border-radius: 500px;
-}
-#testimonial .testimonial-carousel .user p {
-  padding-bottom: 0;
-  font-size: 12px;
-  line-height: 20px;
-  color: #353241;
-}
-#testimonial .testimonial-carousel .user p span {
-  display: block;
-  color: #353241;
+#nosotros h2 {
+  font-size: 28px;
   font-weight: 600;
+  margin-bottom: 30px;
 }
-#testimonial .testimonial-carousel .owl-carousel .owl-pagination div {
-  border: 1px solid #1D1D1D;
-  border-radius: 500px;
-  display: inline-block;
-  height: 10px;
-  margin-right: 15px;
-  width: 10px;
+#nosotros p {
+  color: #868686;
+  margin-bottom: 20px;
+  background-color:beige;
 }
-#testimonial .testimonial-carousel .owl-carousel .owl-pagination div.active {
-  background: #5C5C5C;
-  font-size: 30px;
-  display: inline-block;
-  border: 0px;
-}
-/*--
-	features Start 
---*/
-#clients-logo-section {
-  padding-top: 30px;
-  padding-bottom: 75px;
-}
-#clients-logo-section .clients-logo-img {
-  padding: 0px 50px;
-}
+
+
+
 /*---------------------------------------------
-					Work Start 
+					MASCOTAS 
 -----------------------------------------------*/
 /*--
-	Slider-work Start 
+	PASOS PARA ADOPTAR
 --*/
 #global-header {
-  background: url("../img/imgs/catandog.jpg") no-repeat;
+  background: url("../img/mascotas1.jpg") no-repeat;
   background-size: cover;
   padding-top: 150px;
   padding-bottom: 107px;
@@ -393,7 +330,7 @@ font header .navbar-default .navbar-nav li a:hover {
   width: 100%;
   height: 100%;
   background: linear-gradient(to left, burlywood, saddlebrown 50%);
-  opacity: 0.6;
+  opacity: 0.8;
 }
 #global-header .block {
   color: #E3E3E4;
@@ -415,142 +352,12 @@ font header .navbar-default .navbar-nav li a:hover {
   letter-spacing: 1px;
   word-spacing: 3px;
 }
-/*--
-	portfolio-work Start 
---*/
-#portfolio-work {
-  overflow: hidden;
-  padding: 80px 0;
+
+.row .col-sm-6col-md-4 img {
+	align-content: center;
+	
 }
-#portfolio-work .block .portfolio-menu {
-  padding-bottom: 30px;
-  text-align: center;
-}
-#portfolio-work .block .portfolio-menu ul {
-  border: 1px solid #999999;
-  display: inline-block;
-  margin-bottom: 40px;
-}
-#portfolio-work .block .portfolio-menu ul li {
-  display: inline-block;
-  padding: 0px 25px;
-  cursor: pointer;
-  font-size: 15px;
-  line-height: 40px;
-  font-weight: 600;
-  color: #333333;
-  text-transform: capitalize;
-  position: relative;
-}
-#portfolio-work .block .portfolio-menu ul .active {
-  color: #655E7A;
-  position: relative;
-}
-#portfolio-work .block .portfolio-menu ul .active:before {
-  content: "\f0d7";
-  position: absolute;
-  font-family: 'FontAwesome';
-  bottom: -18px;
-  font-size: 30px;
-  width: 20px;
-  left: 0px;
-  right: 0px;
-  top: 23px;
-  margin: 0 auto;
-  color: #fff;
-  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.9);
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-#portfolio-work .block .portfolio-menu ul li:hover:before {
-  content: "\f0d7";
-  position: absolute;
-  font-family: 'FontAwesome';
-  bottom: -18px;
-  font-size: 30px;
-  width: 20px;
-  left: 0px;
-  right: 0px;
-  top: 24px;
-  margin: 0 auto;
-  color: #fff;
-  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.9);
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-#portfolio-work .block .portfolio-contant ul li {
-  float: left;
-  width: 32.22%;
-  overflow: hidden;
-  margin: 6px;
-  position: relative;
-}
-#portfolio-work .block .portfolio-contant ul li:hover .overly {
-  opacity: 1;
-}
-#portfolio-work .block .portfolio-contant ul li:hover .position-center {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0%, -50%);
-  -moz-transform: translate(0%, -50%);
-  -ms-transform: translate(0%, -50%);
-  transform: translate(0%, -50%);
-}
-#portfolio-work .block .portfolio-contant ul li a {
-  display: block;
-  color: #fff;
-}
-#portfolio-work .block .portfolio-contant ul li a h2 {
-  font-size: 22px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-#portfolio-work .block .portfolio-contant ul li a p {
-  font-size: 15px;
-}
-#portfolio-work .block .portfolio-contant ul li a span {
-  font-style: italic;
-  font-size: 13px;
-  color: #655E7A;
-}
-#portfolio-work .block .portfolio-contant ul img {
-  width: 100%;
-  height: auto;
-}
-#portfolio-work .block .portfolio-contant .overly {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.9);
-  opacity: 0;
-  -webkit-transition: .3s all;
-  -o-transition: .3s all;
-  transition: .3s all;
-  text-align: center;
-}
-#portfolio-work .block .portfolio-contant .position-center {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  -webkit-transform: translate(0%, 50%);
-  -moz-transform: translate(0%, 50%);
-  -ms-transform: translate(0%, 50%);
-  transform: translate(0%, 50%);
-  -webkit-transition: .5s all;
-  -o-transition: .5s all;
-  transition: .5s all;
-}
-#portfolio-work .block .mix {
-  display: none;
-}
+
 /*--
 	wrapper-work Start 
 --*/
@@ -640,7 +447,7 @@ font header .navbar-default .navbar-nav li a:hover {
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to left, burlywood, saddlebrown 50%);
+  background: linear-gradient(to left, #928dab, #1f1c2c 70%);
   opacity: 0.8;
 }
 #slider-contact .block {
@@ -702,40 +509,7 @@ font header .navbar-default .navbar-nav li a:hover {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 }
-/*--
-	wrapper-contact Start 
---*/
-.address-block li {
-  margin-bottom: 20px;
-}
-.address-block li i {
-  margin-right: 15px;
-  font-size: 20px;
-  width: 20px;
-}
-.social-icons {
-  margin-top: 40px;
-}
-.social-icons li {
-  display: inline-block;
-  margin: 0 6px;
-}
-.social-icons a {
-  display: inline-block;
-}
-.social-icons i {
-  color: #2C2C2C;
-  margin-right: 25px;
-  font-size: 25px;
-}
-.google-map {
-  position: relative;
-}
-.google-map #map {
-  width: 100%;
-  height: 300px;
-  background-color: #ff432e;
-}
+
 #contact-box {
   padding-top: 35px;
   padding-bottom: 58px;
@@ -805,124 +579,9 @@ footer p {
 footer a {
   color: #595959;
 }
-footer .footer-manu {
-  padding-bottom: 25px;
-}
-footer .footer-manu ul {
-  margin: 0px;
-  padding: 0px;
-}
-footer .footer-manu ul li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-footer .footer-manu ul li a {
-  display: inline-block;
-  color: #494949;
-}
-footer .footer-manu ul li a:hover {
-  color: #000;
-}
 
-a.above{
-    background-color: tan;
-    opacity: 0.7;
-}
-
-ul.login{ 
-    position: absolute; 
-    right: 2%; 
-    top: 5%;
-}
-li.loginu a{ 
-    text-decoration: none; 
-    color: black;
-}
-li.loginu a:hover{ 
-    text-decoration: none; 
-    color: floralwhite;
-    opacity: 0.5;
-}
-td.sidebartitle{ 
-    background-color: burlywood; 
-    color: white; 
-    height:30px; 
-    padding: 10px;
-}
-td.sidebartitle a{
-    color: white;
-}
-a.sidebarsubt{
-    padding: 3px; 
-    color: black;
-}
-a.sidebarsubt:hover{ 
-    color: papayawhip;
-}
-.imagenes{
-    position: absolute;
-    bottom: 20px;
-    left: 370px;
-}
-.ausp{
-    position: relative;
-    width: 820px;
-    left: 150px;
-}
-
-.newOne{
-    position: absolute;
-    left: 320px;
-    top: 270px;
-}
-
-.op{
-    color: gainsboro;
-    font-size: 17px;
-    
-}
-
-#politicas{
-    background-color: white;
-    background-attachment: fixed;
-    background-position: 10% 0%;
-    font-size: 10px;
-    padding: 20px;
-    opacity: 0.5;
-}
-
-.tipo_1 img {
-   height: auto;
-max-width: 100%
-     }
-
-.alinear{
-   text-align: center;
-}
-
-a:hover, a:active {
-background-color: burlywood;
-    
-    opacity: 0.5;
-}
-
-#tabla{
-    background-color:#696969;
-    opacity: 0.7;
-}
-
-@media screen and (max-width:1000px)and (min-width:100px){
-
-
-.tipo_1 { float:none ;
-width :auto}
-}
-
-a.ifo:link, a.ifo:visited {
-background-color: blue;
-color: white;
-padding: 14px 25px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
+/*----AGENDA---*/
+#agenda img {
+    width:100%;
+    max-width:500px;
 }
