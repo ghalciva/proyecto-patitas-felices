@@ -31,7 +31,7 @@ function deleteReceta($id_receta) {
  }
 
 
-function createEstado($id_consulta, $descripcion, $cantidad ) {
+function createReceta($id_consulta, $descripcion, $cantidad ) {
    $insertrow = self::$db->insertRow("INSERT INTO public.receta (id_consulta, descripcion, cantidad) VALUES (?,?,?) ", array("{$id_consulta}", "{$descripcion}", "{$cantidad}"));        
  }
 }
