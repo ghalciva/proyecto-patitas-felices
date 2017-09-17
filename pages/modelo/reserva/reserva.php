@@ -15,36 +15,36 @@ class reserva
         $this->id_veterinario = $id_veterinario;
  	
      }
-function setid_reserva($id_reserva){
+function setId_reserva($id_reserva){
        $this->id_reserva = $id_reserva;
      } 
-     function getid_reserva(){
+     function getId_reserva(){
        return $this->id_reserva;
      } 
     
-     function setfid_cliente($id_cliente){
+     function setId_cliente($id_cliente){
        $this->id_cliente = $id_cliente;
      } 
-     function getid_cliente(){
+     function getId_cliente(){
        return $this->id_cliente;
      } 
-     function setid_mascota($id_mascota){
+     function setId_mascota($id_mascota){
        $this->id_mascota = $id_mascota;
      } 
-     function getid_mascota(){
+     function getId_mascota(){
        return $this->id_mascota;
      } 
- function setfecha($fecha){
+ function setFecha($fecha){
        $this->fecha = $fecha;
      } 
-     function getfecha(){
+     function getFecha(){
        return $this->fecha;
      }
  
-function setid_veterinario($id_veterinario){
+function setId_veterinario($id_veterinario){
        $this->id_veterinario = $id_veterinario;
      } 
-     function getid_veterinario(){
+     function getId_veterinario(){
        return $this->id_veterinario;
      } 
 
