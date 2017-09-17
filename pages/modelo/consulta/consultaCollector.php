@@ -18,13 +18,13 @@ class consultaCollector extends Collector
   }
   
 //eliminar mascota
-  function deletefichamedica($id_fichamedica) {
-    $rows = self::$db->deleteRow("DELETE FROM fichamedica WHERE id_fichamedica= ? ", array("{$id_fichamedica}"));        
+  function deleteconsulta($id_consulta) {
+    $rows = self::$db->deleteRow("DELETE FROM consulta WHERE id_consulta= ? ", array("{$id_consulta}"));        
   }   
 
 //insertar mascota
-  function createfichamedica($id_fichamedica,$id_mascota,$detalle) {
-    $rows = self::$db->insertRow("INSERT INTO public.fichamedica (id_fichamedica, id_mascota, detalle) VALUES (?,?,?) ", array("{$id_fichamedica}","{$id_mascota}","{$detalle}"));        
+  function createconsulta($id_consulta,$id_reserva,$hora,$detalle) {
+    $rows = self::$db->insertRow("INSERT INTO public.fichamedica (id_fichamedica, id_mascota, detalle) VALUES (?,?,?) ", array("{$id_consulta}","{$id_reserva}","{$hora}","{$detalle}"));        
   } 
     
 //actualizar mascota
