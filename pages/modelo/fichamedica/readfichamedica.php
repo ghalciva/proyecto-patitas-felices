@@ -3,10 +3,10 @@ session_start();
 ?>
 
 <?php
-include_once("consultaCollector.php");
+include_once("fichamedicaCollector.php");
 $usuario = $_SESSION['MiSesion'];
 
-$consultaCollectorObj = new consultaCollector();
+$fichamedicaCollectorObj = new fichamedicaCollector();
 
 ?>
 
@@ -85,30 +85,30 @@ $consultaCollectorObj = new consultaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla consulta</h1>
-    <a href="createMascota.php"><button class="btn btn-default btn-call-to-action">Crear consulta</button></a> <br>
+              <h1>Tabla ficha medica</h1>
+    <a href="createfichamedica.php"><button class="btn btn-default btn-call-to-action">Crear ficha Medica</button></a> <br>
     <table id="tabla">
         <tr>    
-            <th>&nbsp;&nbsp;id_consulta&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;id_reserva&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;hora&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>a
+            <th>&nbsp;&nbsp;id_fichamedica&nbsp;&nbsp;</th>
+            <th>&nbsp;&nbsp;id_mascota&nbsp;&nbsp;</th>
+            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>
+            
         </tr>
         <?php
 
-            foreach ($consultaCollectorObj->showconsulta() as $c){
+            foreach ($fichamedicaCollectorObj->showfichamedica() as $c){
             echo "<tr>";
-            echo "<td>" . $c->getId_consulta() . "</td>";
-            echo "<td>" . $c->getId_reserva() . "</td>";   
-            echo "<td>" . $c->getHora() . "</td>";
-            echo "<td>" . $c->getDetalle() . "</td>";            
+            echo "<td>" . $c->getId_fichamedica() . "</td>";
+            echo "<td>" . $c->getId_mascota() . "</td>";   
+            echo "<td>" . $c->getDetalle() . "</td>";
+                      
                      
             
-            echo "<td><a href='updateConsulta.php?id_consulta=" . $c->getId_consulta() . "&id_reserva=" . $c->getId_reserva() . "&hora=" . $c->getHora() . "&detalle=" . $c->getDetalle() ."'> 
+            echo "<td><a href='updateFichamedica.php?id_fichamedica=" . $c->getId_fichamedica() . "&id_mascota=" . $c->getId_mascota() . "&detalle=" . $c->getDetalle() ."'> 
 
 <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 
-            echo "<td><a href='deleteConsulta.php?id_consulta=". $c->getId_consulta() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
+            echo "<td><a href='deleteFichamedica.php?id_fichamedica=". $c->getId_fichamedica() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
             echo "</tr>"; 
                 
         }
@@ -139,4 +139,4 @@ $consultaCollectorObj = new consultaCollector();
             
     
     </body>
-</html>
+</html

@@ -11,7 +11,7 @@ class reservaCollector extends Collector
     $rows = self::$db->getRows("SELECT * FROM reserva");        
     $arrayreserva= array();        
     foreach ($rows as $c){
-      $aux = new reserva($c{'id_reserva'},$c{'id_cliente'},$c{'id_mascota'},$c{'fecha'},$c{'id_veterinario'});
+      $aux = new reserva($c{'id_reserva'},$c{'id_cliente'},$c{'fecha_consulta'},$c{'id_veterinario'});
       array_push($arrayreserva, $aux);
     }
     return $arrayreserva;        

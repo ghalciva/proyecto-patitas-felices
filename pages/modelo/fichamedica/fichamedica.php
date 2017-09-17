@@ -1,5 +1,5 @@
 <<?php
-class reserva
+class fichamedica
 {
     private $id_fichamedica;
     private $id_mascota;
