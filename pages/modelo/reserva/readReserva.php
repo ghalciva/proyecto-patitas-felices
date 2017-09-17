@@ -3,10 +3,10 @@ session_start();
 ?>
 
 <?php
-include_once("consultaCollector.php");
+include_once("reservaCollector.php");
 $usuario = $_SESSION['MiSesion'];
 
-$consultaCollectorObj = new consultaCollector();
+$reservaCollectorObj = new reservaCollector();
 
 ?>
 
@@ -85,30 +85,30 @@ $consultaCollectorObj = new consultaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla consulta</h1>
-    <a href="createMascota.php"><button class="btn btn-default btn-call-to-action">Crear consulta</button></a> <br>
+              <h1>Tabla reserva</h1>
+    <a href="createMascota.php"><button class="btn btn-default btn-call-to-action">Crear reserva</button></a> <br>
     <table id="tabla">
         <tr>    
-            <th>&nbsp;&nbsp;id_consulta&nbsp;&nbsp;</th>
             <th>&nbsp;&nbsp;id_reserva&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;hora&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>a
+            <th>&nbsp;&nbsp;id_cliente&nbsp;&nbsp;</th>
+            <th>&nbsp;&nbsp;fecha_consulta&nbsp;&nbsp;</th>
+            <th>&nbsp;&nbsp;id_veterinario&nbsp;&nbsp;</th>a
         </tr>
         <?php
 
-            foreach ($consultaCollectorObj->showconsulta() as $c){
+            foreach ($reservaCollectorObj->showreserva() as $c){
             echo "<tr>";
-            echo "<td>" . $c->getId_consulta() . "</td>";
-            echo "<td>" . $c->getId_reserva() . "</td>";   
-            echo "<td>" . $c->getHora() . "</td>";
-            echo "<td>" . $c->getDetalle() . "</td>";            
+            echo "<td>" . $c->getId_reserva() . "</td>";
+            echo "<td>" . $c->getId_cliente() . "</td>";   
+            echo "<td>" . $c->getFecha_consulta() . "</td>";
+            echo "<td>" . $c->getId_veterinario() . "</td>";            
                      
             
-            echo "<td><a href='updateConsulta.php?id_consulta=" . $c->getId_consulta() . "&id_reserva=" . $c->getId_reserva() . "&hora=" . $c->getHora() . "&detalle=" . $c->getDetalle() ."'> 
+            echo "<td><a href='updateConsulta.php?id_reserva=" . $c->getId_reserva() . "&id_reserva=" . $c->getId_cliente() . "&hora=" . $c->getFecha_consulta() . "&detalle=" . $c->getId_veterinario() ."'> 
 
 <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 
-            echo "<td><a href='deleteConsulta.php?id_consulta=". $c->getId_consulta() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
+            echo "<td><a href='deletereserva.php?id_consulta=". $c->getId_reserva() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
             echo "</tr>"; 
                 
         }

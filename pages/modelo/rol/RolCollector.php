@@ -6,7 +6,7 @@ include_once('../Collector.php');
 class RolCollector extends Collector
 {
   
-  function showRol() {
+  function showRols() {
     $rows = self::$db->getRows("SELECT * FROM rol ");        
     $arrayRol= array();        
     foreach ($rows as $c){
