@@ -72,13 +72,13 @@
           <div class="container">
               <div class="col-md-12">
                     <div class="block">
-                    <form>
+                    <form action="validarLogin.php" type="POST">
                           <h2>INICIAR SESIÓN</h2>
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="usuario">
+                          <input type="text" class="form-control" name="user" placeholder="Usuario">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="contraseña">
+                          <input type="text" class="form-control" name="pass" placeholder="Contraseña">
                         </div>
                         <button class="btn btn-default" type="submit">Ingresar</button>
                          </form>
