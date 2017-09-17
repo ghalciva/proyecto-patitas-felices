@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Patitas felices</title>
+    <title>Administrador - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <!-- Js -->
     <script src="../js/vendor/jquery-1.10.2.min.js"></script>
@@ -43,7 +44,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.php">
+                <a class="navbar-brand" href="index.php">
                   <img src="../img/logo.png" alt="Logo">
                 </a>
               </div>
@@ -51,7 +52,7 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../index.php" class="above">Inicio</a></li>
+                    <li><a href="index.php">Inicio</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="mascotas.php">Mascotas</a></li>
                     <li><a href="agenda.php">Agenda</a></li>
@@ -65,47 +66,32 @@
       </div>
     </header><!-- header close -->
        
-    <!-- contact form start -->
-    <section id="slider-iniciarsesion">
-	<h3>&nbsp; </h3>
-        <section id="contact-form">
-          <div class="container">
-              <div class="col-md-12">
-                    <div class="block">
-                    <form action="validarLogin.php" type="POST">
-                          <h2>INICIAR SESIÓN</h2>
-                        <div class="form-group">
-                          <input type="text" class="form-control" name="user" placeholder="Usuario">
-                        </div>
-                        <div class="form-group">
-                          <input type="text" class="form-control" name="pass" placeholder="Contraseña">
-                        </div>
-                        <button class="btn btn-default" type="submit">Ingresar</button>
-                         </form>
-              </div>
-              
-              
-            </div>
-       
-        </div>
-        </section> 
-    </section>
-      
-
-      
-    <!-- Call to action Start -->
-    <section id="call-to-action">
+        
+    <!-- Slider Start -->
+    <section id="slider">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h2>¿YA TE ANIMASTE PARA ADOPTAR?</h2>             
+              <h1 class="animated fadeInUp">Administrar tablas</h1>
+                  <a class="btn btn-default btn-call-to-action" href="modelo/adpocion/readAdopcion.php">Adopcion de mascota</a>
+                  <a class="btn btn-default btn-call-to-action" href="modelo/mascota/readAnimal.php">Mascota</a>	      	      
+                  <a class="btn btn-default btn-call-to-action" href="modelo/cliente/readCliente.php">Cliente</a>	      
+                  <a class="btn btn-default btn-call-to-action" href="modelo/reserva/readReserva.php">Reserva</a>  
+                  <a class="btn btn-default btn-call-to-action" href="modelo/fichamedica/readFichaMedica.php">Ficha médica</a>	     
+                  <a class="btn btn-default btn-call-to-action" href="modelo/rol/readRol.php">Rol</a><br>
+                  <a class="btn btn-default btn-call-to-action" href="modelo/administrador/readAdministrador.php">Administrador</a>	 
+                  <a class="btn btn-default btn-call-to-action" href="modelo/persona/readPersona.php">Persona</a>	               
+                  <a class="btn btn-default btn-call-to-action" href="modelo/veterinario/readVeterinario.php">Veterinario</a>	           
+                  <a class="btn btn-default btn-call-to-action" href="modelo/receta/readReceta.php">Receta</a>	           
+                  <a class="btn btn-default btn-call-to-action" href="modelo/estado/readEstado.php">Estado</a>	           
+                  <a class="btn btn-default btn-call-to-action" href="modelo/consulta/readConsulta.php">Consulta</a>	           
             </div>
           </div>
         </div>
       </div>
     </section>
-   
+           
     <!-- footer Start -->
     <footer>
       <div class="container">
