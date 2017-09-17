@@ -4,7 +4,7 @@ class Cliente
 {
     private $id_cliente;
     private $id_persona;
-    private $fecha_registro
+    private $fecha_registro;
     
      function __construct($id_cliente, $id_persona, $fecha_registro) {
        $this->id_cliente = $id_cliente;
