@@ -4,22 +4,22 @@ class Mascota
 {
     private $id_mascota;
     private $nombre;
-    private $edad;
     private $raza;
-    private $fecha;
-    private $sexo;
     private $color;
+    private $sexo;
+    private $fecha_nacimiento;
     private $imagen;
+    private $id_estado;
     
-     function __construct($id_mascota, $nombre, $edad, $raza, $fecha, $sexo, $color,$imagen) {
+     function __construct($id_mascota, $nombre, $raza, $color, $sexo, $fecha_nacimiento,$imagen,$id_estado) {
        $this->id_mascota = $id_mascota;
        $this->nombre = $nombre;
-       $this->edad = $edad;
        $this->raza = $raza;
-       $this->fecha = $fecha;
-       $this->sexo = $sexo;
        $this->color = $color;
+       $this->sexo = $sexo;
+       $this->fecha_nacimiento = $fecha_nacimiento;
        $this->imagen = $imagen;
+       $this->id_estado = $id_estado;
      }
     
      function setId_mascota($id_mascota){
@@ -34,29 +34,11 @@ class Mascota
      function getNombre(){
        return $this->nombre;
      }
-     function setEdad($edad){
-       $this->edad = $edad;
-     } 
-     function getEdad(){
-       return $this->edad;
-     } 
      function setRaza($raza){
        $this->raza = $raza;
      } 
      function getRaza(){
        return $this->raza;
-     } 
-     function setFecha($fecha){
-       $this->fecha = $fecha;
-     } 
-     function getFecha(){
-       return $this->fecha;
-     } 
-     function setSexo($sexo){
-       $this->sexo = $sexo;
-     } 
-     function getSexo(){
-       return $this->sexo;
      } 
      function setColor($color){
        $this->color = $color;
@@ -64,13 +46,30 @@ class Mascota
      function getColor(){
        return $this->color;
      } 
+     function setSexo($sexo){
+       $this->sexo = $sexo;
+     } 
+     function getSexo(){
+       return $this->sexo;
+     } 
+     function setFecha_nacimiento($fecha_nacimiento){
+       $this->fecha_nacimiento = $fecha_nacimiento;
+     } 
+     function getFecha_nacimiento(){
+       return $this->fecha_nacimiento;
+     } 
      function setImagen($imagen){
        $this->imagen = $imagen;
      } 
      function getImagen(){
        return $this->imagen;
      } 
-
+     function setId_estado($id_estado){
+       $this->id_estado = $id_estado;
+     } 
+     function getId_estado(){
+       return $this->id_estado;
+     } 
 }
 
 ?> 
