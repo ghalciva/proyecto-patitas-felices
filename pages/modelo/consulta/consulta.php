@@ -17,31 +17,31 @@ class consulta
 	$this->detalle = $detalle;
      }
 
-    function setid_consulta($id_consulta){
+    function setId_consulta($id_consulta){
        $this->id_consulta = $id_consulta;
      } 
-     function getid_consulta(){
+     function getId_consulta(){
        return $this->id_consulta;
      } 
 
-function setid_reserva($id_reserva){
+function setId_reserva($id_reserva){
        $this->id_reserva = $id_reserva;
      } 
-     function getid_reserva(){
+     function getId_reserva(){
        return $this->id_reserva;
      } 
 
-function sethora($hora){
+function setHora($hora){
        $this->hora = $hora;
      } 
-     function gethora(){
+     function getHora(){
        return $this->hora;
      } 
 
-     function setdetalle($detalle){
+     function setDetalle($detalle){
        $this->detalle = $detalle;
      } 
-     function getdetalle(){
+     function getDetalle(){
        return $this->detalle;
      } 
      

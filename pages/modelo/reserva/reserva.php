@@ -3,14 +3,12 @@ class reserva
 {
     private $id_reserva;
     private $id_cliente;
-    private $id_mascota;
     private $fecha;
    private $id_veterinario;
     
-     function __construct($id_reserva, $id_cliente,$id_mascota,$fecha,$id_veterinario) {
+     function __construct($id_reserva, $id_cliente,$fecha,$id_veterinario) {
         $this->id_reserva = $id_reserva;
         $this->id_cliente = $id_cliente;
- 	$this->id_mascota = $id_mascota;
  	$this->fecha = $fecha;
         $this->id_veterinario = $id_veterinario;
  	
@@ -28,12 +26,7 @@ function setId_reserva($id_reserva){
      function getId_cliente(){
        return $this->id_cliente;
      } 
-     function setId_mascota($id_mascota){
-       $this->id_mascota = $id_mascota;
-     } 
-     function getId_mascota(){
-       return $this->id_mascota;
-     } 
+     
  function setFecha($fecha){
        $this->fecha = $fecha;
      } 
