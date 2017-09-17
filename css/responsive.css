@@ -35,6 +35,14 @@ px      68    160    252    344    436    528    620    712    */
   #content .block {
     padding-bottom: 100px;
   }
+    
+    
+    .newOne{
+    position: absolute;
+    padding: 10px 20px;
+    font-size: 15px;
+     }
+    
   /*--
 	features Start 
 --*/
@@ -221,12 +229,17 @@ px      68    160    252    */
     font-size: 15px;
   }
     
+ 
+}    
     
     
-    .tipo_1 img {
+#call-to-action img {
    height: auto;
 max-width: 100%
-     }
+}    
+    
+
+    
   /*--
 	content Start 
 --*/
@@ -246,31 +259,6 @@ max-width: 100%
   #content .block-bottom .item-img {
     padding-left: 0px;
   }
-    
-    .container #user .login  {
-    margin-top: 10px;    
-    margin-right: 85px;
-  }
-    
-    .container img{
-   height: auto;
-max-width: 100%;
-}
-    
-      .container p{
-  font-size:10px;
-}
-
-    .navbar-header {
-      width:500px;
- 
-} 
-    
-.navbar-brand {
-  width: auto;
- 
-} 
-    
   /*--
 	features Start 
 --*/
