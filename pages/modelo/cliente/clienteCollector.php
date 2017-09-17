@@ -24,7 +24,7 @@ class clienteCollector extends Collector
 
 //insertar clientes
   function createCliente($id_persona,$fecha_registro) {
-    $rows = self::$db->insertRow("INSERT INTO cliente (id_persona, fecha_registro) VALUES (?,?) ", array("{$id_persona}","{$fecha_registro}"));        
+    $rows = self::$db->insertRow("INSERT INTO cliente (fecha_registro, id_persona) VALUES (?,?) ", array("{$id_persona}", "{$fecha_registro}"));        
   } 
     
 //actualizar clientes

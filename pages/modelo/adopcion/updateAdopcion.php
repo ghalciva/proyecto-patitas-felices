@@ -1,5 +1,14 @@
 <?php
 session_start();
+
+$id_mascota=$_GET["id_adopcion"];
+$id_cliente=$_GET["id_cliente"];
+$id_mascota=$_GET["id_mascota"];
+$fecha_adopcion=$_GET["fecha_adopcion"];
+
+include_once("adopcionCollector.php");
+$adopcionCollectorObj = new adopcionCollector();
+
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +16,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title>Administrador - Adopcion - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -77,26 +86,30 @@ session_start();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-		<?php
-				
-		$id_mascota=$_GET["id_mascota"];
-		$nombre=$_GET["nombre"];
-		$raza=$_GET["raza"];
-		$color=$_GET["color"];
-		$sexo=$_GET["sexo"];
-		$fecha_nacimiento=$_GET["fecha_nacimiento"];
-		$imagen=$_GET["imagen"];
-		$id_estado=$_GET["id_estado"];
+              <form action="saveUpdateAdopcion.php" method="get">
+                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  A D O P C I O N</h1>
+			<?php
+				echo "<label>IdAdopcion</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='id_adopcion' class='form-control' value='". $id_adopcion . "' readonly>";
+				echo "</div>";
+				echo "<label>IdCliente</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $id_cliente . "' name='id_cliente'>";
+				echo "</div>";	
+				echo "<label>IdMascota</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $id_mascota . "' name='id_mascota'>";
+				echo "</div>";
+				echo "<label>FechaAdopcion</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='date' class='form-control' value='". $fecha_adopcion . "' name='fecha_adopcion'>";
+				echo "</div>";
+				echo "<a href='saveUpdateAdopcion.php?id_adopcion=". $id_adopcion ."'><button class='btn btn-default' type='submit'> Siguiente </button>";
 
-		include_once("mascotaCollector.php");
-		$mascotaCollectorObj = new mascotaCollector();
-
-		echo "<p>Se han modificado los cambios en la tabla Mascota!</p>";
-		$mascotaCollectorObj->updateMascota($id_mascota,$nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
-
-		?>                        
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+			?>                        
+                   </form>
+		<a href="readAdopcion.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

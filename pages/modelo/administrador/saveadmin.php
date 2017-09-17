@@ -2,7 +2,9 @@
 session_start();
 include_once("AdministradorCollector.php");
 
-$id_administrador = $_GET['id_administrador'];
+$id_persona = $_POST['id_persona'];
+
+
 
 
 $AdministradorCollectorObj = new AdministradorCollector();
@@ -13,18 +15,19 @@ $AdministradorCollectorObj = new AdministradorCollector();
     <head>
         <meta charset="utf-8">
         <title>Login</title>
-       
+        
+    
     </head>
     <body>
+        
         <?php
-       
-		  ///if (isset($_SESSION['MiSesion'])){
+		  //if (isset($_SESSION['MiSesion'])){
    
-        echo "<p>Se elimino la tabla #" . $id_administrador ."?</p>";
-        $AdministradorCollectorObj->deleteAdmin($id_administrador);
+        echo "<p>Se creo un  nuevo usuario </p>";
+        $AdministradorCollectorObj->createAdmin($id_persona);
         echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAdmin.php'>";
-                          //  }else{   
-                            //   echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
+                            //}else{   
+                              // echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
                              //} 
                         ?>
   

@@ -1,6 +1,6 @@
 <?php
 
-include_once('Veterinario.php');
+include_once('veterinario.php');
 include_once('../Collector.php');
 
 class VeterinarioCollector extends Collector
@@ -22,17 +22,17 @@ class VeterinarioCollector extends Collector
    return $ObjPersona;   
  }
 
-function updatePersona($id_persona,$titulo,$ocupacion) {
+function updateVeterinario($id_persona,$titulo,$ocupacion) {
    $insertrow = self::$db->updateRow("UPDATE public.veterinario SET id_persona = ?,titulo = ?,ocupacion = ? WHERE id_veterinario= ? ", array("{$id_persona}","{$titulo}","{$ocupacion}"));        
  }
 
-function deletePersona($id_persona) {
+function deleteVeterinario($id_persona) {
    $insertrow = self::$db->deleteRow("DELETE FROM veterinario WHERE id_veterinario= ? ", array("{$id_veterinario}"));        
  }
 
 
-function createPersona($id_persona,$titulo,$ocupacion) {
-   $insertrow = self::$db->insertRow("INSERT INTO public.veterinario (id_persona,titulo,ocupacion) VALUES (?) ", array("{$id_persona}","{$titulo}","{$ocupacion}"));        
+function createVeterinario($id_persona,$titulo,$ocupacion) {
+   $insertrow = self::$db->insertRow("INSERT INTO public.veterinario (id_persona,titulo,ocupacion) VALUES (?,?,?) ", array("{$id_persona}","{$titulo}","{$ocupacion}"));        
  }
 }
 ?>

@@ -59,8 +59,8 @@ $AdministradorCollectorObj = new AdministradorCollector();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">
-                  <img src="../img/logo.png" alt="Logo">
+                <a class="navbar-brand" href="../../../index.php">
+                  <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -89,7 +89,7 @@ $AdministradorCollectorObj = new AdministradorCollector();
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
                  <h1>Tabla Administrador</h1>
-    <a href="createPersona.php"><button class="btn btn-default btn-call-to-action">Crear Persona</button></a> <br>
+    <a href="createAdmin.php"><button class="btn btn-default btn-call-to-action">Crear Administrador</button></a> <br>
     <table id="tabla">
         <tr>    
             <th>&nbsp;&nbsp;IdAdministrador&nbsp;&nbsp;</th>

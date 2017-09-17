@@ -3,8 +3,12 @@ session_start();
 ?>
 
 <?php
-include_once("AdministradorCollector.php");
-$AdministradorCollectorObj = new AdministradorCollector();
+include_once("veterinarioCollector.php");
+$id_persona=$_GET["id_persona"];
+$titulo=$_GET["titulo"];
+$ocupacion=$_GET["ocupacion"];
+
+$veterinarioCollectorObj = new veterinarioCollector();
 ?>
 
 <!DOCTYPE html>
@@ -12,44 +16,37 @@ $AdministradorCollectorObj = new AdministradorCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador</title>
+    <title>Administrador - Mascota- Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-      
-    
+        
     <!-- CSS -->
-   
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/animate.css">
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/responsive.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- Js -->
+    
+    <!-- Js -->
     <script src="../../../js/vendor/jquery-1.10.2.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
-
-  </head>
-<body>
-<?php
-	//if (isset($_SESSION['MiSesion'])){
-	//	$usuario = $_SESSION['MiSesion'];
-  ?>
-       
-<!-- Header Start -->
+   </head>
+  <body>
+    <!--  -->
+   
+   
+  <!-- Header Start -->
   <header>
     <div class="container">
          <div id="user">
        		 <ul class="login">
-                <li class="loginu"><a href="../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido  </a></li>
-            </ul>
-	 </div>	
-            <div class="row">
+             <li class="loginu col-md-2 col-md-offset-10"><a href="../../iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+       		 </ul>
+       	 </div>
+      <div class="row">
         <div class="col-md-12">
          
-            <!-- header Nav Start -->
+          <!-- header Nav Start -->
           <nav class="navbar navbar-default">
             <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
@@ -60,7 +57,7 @@ $AdministradorCollectorObj = new AdministradorCollector();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../../index.php">
+                <a class="navbar-brand" href="index.php">
                   <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
@@ -82,33 +79,38 @@ $AdministradorCollectorObj = new AdministradorCollector();
       </div>
     </header><!-- header close -->
        
-            
-<!-- contact form start -->
+        
+    <!-- Slider Start -->
     <section id="slider">
-        <section id="contact-form">
-          <div class="container"><center>
-              <div class="col-md-12">
-                    <div class="block">
-                    <form action="saveadmin.php" method="post">
-                          <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D M I N I S T R A D O R</h1>
-                        <div class="form-group">
-                          <input type="text" name="id_persona" class="form-control" placeholder="id_persona">
-                        </div>
-                       
-                        <button class="btn btn-default" type="submit"> Siguiente </button>
-                         </form>
-              </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-2">
+            <div class="block">
+              <h1 class="animated fadeInUp">Guardado!</h1>
+		<?php
+        		$veterinarioCollectorObj->createVeterinario($id_persona,$titulo,$ocupacion);
+        		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readVeterinario.php'>";
+                ?>	           
             </div>
-        </center></div>
-        </section> 
+          </div>
+        </div>
+      </div>
     </section>
-
+           
+    <!-- footer Start -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Todos los derechos reservados. By: WebDesign. 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+            
+            
+  
+            
     
-      <?php
-                         // }else{   
-                           //    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../indexAdmin.php'>";
-                             //} 
-                        ?>
- 
     </body>
 </html>
