@@ -1,10 +1,14 @@
 <?php
 session_start();
+?>
 
+<?php
 include_once("clienteCollector.php");
 $id_persona=$_GET["id_persona"];
 $fecha_registro=$_GET["fecha_registro"];
+
 $clienteCollectorObj = new clienteCollector();
+
 ?>
 
 <!DOCTYPE html>

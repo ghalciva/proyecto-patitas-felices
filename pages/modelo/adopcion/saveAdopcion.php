@@ -7,6 +7,7 @@ include_once("adopcionCollector.php");
 $id_cliente=$_GET["id_cliente"];
 $id_mascota=$_GET["id_mascota"];
 $fecha_adopcion=$_GET["fecha_adopcion"];
+
 $adopcionCollectorObj = new adopcionCollector();
 ?>
 

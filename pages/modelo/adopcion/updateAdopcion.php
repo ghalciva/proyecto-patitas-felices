@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$id_mascota=$_GET["id_adopcion"];
+$id_adopcion=$_GET["id_adopcion"];
 $id_cliente=$_GET["id_cliente"];
 $id_mascota=$_GET["id_mascota"];
 $fecha_adopcion=$_GET["fecha_adopcion"];

@@ -3,8 +3,16 @@ session_start();
 ?>
 
 <?php
+
 include_once("adopcionCollector.php");
 $adopcionCollectorObj = new adopcionCollector();
+
+include_once("../cliente/clienteCollector.php");
+$clienteCollectorObj = new clienteCollector();
+
+include_once("../mascota/mascotaCollector.php");
+$mascotaCollectorObj = new mascotaCollector();
+
 ?>
 
 <!DOCTYPE html>
@@ -85,13 +93,21 @@ $adopcionCollectorObj = new adopcionCollector();
             <div class="block"><center>
               <form action="saveAdopcion.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D O P C I O N </h1>
-			<div class="form-group">
-                          <input type="text" name="id_cliente" class="form-control" placeholder="Id del cliente">
-                        </div>			
-			<div class="form-group">
-                          <input type="text" name="id_mascota" class="form-control" placeholder="Id de la mascota">
-                        </div>			
-			<div class="form-group">
+                     <select name="id_cliente">
+                       <?php
+                        foreach ($clienteCollectorObj->showClientes() as $c){
+                            echo "<option>" . $c->getId_cliente() . "</option>";
+                        }
+                        ?>
+		     </select>
+                     <select name="id_mascota">
+			<?php
+                        foreach ($mascotaCollectorObj->showMascotas() as $c){
+                            echo "<option>" . $c->getId_mascota() . "</option>";
+                        }
+                        ?>
+		     </select>
+                     <div class="form-group">
                           <input type="date" name="fecha_adopcion" class="form-control" placeholder="Fecha de la adopcion">
                         </div>
                         <button class="btn btn-default" type="submit"> Siguiente </button>
