@@ -1,11 +1,16 @@
 <?php
 session_start();
+?>
 
-$id_fichamedica=$_GET["id_fichamedica"];
+<?php
+include_once("consultaCollector.php");
+$usuario = $_SESSION['MiSesion'];
 
-include_once("fichamedicaCollector.php");
-$fichamedicaCollectorObj = new fichamedicaCollector();
-
+$consultaCollectorObj = new consultaCollector();
+$id_consulta =$_GET["id_consulta"];
+$id_reserva =$_GET["id_reserva"];
+$hora_consulta =$_GET["hora_consulta"];
+$descripcion =$_GET["descripcion"];
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +60,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                  <img src="../../../img/logo.png" alt="Logo">
+                  <img src="../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -83,12 +88,46 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <?php
-        	echo "<p>Se eliminó el id No." . $id_fichamedica ."!</p>";
-        	$fichamedicaCollectorObj->deletefichamedica($id_fichamedica);
-		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readfichamedica.php'>";	
-              ?>
-		
+              
+
+<form action="saveUpdateConsulta.php" method="get">
+                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp; C O N S U L T A</h1>
+			<?php
+
+				echo "<label>id_consulta</label>";		
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='id_consulta' class='form-control' value='". $id_consulta . "' readonly>";
+				echo "</div>";
+
+
+
+			
+
+				echo "<label>id_reserva</label>";		
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='id_reserva' class='form-control' value='". $id_reserva . "' readonly>";
+				echo "</div>";
+
+
+				echo "<label>hora_consulta</label>";		
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='hora_consulta' class='form-control' value='". $hora_consulta . "'>";
+				echo "</div>";
+
+				echo "<label>descripcion</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='descripcion' class='form-control' value='". $descripcion . "'>";
+				echo "</div>";
+
+
+				
+
+	echo "<button class='btn btn-default' type='submit'> GUARDAR-MODIFICACION </button>";
+
+			?>                        
+                   </form>
+    </table>
+		<a href="readconsulta.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

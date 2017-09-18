@@ -1,10 +1,14 @@
 <?php
-session_start();
+//session_start();
 
-$id_fichamedica=$_GET["id_fichamedica"];
+include_once("consultaCollector.php");
+//$usuario = $_SESSION['MiSesion'];
+include_once("../reserva/reservaCollector.php");
+		
 
-include_once("fichamedicaCollector.php");
-$fichamedicaCollectorObj = new fichamedicaCollector();
+$reservaCollectorObj = new reservaCollector();
+
+$consultaCollectorObj = new consultaCollector();
 
 ?>
 
@@ -29,7 +33,6 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
     <script src="../../../js/bootstrap.min.js"></script>
    </head>
   <body>
-    <!--  -->
    
    
   <!-- Header Start -->
@@ -55,7 +58,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                  <img src="../../../img/logo.png" alt="Logo">
+                  <img src="../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -83,12 +86,51 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <?php
-        	echo "<p>Se eliminó el id No." . $id_fichamedica ."!</p>";
-        	$fichamedicaCollectorObj->deletefichamedica($id_fichamedica);
-		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readfichamedica.php'>";	
-              ?>
-		
+              <h1>Tabla  Consulta</h1>
+	<form action="saveconsulta.php" method="post">
+                          <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  C O N S U L T A</h1>
+                <?php
+
+		echo"<h3> escoja el id de reserva</h3>";
+		echo "<select name='id_reserva'>";
+ 		foreach ($reservaCollectorObj->showreserva() as $c){
+           	 echo "<option>" . $c->getId_reserva() . "</option>";
+           	}
+
+
+
+		?>
+			</select>
+                       
+                        <div class="form-group">
+
+		<h3>escoja la hora de conuslta</h3>
+
+ 		<input type="time" name="hora_consulta" list="hora_consulta" step="0.001">
+
+ 
+
+	<datalist id="hora_consulta">
+  	<option value="06:40">
+  	<option value="08:24">
+  	<option value="12:31:30">
+  	<option value="23:59:59.999">
+	</datalist>
+
+                         
+                        </div>
+
+			<div class="form-group">
+                          <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
+                        </div>
+
+                   		 <input type="submit" value="Enviar datos">
+
+                   </form>
+
+      
+	  
+		<a href="readconsulta.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

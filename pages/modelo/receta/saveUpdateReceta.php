@@ -7,7 +7,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title>Receta - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -79,19 +79,19 @@ session_start();
             <div class="block">
 		<?php
 				
-		$id_veterinario=$_GET["id_veterinario"];
-		$id_persona=$_GET["id_persona"];
-		$titulo=$_GET["titulo"];
-		$ocupacion=$_GET["ocupacion"];
+		$id_receta=$_GET["id_receta"];
+		$id_consulta=$_GET["id_consulta"];
+		$descripcion=$_GET["descripcion"];
+		$cantidad=$_GET["cantidad"];
 		
 
-		include_once("veterinarioCollector.php");
-		$veterinarioCollectorObj = new veterinarioCollector();
+		include_once("recetaCollector.php");
+		$recetaCollectorObj = new recetaCollector();
 
-		echo "<p>Se han modificado los cambios en la tabla Veterinario!</p>";
-		$veterinarioCollectorObj->updateVeterinario($id_veterinario,$id_persona,$titulo,$ocupacion);
+		echo "<p>Se han modificado los cambios en la tabla Receta!</p>";
+		$recetaCollectorObj->updateReceta($id_receta, $id_consulta, $descripcion, $cantidad);
 		
-        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readVeterinario.php'>";
+        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readReceta.php'>";
 
 		?>                        
 		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
@@ -111,10 +111,5 @@ session_start();
         </div>
       </div>
     </footer>
-            
-            
-  
-            
-    
     </body>
 </html>

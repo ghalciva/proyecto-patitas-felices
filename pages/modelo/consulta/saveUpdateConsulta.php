@@ -1,11 +1,16 @@
 <?php
 session_start();
+?>
 
-$id_fichamedica=$_GET["id_fichamedica"];
+<?php
+include_once("consultaCollector.php");
+$usuario = $_SESSION['MiSesion'];
 
-include_once("fichamedicaCollector.php");
-$fichamedicaCollectorObj = new fichamedicaCollector();
-
+$consultaCollectorObj = new consultaCollector();
+$id_consulta =$_GET["id_consulta"];
+$id_reserva =$_GET["id_reserva"];
+$hora_consulta =$_GET["hora_consulta"];
+$descripcion =$_GET["descripcion"];
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +60,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                  <img src="../../../img/logo.png" alt="Logo">
+                  <img src="../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -83,12 +88,23 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <?php
-        	echo "<p>Se eliminó el id No." . $id_fichamedica ."!</p>";
-        	$fichamedicaCollectorObj->deletefichamedica($id_fichamedica);
-		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readfichamedica.php'>";	
-              ?>
-		
+
+
+		<?php
+			$consultaCollectorObj = new consultaCollector();
+
+			//if (isset($_SESSION['MiSesion'])){
+				echo "<p>Se han modificado los cambios en la tabla CONSULTA!</p>";
+			        $consultaCollectorObj->updateconsulta($id_consulta,$id_reserva,$hora_consulta,$descripcion);
+		        		//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAnimal.php'>";
+                            	//}else{   
+                               		//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../indexAdmin.php'>";
+                             	//} 
+                        ?>
+              
+
+    </table>
+		<a href="readconsulta.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
