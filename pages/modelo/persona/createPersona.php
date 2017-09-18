@@ -43,7 +43,7 @@ $PersonaCollectorObj = new PersonaCollector();
          <div id="user">
        		 <ul class="login">
                 <li class="loginu"><a href="../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido  </a></li>
+                <li class="loginu"> Bienvenido  </li>
             </ul>
 	 </div>	
             <div class="row">
@@ -89,25 +89,25 @@ $PersonaCollectorObj = new PersonaCollector();
           <div class="container"><center>
               <div class="col-md-12">
                     <div class="block">
-                    <form action="saveAnimal.php" method="post">
+                    <form action="savepersona.php" method="post">
                           <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  P E R S O N A</h1>
                         <div class="form-group">
                           <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                         </div>
                         <div class="form-group">
+                          <input type="text" name="direccion" class="form-control" placeholder="Direccion">
+                        </div>
+                        <div class="form-group">
                           <input type="text" name="apellido" class="form-control" placeholder="Apellido">
                         </div>
                         <div class="form-group">
-                          <input type="text" name="correo" class="form-control" placeholder="Correo">
-                        </div>
-                        <div class="form-group">
-                          <input type="date" name="direccion" class="form-control" placeholder="direccion">
+                          <input type="text" name="user" class="form-control" placeholder="user">
                         </div>
 			<div class="form-group">
-                          <input type="text" name="user" class="form-control" placeholder="nombre de usuario">
+                          <input type="text" name="pass" class="form-control" placeholder="contraseña del usuario">
                         </div>
 			<div class="form-group">
-                          <input type="text" name="pass" class="form-control" placeholder="contraseña de usuario">
+                          <input type="text" name="correo" class="form-control" placeholder="correo">
                         </div>
 			<div class="form-group">
                         <input type="text" name="fecha_nacimiento" class="form-control" placeholder="fecha de nacimiento">

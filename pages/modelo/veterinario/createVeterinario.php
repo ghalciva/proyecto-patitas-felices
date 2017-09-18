@@ -1,11 +1,11 @@
 <?php
 session_start();
-?>
 
-<?php
-include_once("estadoCollector.php");
-//$usuario = $_SESSION['MiSesion'];
-$estadoCollectorObj = new estadoCollector();
+include_once("veterinarioCollector.php");
+$veterinarioCollectorObj = new veterinarioCollector();
+
+include_once("../persona/PersonaCollector.php");
+$personaCollectorObj = new personaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ $estadoCollectorObj = new estadoCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Crear estado- Patitas felices</title>
+    <title>Administrador - Mascota- Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -84,14 +84,27 @@ $estadoCollectorObj = new estadoCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <div class="block"><center>
-              <form action="saveEstado.php" method="get">
-                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  E S T A D O  - A D O P C I Ó N</h1>
+              <form action="saveVeterinario.php" method="get">
+                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  V E T E R I N A R I O</h1>
+                        <select name="id_persona">
+                       
+                       <?php
+                        foreach ($personaCollectorObj->showPersonas() as $c){
+                            echo "<option>" . $c->getIdPersona() . "</option>";
+                        }
+                        ?>
+                        </select>
                         <div class="form-group">
-                          <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
+                          <input type="text" name="titulo" class="form-control" placeholder="Título">
                         </div>
-                        <button class="btn btn-default" type="submit"> Siguiente </button>
-                        </form>
-            </center>        
+                        <div class="form-group">
+                          <input type="text" name="ocupacion" class="form-control" placeholder="Ocupación">
+                        </div>
+			
+                       
+                        <button class="btn btn-default" type="submit"> GUARDAR </button>
+                         </form>
+		</center>        
             </div> <br>
 		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
           </div>

@@ -1,10 +1,10 @@
-<?php
+?php
 session_start();
 ?>
 
 <?php
 include_once("estadoCollector.php");
-//$usuario = $_SESSION['MiSesion'];
+$descripcion=$_GET["descripcion"];
 $estadoCollectorObj = new estadoCollector();
 ?>
 
@@ -13,7 +13,7 @@ $estadoCollectorObj = new estadoCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Crear estado- Patitas felices</title>
+    <title>Crear estado - Patitas Felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -79,25 +79,20 @@ $estadoCollectorObj = new estadoCollector();
         
     <!-- Slider Start -->
     <section id="slider">
-     <section id="contact-form">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="block"><center>
-              <form action="saveEstado.php" method="get">
-                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  E S T A D O  - A D O P C I Ó N</h1>
-                        <div class="form-group">
-                          <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
-                        </div>
-                        <button class="btn btn-default" type="submit"> Siguiente </button>
-                        </form>
-            </center>        
-            </div> <br>
-		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="block">
+              <h1 class="animated fadeInUp">Guardado!</h1>
+		<?php
+        		$estadoCollectorObj->createEstado($descripcion);
+        		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readEstado.php'>";
+                ?>
+		<a href="../../readEstado.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>	           
+            </div>
           </div>
         </div>
       </div>
-     </section>
     </section>
            
     <!-- footer Start -->
