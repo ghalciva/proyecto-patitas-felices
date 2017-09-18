@@ -7,11 +7,11 @@ session_start();
 include_once("adopcionCollector.php");
 $adopcionCollectorObj = new adopcionCollector();
 
-include_once("../persona/PersonaCollector.php");
-$personaCollectorObj = new personaCollector();
-
 include_once("../cliente/clienteCollector.php");
 $clienteCollectorObj = new clienteCollector();
+
+include_once("../mascota/mascotaCollector.php");
+$mascotaCollectorObj = new mascotaCollector();
 
 ?>
 
@@ -93,26 +93,21 @@ $clienteCollectorObj = new clienteCollector();
             <div class="block"><center>
               <form action="saveAdopcion.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D O P C I O N </h1>
-			
-                           <select name="id_persona">
-                       
+                     <select name="id_cliente">
                        <?php
-                        foreach ($personaCollectorObj->showPersonas() as $c){
-                            echo "<option>" . $c->getIdPersona() . "</option>";
+                        foreach ($clienteCollectorObj->showClientes() as $c){
+                            echo "<option>" . $c->getId_cliente() . "</option>";
                         }
                         ?>
-</select>
-                        
-                           <select name="id_mascota">
-                       
-                       <?php
+		     </select>
+                     <select name="id_mascota">
+			<?php
                         foreach ($mascotaCollectorObj->showMascotas() as $c){
                             echo "<option>" . $c->getId_mascota() . "</option>";
                         }
                         ?>
-</select>
-                        			
-			<div class="form-group">
+		     </select>
+                     <div class="form-group">
                           <input type="date" name="fecha_adopcion" class="form-control" placeholder="Fecha de la adopcion">
                         </div>
                         <button class="btn btn-default" type="submit"> Siguiente </button>
