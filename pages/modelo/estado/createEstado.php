@@ -85,7 +85,7 @@ $estadoCollectorObj = new estadoCollector();
           <div class="col-md-10 col-md-offset-1">
             <div class="block"><center>
               <form action="saveEstado.php" method="get">
-                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  E S T A D O  - A D O P C I Ó N</h1>
+                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  E S T A D O  DE  A D O P C I Ó N</h1>
                         <div class="form-group">
                           <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
                         </div>

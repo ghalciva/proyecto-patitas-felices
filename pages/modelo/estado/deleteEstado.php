@@ -10,7 +10,7 @@ $estadoCollectorObj = new estadoCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Eliminar Estado - Patitas felices</title>
+    <title>Eliminar Estado Adopción - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     

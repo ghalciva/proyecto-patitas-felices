@@ -13,7 +13,7 @@ $estadoCollectorObj = new estadoCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Crear estado - Patitas Felices</title>
+    <title> Guardar estado Adopción - Patitas Felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
