@@ -86,7 +86,7 @@ $veterinarioCollectorObj = new veterinarioCollector();
 <div class="row">
 <div class="col-md-10 col-md-offset-2">
 <div class="block">
-<h1>Tabla Estado</h1>
+<h1>Tabla Veterinario</h1>
 <a href="createVeterinario.php"><button class="btn btn-default btn-call-to-action">Crear Veterinario</button></a> <br>
 <table id="tabla">
 <tr>
