@@ -84,18 +84,18 @@ $adopcionCollectorObj = new adopcionCollector();
           <div class="col-md-10 col-md-offset-1">
             <div class="block"><center>
               <form action="saveAdopcion.php" method="get">
-                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D O P C I O N </h1>>
-                        <div class="form-group">
+                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D O P C I O N </h1>
+			<div class="form-group">
                           <input type="text" name="id_cliente" class="form-control" placeholder="Id del cliente">
-                        </div>
+                        </div>			
 			<div class="form-group">
                           <input type="text" name="id_mascota" class="form-control" placeholder="Id de la mascota">
-                        </div>
+                        </div>			
 			<div class="form-group">
-                          <input type="text" name="fecha_adopcion" class="form-control" placeholder="Fecha de la adopcion">
+                          <input type="date" name="fecha_adopcion" class="form-control" placeholder="Fecha de la adopcion">
                         </div>
                         <button class="btn btn-default" type="submit"> Siguiente </button>
-                         </form>
+                </form>
 		</center>        
             </div> <br>
 		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
