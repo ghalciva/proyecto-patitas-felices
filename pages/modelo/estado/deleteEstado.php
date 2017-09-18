@@ -81,9 +81,9 @@ $estadoCollectorObj = new estadoCollector();
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
               <?php
-        	echo "<p>Se eliminó el id No." . $id_estado ."!</p>";
+        	echo "Se eliminó el id No." . $id_estado ."!";
         	$estadoCollectorObj->deleteEstado($id_estado);
-		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readEstado.php'>";	
+		echo "<meta name='REFRESH' CONTENT='1;URL=readEstado.php'>";	
               ?>
 		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
