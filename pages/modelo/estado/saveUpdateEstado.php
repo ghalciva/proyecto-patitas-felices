@@ -1,15 +1,5 @@
 <?php
 session_start();
-
-$id_veterinario=$_GET["id_veterinario"];
-$titulo=$_GET["titulo"];
-$id_persona=$_GET["id_persona"];
-$ocupacion=$_GET["ocupacion"];
-
-
-include_once("veterinarioCollector.php");
-$veterinarioCollectorObj = new veterinarioCollector();
-
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +7,7 @@ $veterinarioCollectorObj = new veterinarioCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title>Editar estado - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -87,29 +77,21 @@ $veterinarioCollectorObj = new veterinarioCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <form action="saveUpdateVeterinario.php" method="get">
-                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  V E T E R I N A R I O</h1>
-			<?php
-				echo "<label>IdVeterinario</label>";
-				echo "<div class='form-group'>";
-				echo "<input type='text' name='id_veterinario' class='form-control' value='". $id_veterinario . "' readonly>";
-				echo "</div>";
-				echo "<label>Persona</label>";
-				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $id_persona . "' name='id_persona' readonly>";
-				echo "</div>";	
-				echo "<label>Titulo</label>";
-				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $titulo . "' name='titulo'>";
-				echo "</div>";
-				echo "<label>Ocupacion</label>";
-				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $ocupacion . "' name='ocupacion'>";
-				echo "</div>";
-				echo "<button class='btn btn-default' type='submit'> GUARDAR </button>";
+		<?php
+				
+		$id_estado=$_GET["id_estado"];
+		$descripcion=$_GET["descripcion"];
+		
 
-			?>                        
-                   </form>
+		include_once("estadoCollector.php");
+		$estadoCollectorObj = new estadoCollector();
+
+		echo "<p>Se han modificado los cambios en la tabla Estado!</p>";
+		$estadoCollectorObj->updateEstado($id_estado, $descripcion);
+		
+        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readEstado.php'>";
+
+		?>                        
 		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
