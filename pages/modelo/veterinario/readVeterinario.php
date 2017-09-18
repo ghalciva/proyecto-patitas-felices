@@ -104,7 +104,7 @@ echo "<td>" . $c->getId_persona() . "</td>";
 echo "<td>" . $c->getTitulo() . "</td>";
 echo "<td>" . $c->getOcupacion() . "</td>";
 
-echo "<td><a href='updateEstado.php?id_veterinario=" . $c->getId_veterinario() . "&descripcion=" . $c->getId_persona() . "&descripcion=" . $c->getTitulo() ."'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
+echo "<td><a href='updateVeterinario.php?id_veterinario=" . $c->getId_veterinario() . "&id_persona=" . $c->getId_persona() . "&titulo=" . $c->getTitulo() ."&ocupacion=" . $c->getOcupacion() ."'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 echo "<td><a href='deleteEstado.php?id_veterinario=". $c->getId_veterinario() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
 echo "</tr>";
 
