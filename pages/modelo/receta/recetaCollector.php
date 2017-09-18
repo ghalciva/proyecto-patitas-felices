@@ -22,8 +22,10 @@ class recetaCollector extends Collector
    return $ObjReceta;   
  }
 
-function updateReceta($id_receta,$id_consulta, $descripcion, $cantidad) {
-   $insertrow = self::$db->updateRow("UPDATE public.receta SET id_consulta= ?, descripcion = ?, cantidad = ? WHERE id_receta= ? ", array("{$id_receta}","{$id_consulta}","{$descripcion}", "{$cantidad}"));        
+function updateReceta($id_receta, $id_consulta, $descripcion, $cantidad) {
+   $insertrow = self::$db->updateRow("UPDATE public.receta SET descripcion = ?, cantidad = ? WHERE id_receta= ? ", "id_consulta= ? ", array("{$id_receta}","{$id_consulta}","{$descripcion}", "{$cantidad}"));  
+
+
  }
 
 function deleteReceta($id_receta) {
@@ -31,7 +33,7 @@ function deleteReceta($id_receta) {
  }
 
 
-function createReceta($id_consulta, $descripcion, $cantidad ) {
+function createReceta($id_consulta, $descripcion, $cantidad) {
    $insertrow = self::$db->insertRow("INSERT INTO public.receta (id_consulta, descripcion, cantidad) VALUES (?,?,?) ", array("{$id_consulta}", "{$descripcion}", "{$cantidad}"));        
  }
 }
