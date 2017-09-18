@@ -24,7 +24,7 @@ class adopcionCollector extends Collector
 
 //insertar adopcion
   function createAdopcion($id_cliente,$id_mascota,$fecha_adopcion) {
-    $rows = self::$db->insertRow("INSERT INTO adopcion (id_cliente, id_mascota, fecha_adopcion) VALUES (?,?) ", array("{$id_cliente}","{$id_mascota}","{$fecha_adopcion}"));        
+    $rows = self::$db->insertRow("INSERT INTO adopcion (id_cliente, id_mascota, fecha_adopcion) VALUES (?,?,?) ", array("{$id_cliente}","{$id_mascota}","{$fecha_adopcion}"));        
   } 
     
 //actualizar adopcion

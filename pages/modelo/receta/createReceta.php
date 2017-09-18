@@ -3,11 +3,9 @@ session_start();
 ?>
 
 <?php
-include_once("fichamedicaCollector.php");
-$usuario = $_SESSION['MiSesion'];
-
-$fichamedicaCollectorObj = new fichamedicaCollector();
-
+include_once("recetaCollector.php");
+//$usuario = $_SESSION['MiSesion'];
+$recetaCollectorObj = new recetaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +13,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title>Crear recetario médico - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -57,7 +55,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                  <img src="../img/logo.png" alt="Logo">
+                  <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -81,46 +79,31 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         
     <!-- Slider Start -->
     <section id="slider">
+     <section id="contact-form">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 col-md-offset-2">
-            <div class="block">
-              <h1>Tabla ficha medica</h1>
-    <a href="createfichamedica.php"><button class="btn btn-default btn-call-to-action">Crear ficha Medica</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;id_fichamedica&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;id_mascota&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>
-            
-        </tr>
-        <?php
-
-            foreach ($fichamedicaCollectorObj->showfichamedica() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getId_fichamedica() . "</td>";
-            echo "<td>" . $c->getId_mascota() . "</td>";   
-            echo "<td>" . $c->getDetalle() . "</td>";
-                      
-                     
-            
-            echo "<td><a href='updateFichamedica.php?id_fichamedica=" . $c->getId_fichamedica() . "&id_mascota=" . $c->getId_mascota() . "&detalle=" . $c->getDetalle() ."'> 
-
-<button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
-
-            echo "<td><a href='deleteFichamedica.php?id_fichamedica=". $c->getId_fichamedica() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
-            echo "</tr>"; 
-                
-        }
-
-        ?>
-
-    </table> 	  
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
-            </div>
+          <div class="col-md-10 col-md-offset-1">
+            <div class="block"><center>
+              <form action="saveReceta.php" method="get">
+                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  R E C E T A </h1>
+                        <div class="form-group">
+                          <input type="text" name="idConsulta" class="form-control" placeholder="Id consulta">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
+                        </div>
+			<div class="form-group">
+                          <input type="text" name="cantidad" class="form-control" placeholder="Cantidad">
+                        </div>
+                        <button class="btn btn-default" type="submit"> Siguiente </button>
+                        </form>
+            </center>        
+            </div> <br>
+		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
           </div>
         </div>
       </div>
+     </section>
     </section>
            
     <!-- footer Start -->

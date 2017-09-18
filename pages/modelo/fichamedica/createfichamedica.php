@@ -1,10 +1,12 @@
 <?php
-session_start();
-?>
+//session_start();
 
-<?php
 include_once("fichamedicaCollector.php");
-$usuario = $_SESSION['MiSesion'];
+//$usuario = $_SESSION['MiSesion'];
+include_once("../mascota/mascotaCollector.php");
+		
+
+$mascotaCollectorObj = new mascotaCollector();
 
 $fichamedicaCollectorObj = new fichamedicaCollector();
 
@@ -31,7 +33,6 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
     <script src="../../../js/bootstrap.min.js"></script>
    </head>
   <body>
-    <!--  -->
    
    
   <!-- Header Start -->
@@ -87,35 +88,32 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
             <div class="block">
               <h1>Tabla ficha medica</h1>
     <a href="createfichamedica.php"><button class="btn btn-default btn-call-to-action">Crear ficha Medica</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;id_fichamedica&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;id_mascota&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>
-            
-        </tr>
-        <?php
+  
 
-            foreach ($fichamedicaCollectorObj->showfichamedica() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getId_fichamedica() . "</td>";
-            echo "<td>" . $c->getId_mascota() . "</td>";   
-            echo "<td>" . $c->getDetalle() . "</td>";
-                      
-                     
-            
-            echo "<td><a href='updateFichamedica.php?id_fichamedica=" . $c->getId_fichamedica() . "&id_mascota=" . $c->getId_mascota() . "&detalle=" . $c->getDetalle() ."'> 
+	<form action="savefichamedica.php" method="post">
+                          <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  F I C H A M E D I C A</h1>
+                <?php
 
-<button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
+		
+		echo "<select name='id_mascota'>";
+ 		foreach ($mascotaCollectorObj->showMascotas() as $c){
+           	 echo "<option>" . $c->getId_mascota() . "</option>";
+           	}
 
-            echo "<td><a href='deleteFichamedica.php?id_fichamedica=". $c->getId_fichamedica() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
-            echo "</tr>"; 
+
+
+		?>
+			</select>
+                       
+                        <div class="form-group">
+                          <input type="text" name="detalle" class="form-control" placeholder="detalle">
+                        </div>
                 
-        }
+                        <button class="btn btn-default" type="submit"> GUARDAR </button>
+                   </form>
 
-        ?>
-
-    </table> 	  
+      
+	  
 		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
