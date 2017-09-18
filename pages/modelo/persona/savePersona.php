@@ -1,11 +1,20 @@
 <?php
 session_start();
+?>
 
+<?php
 include_once("PersonaCollector.php");
-$PersonaCollectorObj = new PersonaCollector();
+$nombre=$_GET["nombre"];
+$direccion=$_GET["direccion"];
+$apellido=$_GET["apellido"];
+$user=$_GET["user"];
+$pass=$_GET["pass"];
+$correo=$_GET["correo"];
+$fecha_nacimiento=$_GET["fecha_nacimiento"];
+$id_rol=$_GET["id_rol"];
 
-include_once("../rol/RolCollector.php");
-$RolCollectorObj = new RolCollector();
+
+$PersonaCollectorObj = new PersonaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -13,44 +22,37 @@ $RolCollectorObj = new RolCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Persona</title>
+    <title> Persona</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-      
-    
+        
     <!-- CSS -->
-   
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../css/animate.css">
     <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="../../../css/responsive.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<!-- Js -->
+    
+    <!-- Js -->
     <script src="../../../js/vendor/jquery-1.10.2.min.js"></script>
     <script src="../../../js/bootstrap.min.js"></script>
-
-  </head>
-<body>
-<?php
-	//if (isset($_SESSION['MiSesion'])){
-	//	$usuario = $_SESSION['MiSesion'];
-  ?>
-       
-<!-- Header Start -->
+   </head>
+  <body>
+    <!--  -->
+   
+   
+  <!-- Header Start -->
   <header>
     <div class="container">
          <div id="user">
        		 <ul class="login">
-                <li class="loginu"><a href="../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido  </a></li>
-            </ul>
-	 </div>	
-            <div class="row">
+             <li class="loginu col-md-2 col-md-offset-10"><a href="../../iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+       		 </ul>
+       	 </div>
+      <div class="row">
         <div class="col-md-12">
          
-            <!-- header Nav Start -->
+          <!-- header Nav Start -->
           <nav class="navbar navbar-default">
             <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,7 +63,7 @@ $RolCollectorObj = new RolCollector();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../../../index.php">
+                <a class="navbar-brand" href="index.php">
                   <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
@@ -82,54 +84,23 @@ $RolCollectorObj = new RolCollector();
         </div>
       </div>
     </header><!-- header close -->
+       
         
     <!-- Slider Start -->
     <section id="slider">
-     <section id="contact-form">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="block"><center>
-              <form action="savePersona.php" method="get">
-                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  P E R S O N A</h1>
-
-                       
-                      
-                       <div class="form-group">
-                          <input type="text" name="nombre" class="form-control" placeholder="nombre">
-                        </div>
-                        <div class="form-group">
-                          <input type="text" name="direccion" class="form-control" placeholder="direccion">
-                        </div>
-<div class="form-group">
-                          <input type="text" name="apellido" class="form-control" placeholder="apellido">
-                        </div>
-                        <div class="form-group">
-                          <input type="text" name="user" class="form-control" placeholder="user">
-                        </div>
-<div class="form-group">
-                          <input type="text" name="pass" class="form-control" placeholder="pass">
-                        </div>
-                        <div class="form-group">
-                          <input type="text" name="correo" class="form-control" placeholder="correo">
-                        </div>
-<div class="form-group">
-                          <input type="text" name="fecha_nacimiento" class="form-control" placeholder="fecha de nacimiento">
-                        </div>
-                        <div class="form-group">
-                          <input type="text" name="id_rol" class="form-control" placeholder="rol de la persona">
-                        </div>
-			
-                       
-                        <button class="btn btn-default" type="submit"> GUARDAR </button>
-                         </form>
-		</center>        
-            </div> <br>
-		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
+          <div class="col-md-10 col-md-offset-2">
+            <div class="block">
+              <h1 class="animated fadeInUp">Guardado!</h1>
+		<?php
+        		$PersonaCollectorObj->createPersona($nombre,$direccion,$apellido,$user,$pass,$correo,$fecha_nacimiento,$id_rol);
+        		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readPersona.php'>";
+                ?>	           
+            </div>
           </div>
         </div>
       </div>
-     </section>
     </section>
            
     <!-- footer Start -->
