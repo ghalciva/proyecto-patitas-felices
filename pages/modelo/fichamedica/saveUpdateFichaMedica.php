@@ -7,7 +7,9 @@ include_once("fichamedicaCollector.php");
 $usuario = $_SESSION['MiSesion'];
 
 $fichamedicaCollectorObj = new fichamedicaCollector();
-
+$id_fichamedica =$_GET["id_fichamedica"];
+$id_mascota =$_GET["id_mascota"];
+$detalle =$_GET["detalle"];
 ?>
 
 <!DOCTYPE html>
@@ -85,40 +87,23 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla ficha medica</h1>
-    <a href="createfichamedica.php"><button class="btn btn-default btn-call-to-action">Crear ficha Medica</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;id_fichamedica&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;id_mascota&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>
-            
-        </tr>
-        <?php
-
-            foreach ($fichamedicaCollectorObj->showfichamedica() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getId_fichamedica() . "</td>";
-            echo "<td>" . $c->getId_mascota() . "</td>";   
-            echo "<td>" . $c->getDetalle() . "</td>";
-                      
-                     
-            
-            echo "<td><a href='updatefichamedica.php?id_fichamedica=" . $c->getId_fichamedica() . "&id_mascota=" . $c->getId_mascota() . "&detalle=" . $c->getDetalle()."'><button class='btn btn-default btn-call-to-action'>Editar</button></a>  </td>"	;
 
 
+		<?php
+			$fichamedicaCollectorObj = new fichamedicaCollector();
 
-            echo "<td> <a href='deletefichamedica.php?id_fichamedica=". $c->getId_fichamedica() ."'>
-		<button class='btn btn-default btn-call-to-action'>Eliminar</button></a>  </td>"	;
+			//if (isset($_SESSION['MiSesion'])){
+				echo "<p>Se han modificado los cambios en la tabla ficha medica!</p>";
+			        $fichamedicaCollectorObj->updatefichamedica($id_fichamedica,$id_mascota,$detalle);
+		        		//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAnimal.php'>";
+                            	//}else{   
+                               		//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../indexAdmin.php'>";
+                             	//} 
+                        ?>
+              
 
-            echo "</tr>"; 
-                
-        }
-
-        ?>
-
-    </table> 	  
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+    </table>
+		<a href="readfichamedica.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

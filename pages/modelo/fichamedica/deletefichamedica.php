@@ -1,11 +1,9 @@
 <?php
 session_start();
-?>
 
-<?php
+$id_fichamedica=$_GET["id_fichamedica"];
+
 include_once("fichamedicaCollector.php");
-$usuario = $_SESSION['MiSesion'];
-
 $fichamedicaCollectorObj = new fichamedicaCollector();
 
 ?>
@@ -57,7 +55,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                  <img src="../img/logo.png" alt="Logo">
+                  <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -85,40 +83,12 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla ficha medica</h1>
-    <a href="createfichamedica.php"><button class="btn btn-default btn-call-to-action">Crear ficha Medica</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;id_fichamedica&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;id_mascota&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>
-            
-        </tr>
-        <?php
-
-            foreach ($fichamedicaCollectorObj->showfichamedica() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getId_fichamedica() . "</td>";
-            echo "<td>" . $c->getId_mascota() . "</td>";   
-            echo "<td>" . $c->getDetalle() . "</td>";
-                      
-                     
-            
-            echo "<td><a href='updatefichamedica.php?id_fichamedica=" . $c->getId_fichamedica() . "&id_mascota=" . $c->getId_mascota() . "&detalle=" . $c->getDetalle()."'><button class='btn btn-default btn-call-to-action'>Editar</button></a>  </td>"	;
-
-
-
-            echo "<td> <a href='deletefichamedica.php?id_fichamedica=". $c->getId_fichamedica() ."'>
-		<button class='btn btn-default btn-call-to-action'>Eliminar</button></a>  </td>"	;
-
-            echo "</tr>"; 
-                
-        }
-
-        ?>
-
-    </table> 	  
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+              <?php
+        	echo "<p>Se eliminó el id No." . $id_fichamedica ."!</p>";
+        	$fichamedicaCollectorObj->deletefichamedica($id_fichamedica);
+		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readVeterinario.php'>";	
+              ?>
+		
             </div>
           </div>
         </div>

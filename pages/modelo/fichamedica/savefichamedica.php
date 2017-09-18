@@ -94,7 +94,7 @@ $detalle=$_POST["detalle"];
 
       
 	  
-		<a href="../../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+		<a href="readfichamedica.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

@@ -7,7 +7,9 @@ include_once("fichamedicaCollector.php");
 $usuario = $_SESSION['MiSesion'];
 
 $fichamedicaCollectorObj = new fichamedicaCollector();
-
+$id_fichamedica =$_GET["id_fichamedica"];
+$id_mascota =$_GET["id_mascota"];
+$detalle =$_GET["detalle"];
 ?>
 
 <!DOCTYPE html>
@@ -85,40 +87,35 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla ficha medica</h1>
-    <a href="createfichamedica.php"><button class="btn btn-default btn-call-to-action">Crear ficha Medica</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;id_fichamedica&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;id_mascota&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>
-            
-        </tr>
-        <?php
+              
 
-            foreach ($fichamedicaCollectorObj->showfichamedica() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getId_fichamedica() . "</td>";
-            echo "<td>" . $c->getId_mascota() . "</td>";   
-            echo "<td>" . $c->getDetalle() . "</td>";
-                      
-                     
-            
-            echo "<td><a href='updatefichamedica.php?id_fichamedica=" . $c->getId_fichamedica() . "&id_mascota=" . $c->getId_mascota() . "&detalle=" . $c->getDetalle()."'><button class='btn btn-default btn-call-to-action'>Editar</button></a>  </td>"	;
+<form action="saveUpdateFichaMedica.php" method="get">
+                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp; F I C H A</h1>
+			<?php
+				echo "<label>id_ficha medica</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='id_fichamedica' class='form-control' value='". $id_fichamedica . "' readonly>";
+				echo "</div>";
 
+				echo "<label>id_mascota</label>";		
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='id_mascota' class='form-control' value='". $id_mascota . "' readonly>";
+				echo "</div>";
+
+				echo "<label>detalle</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' name='detalle' class='form-control' value='". $detalle . "'>";
+				echo "</div>";
 
 
-            echo "<td> <a href='deletefichamedica.php?id_fichamedica=". $c->getId_fichamedica() ."'>
-		<button class='btn btn-default btn-call-to-action'>Eliminar</button></a>  </td>"	;
+				
 
-            echo "</tr>"; 
-                
-        }
+	echo "<button class='btn btn-default' type='submit'> GUARDAR-MODIFICACION </button>";
 
-        ?>
-
-    </table> 	  
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+			?>                        
+                   </form>
+    </table>
+		<a href="readfichamedica.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
