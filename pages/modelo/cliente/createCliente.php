@@ -2,12 +2,17 @@
 session_start();
 ?>
 
+<?php
+include_once("clienteCollector.php");
+$clienteCollectorObj = new clienteCollector();
+?>
+
 <!DOCTYPE html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title>Administrador - Cliente - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -73,34 +78,28 @@ session_start();
         
     <!-- Slider Start -->
     <section id="slider">
+     <section id="contact-form">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 col-md-offset-2">
-            <div class="block">
-		<?php
-				
-		$id_mascota=$_GET["id_mascota"];
-		$nombre=$_GET["nombre"];
-		$raza=$_GET["raza"];
-		$color=$_GET["color"];
-		$sexo=$_GET["sexo"];
-		$fecha_nacimiento=$_GET["fecha_nacimiento"];
-		$imagen=$_GET["imagen"];
-		$id_estado=$_GET["id_estado"];
-
-		include_once("mascotaCollector.php");
-		$mascotaCollectorObj = new mascotaCollector();
-
-		echo "<p>Se han modificado los cambios en la tabla Mascota!</p>";
-		$mascotaCollectorObj->updateMascota($id_mascota,$nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
-
-		?>                        
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
-            </div>
+          <div class="col-md-10 col-md-offset-1">
+            <div class="block"><center>
+              <form action="saveCliente.php" method="get">
+                  <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  C L I E N T E</h1>
+                        <div class="form-group">
+                          <input type="text" name="id_persona" class="form-control" placeholder="Id de la persona">
+			</div>                        
+			<div class="form-group">
+                          <input type="date" name="fecha_registro" class="form-control" placeholder="Fecha de registro del cliente">
+			</div>
+                        <button class="btn btn-default" type="submit"> Siguiente </button>
+                         </form>
+		</center>        
+            </div> <br>
+		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
           </div>
         </div>
       </div>
+     </section>
     </section>
            
     <!-- footer Start -->

@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+include_once("clienteCollector.php");
+$id_persona=$_GET["id_persona"];
+$fecha_registro=$_GET["fecha_registro"];
+$clienteCollectorObj = new clienteCollector();
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +12,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title>Administrador - Cliente - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -77,26 +82,12 @@ session_start();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
+              <h1 class="animated fadeInUp">Guardado!</h1>
 		<?php
-				
-		$id_mascota=$_GET["id_mascota"];
-		$nombre=$_GET["nombre"];
-		$raza=$_GET["raza"];
-		$color=$_GET["color"];
-		$sexo=$_GET["sexo"];
-		$fecha_nacimiento=$_GET["fecha_nacimiento"];
-		$imagen=$_GET["imagen"];
-		$id_estado=$_GET["id_estado"];
-
-		include_once("mascotaCollector.php");
-		$mascotaCollectorObj = new mascotaCollector();
-
-		echo "<p>Se han modificado los cambios en la tabla Mascota!</p>";
-		$mascotaCollectorObj->updateMascota($id_mascota,$nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
-
-		?>                        
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+        		$clienteCollectorObj->createCliente($id_persona,$fecha_registro);
+        		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readCliente.php'>";
+                ?>
+		<a href="readCliente.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>	           
             </div>
           </div>
         </div>

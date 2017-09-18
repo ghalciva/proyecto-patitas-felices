@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+$id_adopcion=$_GET["id_adopcion"];
+
+include_once("adopcionCollector.php");
+$adopcionCollectorObj = new adopcionCollector();
+
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +13,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title>Administrador - Adopcion - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -77,26 +83,12 @@ session_start();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-		<?php
-				
-		$id_mascota=$_GET["id_mascota"];
-		$nombre=$_GET["nombre"];
-		$raza=$_GET["raza"];
-		$color=$_GET["color"];
-		$sexo=$_GET["sexo"];
-		$fecha_nacimiento=$_GET["fecha_nacimiento"];
-		$imagen=$_GET["imagen"];
-		$id_estado=$_GET["id_estado"];
-
-		include_once("mascotaCollector.php");
-		$mascotaCollectorObj = new mascotaCollector();
-
-		echo "<p>Se han modificado los cambios en la tabla Mascota!</p>";
-		$mascotaCollectorObj->updateMascota($id_mascota,$nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
-
-		?>                        
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+              <?php
+        	echo "<p>Se eliminó el id No." . $id_adopcion ."!</p>";
+        	$adopcionCollectorObj->deleteAdopcion($id_adopcion);
+		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAdopcion.php'>";	
+              ?>
+		<a href="readAdopcion.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

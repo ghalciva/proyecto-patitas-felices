@@ -7,7 +7,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title>Administrador - Adopcion- Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -79,24 +79,20 @@ session_start();
             <div class="block">
 		<?php
 				
+		$id_adopcion=$_GET["id_adopcion"];
+		$id_cliente=$_GET["id_cliente"];
 		$id_mascota=$_GET["id_mascota"];
-		$nombre=$_GET["nombre"];
-		$raza=$_GET["raza"];
-		$color=$_GET["color"];
-		$sexo=$_GET["sexo"];
-		$fecha_nacimiento=$_GET["fecha_nacimiento"];
-		$imagen=$_GET["imagen"];
-		$id_estado=$_GET["id_estado"];
+		$fecha_adopcion=$_GET["fecha_adopcion"];
 
-		include_once("mascotaCollector.php");
-		$mascotaCollectorObj = new mascotaCollector();
+		include_once("adopcionCollector.php");
+		$adopcionCollectorObj = new adopcionCollector();
 
-		echo "<p>Se han modificado los cambios en la tabla Mascota!</p>";
-		$mascotaCollectorObj->updateMascota($id_mascota,$nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
+		echo "<p>Se han modificado los cambios en la tabla Adopcion!</p>";
+		$adopcionCollectorObj->updateAdopcion($id_adopcion,$id_cliente,$id_mascota,$fecha_adopcion);
+        	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAdopcion.php'>";
 
 		?>                        
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+		<a href="readAdopcion.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
