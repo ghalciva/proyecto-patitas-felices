@@ -23,7 +23,7 @@ class recetaCollector extends Collector
  }
 
 function updateReceta($id_receta, $id_consulta, $descripcion, $cantidad) {
-   $insertrow = self::$db->updateRow("UPDATE public.receta SET descripcion = ?, cantidad = ? WHERE id_receta= ? " , array("{$id_receta}", "{$id_consulta}", "{$descripcion}", "{$cantidad}"));  
+   $insertrow = self::$db->updateRow("UPDATE public.receta SET descripcion = ?, cantidad = ? WHERE id_receta= ?, id_consulta=? " , array("{$id_receta}", "{$id_consulta}", "{$descripcion}", "{$cantidad}"));  
  }
 
 
