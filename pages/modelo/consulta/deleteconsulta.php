@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$id_fichamedica=$_GET["id_fichamedica"];
+$id_consulta=$_GET["id_consulta"];
 
-include_once("fichamedicaCollector.php");
-$fichamedicaCollectorObj = new fichamedicaCollector();
+include_once("consultaCollector.php");
+$consultaCollectorObj = new consultaCollector();
 
 ?>
 
@@ -84,9 +84,15 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
               <?php
-        	echo "<p>Se eliminó el id No." . $id_fichamedica ."!</p>";
-        	$fichamedicaCollectorObj->deletefichamedica($id_fichamedica);
-		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readfichamedica.php'>";	
+        	echo "<p>Se eliminó la consulta No." . $id_consulta
+
+
+
+
+
+ ."!</p>";
+        	$consultaCollectorObj->deleteconsulta($id_consulta);
+		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readconsulta.php'>";	
               ?>
 		
             </div>

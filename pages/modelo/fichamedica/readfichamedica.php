@@ -4,7 +4,7 @@ session_start();
 
 <?php
 include_once("fichamedicaCollector.php");
-$usuario = $_SESSION['MiSesion'];
+//$usuario = $_SESSION['MiSesion'];
 
 $fichamedicaCollectorObj = new fichamedicaCollector();
 

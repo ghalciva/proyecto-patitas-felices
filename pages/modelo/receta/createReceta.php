@@ -4,8 +4,12 @@ session_start();
 
 <?php
 include_once("recetaCollector.php");
-//$usuario = $_SESSION['MiSesion'];
 $recetaCollectorObj = new recetaCollector();
+
+
+include_once("consultaCollector.php");
+//$usuario = $_SESSION['MiSesion'];
+$consultaCollectorObj = new consultaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +17,7 @@ $recetaCollectorObj = new recetaCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Crear recetario médico - Patitas felices</title>
+    <title>Administradr- Crear recetario médico - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -86,6 +90,19 @@ $recetaCollectorObj = new recetaCollector();
             <div class="block"><center>
               <form action="saveReceta.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  R E C E T A </h1>
+
+                   <select name="id_consulta">
+
+
+                       <?php
+                        foreach ($consultaCollectorObj->showconsulta() as $c){
+                            echo "<option>" . $c->getIdPersona() . "</option>";
+                        }
+                        ?>
+                        </select>
+
+
+
                         <div class="form-group">
                           <input type="text" name="idConsulta" class="form-control" placeholder="Id consulta">
                         </div>

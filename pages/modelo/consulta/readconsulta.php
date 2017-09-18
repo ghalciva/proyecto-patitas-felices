@@ -86,7 +86,7 @@ $consultaCollectorObj = new consultaCollector();
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
               <h1>Tabla consulta</h1>
-    <a href="createMascota.php"><button class="btn btn-default btn-call-to-action">Crear consulta</button></a> <br>
+    <a href="createconsulta.php"><button class="btn btn-default btn-call-to-action">Crear consulta</button></a> <br>
     <table id="tabla">
         <tr>    
             <th>&nbsp;&nbsp;id_consulta&nbsp;&nbsp;</th>
@@ -100,15 +100,15 @@ $consultaCollectorObj = new consultaCollector();
             echo "<tr>";
             echo "<td>" . $c->getId_consulta() . "</td>";
             echo "<td>" . $c->getId_reserva() . "</td>";   
-            echo "<td>" . $c->getHora() . "</td>";
-            echo "<td>" . $c->getDetalle() . "</td>";            
+            echo "<td>" . $c->getHora_consulta() . "</td>";
+            echo "<td>" . $c->getDescripcion() . "</td>";            
                      
             
-            echo "<td><a href='updateConsulta.php?id_consulta=" . $c->getId_consulta() . "&id_reserva=" . $c->getId_reserva() . "&hora=" . $c->getHora() . "&detalle=" . $c->getDetalle() ."'> 
+            echo "<td><a href='updateconsulta.php?id_consulta=" . $c->getId_consulta() . "&id_reserva=" . $c->getId_reserva() . "&hora_consulta=" . $c->getHora_consulta() . "&descripcion=" . $c->getDescripcion() ."'> 
 
 <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 
-            echo "<td><a href='deleteConsulta.php?id_consulta=". $c->getId_consulta() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
+            echo "<td><a href='deleteconsulta.php?id_consulta=". $c->getId_consulta() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
             echo "</tr>"; 
                 
         }

@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-$id_veterinario=$_GET["id_veterinario"];
-$titulo=$_GET["titulo"];
-$id_persona=$_GET["id_persona"];
-$ocupacion=$_GET["ocupacion"];
+$id_receta=$_GET["id_receta"];
+$id_consulta=$_GET["id_consulta"];
+$descripcion=$_GET["descripcion"];
+$cantidad=$_GET["cantidad"];
 
 
-include_once("veterinarioCollector.php");
-$veterinarioCollectorObj = new veterinarioCollector();
+include_once("recetaCollector.php");
+$recetaCollectorObj = new recetaCollector();
 
 ?>
 
@@ -87,24 +87,24 @@ $veterinarioCollectorObj = new veterinarioCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <form action="saveUpdateVeterinario.php" method="get">
-                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  V E T E R I N A R I O</h1>
+              <form action="saveUpdateReceta.php" method="get">
+                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  R E C E T A</h1>
 			<?php
-				echo "<label>IdVeterinario</label>";
+				echo "<label>Id-Receta</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' name='id_veterinario' class='form-control' value='". $id_veterinario . "' readonly>";
+				echo "<input type='text' name='id_receta' class='form-control' value='". $id_receta . "' readonly>";
 				echo "</div>";
-				echo "<label>Persona</label>";
+				echo "<label>Id-Consulta</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $id_persona . "' name='id_persona' readonly>";
+				echo "<input type='text' class='form-control' value='". $id_consulta . "' name='id_consulta' readonly>";
 				echo "</div>";	
-				echo "<label>Titulo</label>";
+				echo "<label>Descripción</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $titulo . "' name='titulo'>";
+				echo "<input type='text' class='form-control' value='". $descripcion . "' name='descripcion'>";
 				echo "</div>";
-				echo "<label>Ocupacion</label>";
+				echo "<label>Cantidad</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $ocupacion . "' name='ocupacion'>";
+				echo "<input type='text' class='form-control' value='". $cantidad . "' name='cantidad'>";
 				echo "</div>";
 				echo "<button class='btn btn-default' type='submit'> GUARDAR </button>";
 

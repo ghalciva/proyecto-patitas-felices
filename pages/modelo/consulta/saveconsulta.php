@@ -1,12 +1,15 @@
 <?php
-session_start();
+//session_start();
 
-$id_fichamedica=$_GET["id_fichamedica"];
+include_once("consultaCollector.php");
+//$usuario = $_SESSION['MiSesion'];
 
-include_once("fichamedicaCollector.php");
-$fichamedicaCollectorObj = new fichamedicaCollector();
-
+$consultaCollectorObj = new consultaCollector();
+$id_reserva=$_POST["id_reserva"];
+$hora_consulta=$_POST["hora_consulta"];
+$descripcion=$_POST["descripcion"];
 ?>
+
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -29,7 +32,6 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
     <script src="../../../js/bootstrap.min.js"></script>
    </head>
   <body>
-    <!--  -->
    
    
   <!-- Header Start -->
@@ -55,7 +57,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                  <img src="../../../img/logo.png" alt="Logo">
+                  <img src="../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -83,12 +85,17 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <?php
-        	echo "<p>Se eliminó el id No." . $id_fichamedica ."!</p>";
-        	$fichamedicaCollectorObj->deletefichamedica($id_fichamedica);
-		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readfichamedica.php'>";	
-              ?>
-		
+ 		<h1 class="animated fadeInUp">Guardado!</h1>
+             <?php
+		 
+			$consultaCollectorObj->createconsulta($id_reserva,$hora_consulta,$descripcion);
+			//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAnimal.php'>";
+                             
+                        ?>
+
+      
+	  
+		<a href="readconsulta.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

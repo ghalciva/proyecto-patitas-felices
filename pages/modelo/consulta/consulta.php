@@ -9,41 +9,15 @@ class consulta
     private $detalle;
     
     
-     function __construct($id_consulta,$id_reserva,$hora,$detalle) {
+     function __construct($id_consulta,$id_reserva,$hora_consulta,$descripcion) {
 
  	$this->id_consulta = $id_consulta;
        $this->id_reserva = $id_reserva;
-       $this->hora = $hora;
-	$this->detalle = $detalle;
+       $this->hora_consulta = $hora_consulta;
+	$this->descripcion = $descripcion;
      }
 
-<<<<<<< HEAD
-    function setid_consulta($id_consulta){
-       $this->id_consulta = $id_consulta;
-     } 
-     function getid_consulta(){
-       return $this->id_consulta;
-     } 
 
-function setid_reserva($id_reserva){
-       $this->id_reserva = $id_reserva;
-     } 
-     function getid_reserva(){
-       return $this->id_reserva;
-     } 
-
-function sethora($hora){
-       $this->hora = $hora;
-     } 
-     function gethora(){
-       return $this->hora;
-     } 
-
-     function setdetalle($detalle){
-       $this->detalle = $detalle;
-     } 
-     function getdetalle(){
-=======
     function setId_consulta($id_consulta){
        $this->id_consulta = $id_consulta;
      } 
@@ -58,20 +32,22 @@ function setId_reserva($id_reserva){
        return $this->id_reserva;
      } 
 
-function setHora($hora){
-       $this->hora = $hora;
+function setHora_consulta($hora_consulta){
+       $this->hora_consulta = $hora_consulta;
      } 
-     function getHora(){
-       return $this->hora;
+     function getHora_consulta(){
+       return $this->hora_consulta;
      } 
 
-     function setDetalle($detalle){
-       $this->detalle = $detalle;
+     function setDescripcion($descripcion){
+       $this->descripcion = $descripcion;
      } 
-     function getDetalle(){
->>>>>>> c3d28f6c9be7dcc91186c9a048e297e1ca51aa62
-       return $this->detalle;
-     } 
+     function getDescripcion(){
+	return $this->descripcion;
+
+	}
+
+    
      
 
 }
