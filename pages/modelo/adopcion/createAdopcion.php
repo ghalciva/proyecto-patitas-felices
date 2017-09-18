@@ -90,7 +90,7 @@ $mascotaCollectorObj = new mascotaCollector();
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <div class="block"><center>
+            <div class="block" id="alineacion">
               <form action="saveAdopcion.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D O P C I O N </h1>
                      <select name="id_cliente">
@@ -111,10 +111,9 @@ $mascotaCollectorObj = new mascotaCollector();
                           <input type="date" name="fecha_adopcion" class="form-control" placeholder="Fecha de la adopcion">
                         </div>
                         <button class="btn btn-default" type="submit"> Siguiente </button>
-                </form>
-		</center>        
+                </form>        
             </div> <br>
-		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
+	      <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 
           </div>
         </div>
       </div>
