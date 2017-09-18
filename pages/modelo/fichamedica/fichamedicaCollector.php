@@ -23,8 +23,8 @@ class fichamedicaCollector extends Collector
   }   
 
 //insertar mascota
-  function createfichamedica($id_fichamedica,$id_mascota,$detalle) {
-    $rows = self::$db->insertRow("INSERT INTO public.fichamedica (id_fichamedica, id_mascota, detalle) VALUES (?,?,?) ", array("{$id_fichamedica}","{$id_mascota}","{$detalle}"));        
+  function createfichamedica($id_mascota,$detalle) {
+    $rows = self::$db->insertRow("INSERT INTO public.fichamedica (id_mascota, detalle) VALUES (?,?) ", array("{$id_mascota}","{$detalle}"));        
   } 
     
 //actualizar mascota

@@ -1,12 +1,13 @@
-<?php
+?php
 session_start();
 ?>
+
 <?php
-include_once("AdministradorCollector.php");
-//$usuario = $_SESSION['MiSesion'];
-
-$AdministradorCollectorObj = new AdministradorCollector();
-
+include_once("recetaCollector.php");
+$id_consulta=$_GET["idConsulta"];
+$descripcion=$_GET["descripcion"];
+$cantidad=$_GET["cantidad"];
+$recetaCollectorObj = new recetaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ $AdministradorCollectorObj = new AdministradorCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador</title>
+    <title>Administrador - Mascota- Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -31,24 +32,20 @@ $AdministradorCollectorObj = new AdministradorCollector();
    </head>
   <body>
     <!--  -->
-   <?php
-	//if (isset($_SESSION['MiSesion'])){
-	//	$usuario = $_SESSION['MiSesion'];
-  ?>
-
-<!-- Header Start -->
+   
+   
+  <!-- Header Start -->
   <header>
     <div class="container">
          <div id="user">
        		 <ul class="login">
-                <li class="loginu"><a href="../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido </a></li>
-            </ul>
-	 </div>	
-            <div class="row">
+             <li class="loginu col-md-2 col-md-offset-10"><a href="../../iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+       		 </ul>
+       	 </div>
+      <div class="row">
         <div class="col-md-12">
          
-            <!-- header Nav Start -->
+          <!-- header Nav Start -->
           <nav class="navbar navbar-default">
             <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
@@ -60,7 +57,7 @@ $AdministradorCollectorObj = new AdministradorCollector();
                 <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                  <img src="../img/logo.png" alt="Logo">
+                  <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -81,48 +78,39 @@ $AdministradorCollectorObj = new AdministradorCollector();
       </div>
     </header><!-- header close -->
        
-           
-       <!-- Slider Start -->
+        
+    <!-- Slider Start -->
     <section id="slider">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-                 <h1>Tabla Administrador</h1>
-    <a href="createPersona.php"><button class="btn btn-default btn-call-to-action">Crear Persona</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;IdAdministrador&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;IdPersona&nbsp;&nbsp;</th>
-
-        </tr>
-        <?php
-            foreach ($AdministradorCollectorObj->showAdmins() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getIdAdministrador() . "</td>";
-            echo "<td>" . $c->getIdPersona() . "</td>";               
-            
-            echo "<td><a href='updateAdmin.php?id_administrador=" . $c->getIdAdministrador() . "&id_persona=" . $c->getIdPersona()  ."'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
-            echo "<td><a href='deleteAdmin.php?id_administrador=". $c->getIdAdministrador() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
-            echo "</tr>"; 
-                
-        }
-
-        ?>
-
-    </table> 	  
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>         
+              <h1 class="animated fadeInUp">Guardado!</h1>
+		<?php
+        		$recetaCollectorObj->createReceta($id_consulta, $descripcion, $cantidad);
+        		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readReceta.php'>";
+                ?>
+		<a href="../../readReceta.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>	           
             </div>
           </div>
         </div>
       </div>
     </section>
-       
-   <?php
-                         /* }else{   
-                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../indexAdmin.php'>";
-                             } */
-                        ?>
-
-</body>
+           
+    <!-- footer Start -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Todos los derechos reservados. By: WebDesign. 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+            
+            
+  
+            
+    
+    </body>
 </html>

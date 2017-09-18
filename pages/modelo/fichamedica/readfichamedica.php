@@ -139,4 +139,4 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
             
     
     </body>
-</html
+</html>

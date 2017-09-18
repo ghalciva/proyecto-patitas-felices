@@ -6,7 +6,7 @@ include_once('../Collector.php');
 class AdministradorCollector extends Collector
 {
   
-  function showAdmin() {
+  function showAdmins() {
     $rows = self::$db->getRows("SELECT * FROM administrador ");        
     $arrayAdmin= array();        
     foreach ($rows as $c){
@@ -27,7 +27,7 @@ function updateAdmin($id_administrador,$id_persona) {
  }
 
 function deleteAdmin($id_administrador) {
-   $insertrow = self::$db->deleteRow("DELETE FROM administrador WHERE id_administrador= ? ", array("{$id_admministrador}"));        
+   $insertrow = self::$db->deleteRow("DELETE FROM administrador WHERE id_administrador= ? ", array("{$id_administrador}"));        
  }
 
 
