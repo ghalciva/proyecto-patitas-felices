@@ -591,3 +591,20 @@ footer a {
     text-align: center;
 }
 
+/*----BOTONES---*/
+.button{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    color: ##1C1C1C;
+    background-color:#E6E6E6;
+    border-radius: 4px;
+  }
+
+
+
+
+
+
+
