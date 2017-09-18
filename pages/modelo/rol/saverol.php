@@ -2,7 +2,9 @@
 session_start();
 include_once("RolCollector.php");
 
-$id_rol = $_GET['id_rol'];
+$descripcion = $_POST['descripcion'];
+
+
 
 
 $RolCollectorObj = new RolCollector();
@@ -13,18 +15,19 @@ $RolCollectorObj = new RolCollector();
     <head>
         <meta charset="utf-8">
         <title>Login</title>
-       
+        
+    
     </head>
     <body>
+        
         <?php
-       
-		  ///if (isset($_SESSION['MiSesion'])){
+		  //if (isset($_SESSION['MiSesion'])){
    
-        echo "<p>Se elimino la tabla #" . $id_rol ."?</p>";
-        $RolCollectorObj->deleteRol($id_rol);
+        echo "<p>Se creo un  nuevo rol </p>";
+        $RolCollectorObj->createRol($descripcion);
         echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readRol.php'>";
-                          //  }else{   
-                            //   echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
+                            //}else{   
+                              // echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
                              //} 
                         ?>
   

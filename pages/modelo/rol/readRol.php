@@ -89,7 +89,7 @@ $RolCollectorObj = new RolCollector();
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
                  <h1>Tabla Rol</h1>
-    <a href="createPersona.php"><button class="btn btn-default btn-call-to-action">Crear Persona</button></a> <br>
+    <a href="createRol.php"><button class="btn btn-default btn-call-to-action">Crear Rol</button></a> <br>
     <table id="tabla">
         <tr>    
             <th>&nbsp;&nbsp;IdRol&nbsp;&nbsp;</th>
