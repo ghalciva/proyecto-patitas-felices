@@ -56,7 +56,7 @@ $personaCollectorObj = new personaCollector();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../../../index.php">
                   <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
@@ -85,8 +85,8 @@ $personaCollectorObj = new personaCollector();
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <div class="block">
-              <form action="saveCliente.php" method="get" id="alineacion">
+            <div class="block"><center>
+              <form action="saveCliente.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  C L I E N T E</h1>
                      <select name="id_persona">
                        <?php
@@ -100,9 +100,10 @@ $personaCollectorObj = new personaCollector();
                           <input type="date" name="fecha_registro" class="form-control" placeholder="Fecha de registro del cliente">
 			</div>
                         <button class="btn btn-default" type="submit"> Siguiente </button>
-                         </form>      
+                         </form>
+		</center>        
             </div> <br>
-	    <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 
+		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
           </div>
         </div>
       </div>

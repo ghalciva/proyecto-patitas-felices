@@ -101,11 +101,12 @@ $reservaCollectorObj = new reservaCollector();
             echo "<tr>";
             echo "<td>" . $c->getId_reserva() . "</td>";
             echo "<td>" . $c->getId_cliente() . "</td>";   
-            echo "<td>" . $c->getFecha_consulta() . "</td>";
-            echo "<td>" . $c->getId_veterinario() . "</td>";            
+
+            echo "<td>" . $c->getId_veterinario() . "</td>"; 
+            echo "<td>" . $c->getFecha_consulta() . "</td>";           
                      
             
-            echo "<td><a href='updateConsulta.php?id_reserva=" . $c->getId_reserva() . "&id_reserva=" . $c->getId_cliente() . "&hora=" . $c->getFecha_consulta() . "&detalle=" . $c->getId_veterinario() ."'> 
+            echo "<td><a href='updateReserva.php?id_reserva=" . $c->getId_reserva() . "&id_cliente=" . $c->getId_cliente() . "&id_veterinario=" . $c->getId_veterinario() . "&fecha_consulta=" . $c->getFecha_consulta() ."'> 
 
 <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <!-- Js -->
     <script src="../js/vendor/jquery-1.10.2.min.js"></script>
@@ -51,8 +52,8 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../index.php" class="above">Inicio</a></li>
-                    <li><a href="nosotros.php">Nosotros</a></li>
+                    <li><a href="../index.php">Inicio</a></li>
+                    <li><a href="nosotros.php"class="above">Nosotros</a></li>
                     <li><a href="mascotas.php">Mascotas</a></li>
                     <li><a href="agenda.php">Agenda</a></li>
                     <li><a href="contactenos.php">Contáctenos</a></li>
@@ -76,7 +77,7 @@
         <div class="col-md-offset-0 col-md-3">
            <img src="../img/nosotros-huella.png"  class="img-responsive">
          </div>  
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-3" id="fondo">
          
         <h2>¿QUIÉNES SOMOS?</h2>
               <p>Patitas Felices es un proyecto que permite la adopcion de mascotas con el fin de encontrarles un nuevo hogar donde reciban mucho amor y cariño. <br>
@@ -88,7 +89,7 @@
 		 
       
       <div class="row">
-        <div class="col-md-6 col-md-offset-0">
+        <div class="col-md-6 col-md-offset-0"id="fondo">
          
         <h2>¿QUÉ HACEMOS?</h2>
               <p>Este servicio web que ofrecemos tiene como finalidad el registro, brindar información y adopción de mascotas en línea. Guardamos la información necesaria del animal para poder ser adoptado. Involucramos nuestra experiencia en animales para hacer que ésta página sea amigable con la comunidad.</p>
@@ -97,7 +98,7 @@
       
       
        <div class="row">
-        <div class="col-md-6 col-md-offset-6">
+        <div class="col-md-6 col-md-offset-6"id="fondo">
          
         <h2>¿POR QUÉ ELEGIRNOS?</h2>
               <p>Te ayudamos a elegir tu mascota acorde a tus gustos. Ofrecemos una interfaz predictible con fácil navegación para el cliente. Además, hacemos que la búsqueda de su nueva mascota sea rápida. Informamos a la comunidad de nuevos eventos acerca del bienestar de los animales y actividades extras. <br> <br>

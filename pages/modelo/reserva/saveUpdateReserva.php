@@ -1,19 +1,16 @@
 <?php
-//session_start();
+session_start();
+?>
 
+<?php
 include_once("reservaCollector.php");
-
-include_once("../veterinario/veterinarioCollector.php");
-//$usuario = $_SESSION['MiSesion'];
-include_once("../cliente/clienteCollector.php");
-		
-
-$clienteCollectorObj = new clienteCollector();
-$veterinarioCollectorObj = new VeterinarioCollector();
-
+$usuario = $_SESSION['MiSesion'];
 
 $reservaCollectorObj = new reservaCollector();
-
+$id_reserva =$_GET["id_reserva"];
+$id_cliente =$_GET["id_cliente"];
+$id_veterinario =$_GET["id_veterinario"];
+$fecha_consulta =$_GET["fecha_consulta"];
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +34,7 @@ $reservaCollectorObj = new reservaCollector();
     <script src="../../../js/bootstrap.min.js"></script>
    </head>
   <body>
+    <!--  -->
    
    
   <!-- Header Start -->
@@ -91,53 +89,26 @@ $reservaCollectorObj = new reservaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla  reserva</h1>
-	<form action="saveReserva.php" method="post">
-                          <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  R E S E R V A</h1>
-                <?php
-		echo "<select name='id_cliente'>";
-		echo"<h3> escoja el id de cliente</h3>";
-
- 		foreach ($clienteCollectorObj->showClientes() as $c){
-           	 echo "<option>" . $c->getId_cliente() . "</option>";
-           	}
 
 
-
-		?>
-		</select>
 		<?php
-		echo "<select name='id_veterinario'>";
-		echo"<h3> escoja el id de veterinario</h3>";
+			$reservaCollectorObj = new reservaCollector();
 
- 		foreach ($veterinarioCollectorObj->showVeterinarios() as $c){
-           	 echo "<option>" . $c->getId_veterinario() . "</option>";
-           	}
+			//if (isset($_SESSION['MiSesion'])){
+				echo "<p>Se han modificado los cambios en la tabla reserva!</p>";
+			        $reservaCollectorObj->updatereserva($id_cliente,$id_veterinario,$fecha_consulta);
+		        	 
+                        ?>
+              
 
-
-
-		?>
-		</select>
-                       
-                 <div class="form-group">
-
-			<h3>ESCOJA la FECHA CONSULTA</h3>
-			<div class="form-group">
-                          <input type="text" name="fecha_consulta" class="form-control" placeholder="fecha_consulta">
-                        </div>
- 		
-
- 
-                       		<a href="saveReserva.php"><button class="btn btn-default btn-call-to-action">Guardar</button></a> 	           
-      
-	  
+    </table>
 		<a href="readReserva.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
       </div>
     </section>
-</section>
+    </section>
            
     <!-- footer Start -->
     <footer>
