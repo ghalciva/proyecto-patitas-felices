@@ -26,7 +26,7 @@ function updateVeterinario($id_veterinario,$id_persona,$titulo,$ocupacion) {
    $insertrow = self::$db->updateRow("UPDATE public.veterinario SET id_persona = ?,titulo = ?,ocupacion = ? WHERE id_veterinario= ? ", array("{$id_persona}","{$titulo}","{$ocupacion}","{$id_veterinario}"));        
  }
 
-function deleteVeterinario($id_persona) {
+function deleteVeterinario($id_veterinario) {
    $insertrow = self::$db->deleteRow("DELETE FROM veterinario WHERE id_veterinario= ? ", array("{$id_veterinario}"));        
  }
 
