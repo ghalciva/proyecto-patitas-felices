@@ -82,6 +82,7 @@ $consultaCollectorObj = new consultaCollector();
         
     <!-- Slider Start -->
     <section id="slider">
+     <section id="contact-form">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
@@ -136,6 +137,7 @@ $consultaCollectorObj = new consultaCollector();
         </div>
       </div>
     </section>
+</section>
            
     <!-- footer Start -->
     <footer>

@@ -84,6 +84,7 @@ $descripcion =$_GET["descripcion"];
         
     <!-- Slider Start -->
     <section id="slider">
+     <section id="contact-form">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
@@ -110,6 +111,7 @@ $descripcion =$_GET["descripcion"];
         </div>
       </div>
     </section>
+</section>
            
     <!-- footer Start -->
     <footer>
