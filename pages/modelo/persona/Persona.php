@@ -12,14 +12,14 @@ class Persona
     private $fecha_nacimiento;
     private $id_rol;
 
-    function __construct($id_persona, $nombre, $apellido, $correo, $direccion, $user, $pass, $fecha_nacimiento, $id_rol) {
+    function __construct($id_persona, $nombre, $direccion, $apellido, $user, $pass, $correo, $fecha_nacimiento, $id_rol) {
        $this->id_persona = $id_persona;
        $this->nombre = $nombre;
-       $this->apellido = $apellido;
-       $this->correo = $correo;
        $this->direccion = $direccion;
+       $this->apellido = $apellido;
        $this->user = $user;
        $this->pass = $pass;
+       $this->correo = $correo;
        $this->fecha_nacimiento = $fecha_nacimiento;
        $this->id_rol = $id_rol;
 	

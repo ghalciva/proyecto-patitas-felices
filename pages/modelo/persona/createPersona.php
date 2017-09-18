@@ -60,8 +60,8 @@ $PersonaCollectorObj = new PersonaCollector();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">
-                  <img src="../img/logo.png" alt="Logo">
+                <a class="navbar-brand" href="../../../index.php">
+                  <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
                
@@ -89,9 +89,10 @@ $PersonaCollectorObj = new PersonaCollector();
           <div class="container"><center>
               <div class="col-md-12">
                     <div class="block">
-                    <form action="savepersona.php" method="post">
+                    <form action="savepersona.php" method="get">
                           <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  P E R S O N A</h1>
-                        <div class="form-group">
+                  
+			<div class="form-group">
                           <input type="text" name="nombre" class="form-control" placeholder="Nombre">
                         </div>
                         <div class="form-group">
