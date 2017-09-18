@@ -93,7 +93,6 @@ session_start();
 
 		echo "<p>Se han modificado los cambios en la tabla Mascota!</p>";
 		$mascotaCollectorObj->updateMascota($id_mascota,$nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-		$mascotaCollectorObj->saveMascota($id_mascota);
         	echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
 
 		?>                        
