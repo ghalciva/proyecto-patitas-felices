@@ -3,8 +3,16 @@ session_start();
 ?>
 
 <?php
+
 include_once("adopcionCollector.php");
 $adopcionCollectorObj = new adopcionCollector();
+
+include_once("../persona/PersonaCollector.php");
+$personaCollectorObj = new personaCollector();
+
+include_once("../cliente/clienteCollector.php");
+$clienteCollectorObj = new clienteCollector();
+
 ?>
 
 <!DOCTYPE html>
@@ -85,12 +93,25 @@ $adopcionCollectorObj = new adopcionCollector();
             <div class="block"><center>
               <form action="saveAdopcion.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D O P C I O N </h1>
-			<div class="form-group">
-                          <input type="text" name="id_cliente" class="form-control" placeholder="Id del cliente">
-                        </div>			
-			<div class="form-group">
-                          <input type="text" name="id_mascota" class="form-control" placeholder="Id de la mascota">
-                        </div>			
+			
+                           <select name="id_persona">
+                       
+                       <?php
+                        foreach ($personaCollectorObj->showPersonas() as $c){
+                            echo "<option>" . $c->getIdPersona() . "</option>";
+                        }
+                        ?>
+</select>
+                        
+                           <select name="id_mascota">
+                       
+                       <?php
+                        foreach ($mascotaCollectorObj->showMascotas() as $c){
+                            echo "<option>" . $c->getId_mascota() . "</option>";
+                        }
+                        ?>
+</select>
+                        			
 			<div class="form-group">
                           <input type="date" name="fecha_adopcion" class="form-control" placeholder="Fecha de la adopcion">
                         </div>
