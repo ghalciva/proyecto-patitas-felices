@@ -13,7 +13,7 @@ $personaCollectorObj = new personaCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Veterinario - Patitas felices</title>
+    <title>Crear Veterinario- Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -102,7 +102,7 @@ $personaCollectorObj = new personaCollector();
                         </div>
 			
                        
-                        <button class="btn btn-default" type="submit"> GUARDAR </button>
+                        <button class="btn btn-default" type="submit"> Guardar </button>
                          </form>
 		</center>        
             </div> <br>

@@ -41,7 +41,7 @@ $veterinarioCollectorObj = new veterinarioCollector();
 <div id="user">
 <ul class="login">
 <li class="loginu"><a href="../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-<li class="loginu">Bienvenido</li>
+<li class="loginu">Bienvenido Usuario</li>
 </ul>
 </div>
 <div class="row">

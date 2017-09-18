@@ -17,9 +17,9 @@ class VeterinarioCollector extends Collector
   }
 
  function showVeterinario($id_veterinario) {
-   $row = self::$db->getRows("SELECT * FROM veterinario where id_veterinario= ?", array("{$id_veterinario}"));        
-   $ObjPersona = new Persona($row[0]{'id_veterinario'},$row[0]{'id_persona'},$row[0]{'titulo'},$row[0]{'ocupacion'});
-   return $ObjPersona;   
+   $row = self::$db->getRows("SELECT * FROM veterinario WHERE id_veterinario= ?", array("{$id_veterinario}"));        
+   $ObjVeterinario = new Veterinario($row[0]{'id_veterinario'},$row[0]{'id_persona'},$row[0]{'titulo'},$row[0]{'ocupacion'});
+   return $ObjVeterinario;   
  }
 
 function updateVeterinario($id_veterinario,$id_persona,$titulo,$ocupacion) {

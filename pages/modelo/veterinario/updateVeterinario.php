@@ -17,7 +17,7 @@ $veterinarioCollectorObj = new veterinarioCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Veterinario - Patitas felices</title>
+    <title> Modificar Veterinario - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -98,11 +98,11 @@ $veterinarioCollectorObj = new veterinarioCollector();
 				echo "<div class='form-group'>";
 				echo "<input type='text' class='form-control' value='". $id_persona . "' name='id_persona' readonly>";
 				echo "</div>";	
-				echo "<label>Titulo</label>";
+				echo "<label>Título</label>";
 				echo "<div class='form-group'>";
 				echo "<input type='text' class='form-control' value='". $titulo . "' name='titulo'>";
 				echo "</div>";
-				echo "<label>Ocupacion</label>";
+				echo "<label>Ocupación</label>";
 				echo "<div class='form-group'>";
 				echo "<input type='text' class='form-control' value='". $ocupacion . "' name='ocupacion'>";
 				echo "</div>";
