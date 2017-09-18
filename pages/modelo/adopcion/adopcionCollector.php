@@ -29,7 +29,7 @@ class adopcionCollector extends Collector
     
 //actualizar adopcion
   function updateAdopcion($id_adopcion,$id_cliente,$id_mascota,$fecha_adopcion) {
-    $rows = self::$db->insertRow("UPDATE adopcion SET fecha_adopcion= ? , id_cliente= ?, id_mascota= ? WHERE id_adopcion= ? ", array("{$fecha_adopcion}","{$id_cliente}","{$id_mascota}",$id_adopcion));        
+    $rows = self::$db->insertRow("UPDATE adopcion SET id_cliente= ? , id_mascota= ? , fecha_adopcion= ? WHERE id_adopcion= ? ", array("{$id_cliente}","{$id_mascota}","{$fecha_adopcion}",$id_adopcion));        
   }
 
 }
