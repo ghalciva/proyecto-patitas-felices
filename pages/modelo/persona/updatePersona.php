@@ -11,6 +11,7 @@ $direccion=$_GET["direccion"];
 $user=$_GET["user"];
 $pass=$_GET["pass"];
 $fecha_nacimiento=$_GET["fecha_nacimiento"];
+$id_rol=$_GET["id_rol"];
 
 include_once("PersonaCollector.php");
 $PersonaCollectorObj = new PersonaCollector();
@@ -22,7 +23,7 @@ $PersonaCollectorObj = new PersonaCollector();
     <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Animal</title>
+    <title>Persona</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -35,11 +36,14 @@ $PersonaCollectorObj = new PersonaCollector();
     <link rel="stylesheet" href="../../../css/responsive.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      
+<!-- Js -->
+    <script src="../../../js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
     </head>
 <body>
     <?php
-		  if (isset($_SESSION['MiSesion'])){
-#	              $usuario = $_SESSION['MiSesion'];
+		  //if (isset($_SESSION['MiSesion'])){
+//	              $usuario = $_SESSION['MiSesion'];
     ?>
 
 <!-- Header Start -->
@@ -47,7 +51,7 @@ $PersonaCollectorObj = new PersonaCollector();
         <div class="container">
             <ul class="login">
                 <li class="loginu"><a href="../../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido <?php echo $usuario;?> </a></li>
+                <li class="loginu"></span> Bienvenido </a></li>
             </ul>
             <div class="row">
                 <div class="col-md-12">
@@ -62,7 +66,7 @@ $PersonaCollectorObj = new PersonaCollector();
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                           </button>
-                          <a class="navbar-brand" href="index.php">
+                          <a class="navbar-brand" href="../../../index.php">
                             <img class="navbar-brand" src="../../../img/logo.png" alt="Logo" >
                             </a>
                         </div>
@@ -70,11 +74,11 @@ $PersonaCollectorObj = new PersonaCollector();
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                           <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index.php">Inicio</a></li>
-                            <li><a href="nosotros.php">Nosotros</a></li>
-                            <li><a href="mascotas.php" >Mascotas</a></li>
-                            <li><a href="agenda.php">Agenda</a></li>
-                            <li><a href="contacto.php" >Contacto</a></li>
+                            <li><a href="../../../index.php">Inicio</a></li>
+                            <li><a href="../../nosotros.php">Nosotros</a></li>
+                            <li><a href="../../mascotas.php" >Mascotas</a></li>
+                            <li><a href="../../agenda.php">Agenda</a></li>
+                            <li><a href="../../contacto.php" >Contacto</a></li>
                           </ul>
                         </div><!-- /.navbar-collapse -->
                       </div><!-- /.container-fluid -->
@@ -89,42 +93,46 @@ $PersonaCollectorObj = new PersonaCollector();
           <div class="container"><center>
               <div class="col-md-12">
                     <div class="block">
-                    <form action="saveUpdateAnimal.php" method="get">
-                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  A N I M A L</h1>
+                    <form action="saveUpdatePersona.php" method="get">
+                        <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  P E R S O N A</h1>
 			<?php
-				echo "<label>IdMascota</label>";
+				echo "<label>IdPersona</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' name='idMascota' class='form-control' value='". $idMascota . "' readonly>";
+				echo "<input type='text' name='id_persona' class='form-control' value='". $id_persona . "' readonly>";
 				echo "</div>";
 				echo "<label>Nombre</label>";
 				echo "<div class='form-group'>";
 				echo "<input type='text' class='form-control' value='". $nombre . "' name='nombre'>";
 				echo "</div>";
-				echo "<label>Edad</label>";
+				echo "<label>Apellido</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $edad . "' name='edad'>";
+				echo "<input type='text' class='form-control' value='". $apellido . "' name='apellido'>";
 				echo "</div>";			
-				echo "<label>Raza</label>";
+				echo "<label>Correo</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $raza . "' name='raza'>";
+				echo "<input type='text' class='form-control' value='". $correo . "' name='correo'>";
+				echo "</div>";
+				echo "<label>Direccion</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $direccion . "' name='direccion'>";
+				echo "</div>";
+				echo "<label>User</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $user . "' name='user'>";
+				echo "</div>";
+				echo "<label>Pass</label>";
+				echo "<div class='form-group'>";
+				echo "<input type='text' class='form-control' value='". $pass . "' name='pass'>";
 				echo "</div>";
 				echo "<label>Fecha Nacimiento</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $fecha . "' name='fecha'>";
+				echo "<input type='text' class='form-control' value='". $fecha_nacimiento . "' name='fecha_nacimiento'>";
 				echo "</div>";
-				echo "<label>Sexo</label>";
+				echo "<label>IdRol</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $sexo . "' name='sexo'>";
+				echo "<input type='text' class='form-control' value='". $id_rol . "' name='id_rol'>";
 				echo "</div>";
-				echo "<label>Color</label>";
-				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $color . "' name='color'>";
-				echo "</div>";
-				echo "<label>Imagen</label>";
-				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $imagen . "' name='imagen'>";
-				echo "</div>";
-				echo "<a href='saveUpdateAnimal.php?idMascota=". $idMascota ."'><button class='btn btn-default' type='submit'> Siguiente </button>";
+				echo "<a href='saveupdatePersona.php?id_persona=". $id_persona ."'><button class='btn btn-default' type='submit'> Siguiente </button>";
 
 			?>                        
                    </form>
@@ -137,9 +145,9 @@ $PersonaCollectorObj = new PersonaCollector();
 
     
       <?php
-                          }else{   
-                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
-                             } 
+                          //}else{   
+                            //   echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
+                             //} 
                         ?>
  
     </body>
