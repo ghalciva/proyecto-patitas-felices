@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-include_once("estadoCollector.php");
+include_once("veterinarioCollector.php");
 //$usuario = $_SESSION['MiSesion'];
 
-$estadoCollectorObj = new estadoCollector();
+$veterinarioCollectorObj = new veterinarioCollector();
 
 ?>
 
@@ -87,22 +87,25 @@ $estadoCollectorObj = new estadoCollector();
 <div class="col-md-10 col-md-offset-2">
 <div class="block">
 <h1>Tabla Estado</h1>
-<a href="createEstado.php"><button class="btn btn-default btn-call-to-action">Crear Estado</button></a> <br>
+<a href="createVeterinario.php"><button class="btn btn-default btn-call-to-action">Crear Veterinario</button></a> <br>
 <table id="tabla">
 <tr>
-<th>&nbsp;&nbsp;Id-Estado&nbsp;&nbsp;</th>
-<th>&nbsp;&nbsp;Descripción&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;Id-Veterinario&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;Id-Persona&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;Título&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;Ocupación&nbsp;&nbsp;</th>
 
 </tr>
 <?php
-foreach ($estadoCollectorObj->showEstados() as $c){
+foreach ($veterinarioCollectorObj->showVeterinarios() as $c){
 echo "<tr>";
-echo "<td>" . $c->getIdEstado() . "</td>";
-echo "<td>" . $c->getDescripcion() . "</td>";
+echo "<td>" . $c->getId_veterinario() . "</td>";
+echo "<td>" . $c->getId_persona() . "</td>";
+echo "<td>" . $c->getTitulo() . "</td>";
+echo "<td>" . $c->getOcupacion() . "</td>";
 
-
-echo "<td><a href='updateEstado.php?id_estado=" . $c->getIdEstado() . "&descripcion=" . $c->getDescripcion() . "'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
-echo "<td><a href='deleteEstado.php?id_estado=". $c->getIdEstado() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
+echo "<td><a href='updateEstado.php?id_veterinario=" . $c->getId_veterinario() . "&descripcion=" . $c->getId_persona() . "&descripcion=" . $c->getTitulo() ."'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
+echo "<td><a href='deleteEstado.php?id_veterinario=". $c->getId_veterinario() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
 echo "</tr>";
 
 }
