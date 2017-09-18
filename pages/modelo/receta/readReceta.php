@@ -105,7 +105,7 @@ echo "<td>" . $c->getDescripcion() . "</td>";
 echo "<td>" . $c->getCantidad() . "</td>";
 
 
-echo "<td><a href='updateReceta.php?id_receta=" . $c->getId_receta() . "&descripcion=" . $c->getDescripcion() . "&cantidad=" . $c->getCantidad() . "'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
+echo "<td><a href='updateReceta.php?id_receta=" . $c->getId_receta() ."&id_consulta=" . $c->getId_consulta() .  "&descripcion=" . $c->getDescripcion() . "&cantidad=" . $c->getCantidad() . "'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 echo "<td><a href='deleteReceta.php?id_receta=" . $c->getId_receta() . "&descripcion=" . $c->getDescripcion() . "&cantidad=" . $c->getCantidad() . "'> <button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
 echo "</tr>";
 

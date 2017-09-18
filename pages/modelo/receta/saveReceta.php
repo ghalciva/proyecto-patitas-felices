@@ -4,7 +4,7 @@ session_start();
 
 <?php
 include_once("recetaCollector.php");
-$id_consulta=$_GET["idConsulta"];
+$id_consulta=$_GET["id_consulta"];
 $descripcion=$_GET["descripcion"];
 $cantidad=$_GET["cantidad"];
 $recetaCollectorObj = new recetaCollector();
@@ -87,7 +87,7 @@ $recetaCollectorObj = new recetaCollector();
             <div class="block">
               <h1 class="animated fadeInUp">Guardado!</h1>
 		<?php
-        		$recetaCollectorObj->createReceta($id_consulta, $descripcion, $cantidad);
+        	$recetaCollectorObj->createReceta($id_consulta,$descripcion,$cantidad);
         		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readReceta.php'>";
                 ?>
 		<a href="../../readReceta.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>	           

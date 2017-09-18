@@ -7,7 +7,7 @@ include_once("recetaCollector.php");
 $recetaCollectorObj = new recetaCollector();
 
 
-include_once("consultaCollector.php");
+include_once("../consulta/consultaCollector.php");
 //$usuario = $_SESSION['MiSesion'];
 $consultaCollectorObj = new consultaCollector();
 ?>
@@ -96,23 +96,21 @@ $consultaCollectorObj = new consultaCollector();
 
                        <?php
                         foreach ($consultaCollectorObj->showconsulta() as $c){
-                            echo "<option>" . $c->getIdPersona() . "</option>";
+                            echo "<option>" . $c->getId_consulta() . "</option>";
                         }
                         ?>
                         </select>
 
 
 
-                        <div class="form-group">
-                          <input type="text" name="idConsulta" class="form-control" placeholder="Id consulta">
-                        </div>
+                
                         <div class="form-group">
                           <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
                         </div>
 			<div class="form-group">
                           <input type="text" name="cantidad" class="form-control" placeholder="Cantidad">
                         </div>
-                        <button class="btn btn-default" type="submit"> Siguiente </button>
+                        <button class="btn btn-default" type="submit"> GUARDAR </button>
                         </form>
             </center>        
             </div> <br>

@@ -17,7 +17,7 @@ $veterinarioCollectorObj = new veterinarioCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Administrador - Mascota- Patitas felices</title>
+    <title> Veterinario - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -90,7 +90,7 @@ $veterinarioCollectorObj = new veterinarioCollector();
               <form action="saveUpdateVeterinario.php" method="get">
                         <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  V E T E R I N A R I O</h1>
 			<?php
-				echo "<label>IdVeterinario</label>";
+				echo "<label>Id-Veterinario</label>";
 				echo "<div class='form-group'>";
 				echo "<input type='text' name='id_veterinario' class='form-control' value='". $id_veterinario . "' readonly>";
 				echo "</div>";
