@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-$id_mascota=$_GET["id_adopcion"];
 $id_cliente=$_GET["id_cliente"];
-$id_mascota=$_GET["id_mascota"];
-$fecha_adopcion=$_GET["fecha_adopcion"];
+$id_persona=$_GET["id_persona"];
+$fecha_registro=$_GET["fecha_registro"];
 
-include_once("adopcionCollector.php");
-$adopcionCollectorObj = new adopcionCollector();
+include_once("clienteCollector.php");
+$clienteCollectorObj = new clienteCollector();
 
 ?>
 
@@ -86,30 +85,26 @@ $adopcionCollectorObj = new adopcionCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <form action="saveUpdateAdopcion.php" method="get">
+              <form action="saveUpdateCliente.php" method="get">
                         <h1 class="form-group">M O D I F I C A R &nbsp;&nbsp;&nbsp;  A D O P C I O N</h1>
 			<?php
-				echo "<label>IdAdopcion</label>";
-				echo "<div class='form-group'>";
-				echo "<input type='text' name='id_adopcion' class='form-control' value='". $id_adopcion . "' readonly>";
-				echo "</div>";
 				echo "<label>IdCliente</label>";
 				echo "<div class='form-group'>";
 				echo "<input type='text' class='form-control' value='". $id_cliente . "' name='id_cliente'>";
 				echo "</div>";	
-				echo "<label>IdMascota</label>";
+				echo "<label>IdPersona</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='text' class='form-control' value='". $id_mascota . "' name='id_mascota'>";
+				echo "<input type='text' class='form-control' value='". $id_persona . "' name='id_persona'>";
 				echo "</div>";
-				echo "<label>FechaAdopcion</label>";
+				echo "<label>FechaRegistro</label>";
 				echo "<div class='form-group'>";
-				echo "<input type='date' class='form-control' value='". $fecha_adopcion . "' name='fecha_adopcion'>";
+				echo "<input type='date' class='form-control' value='". $fecha_registro . "' name='fecha_registro'>";
 				echo "</div>";
-				echo "<a href='saveUpdateAdopcion.php?id_adopcion=". $id_adopcion ."'><button class='btn btn-default' type='submit'> Siguiente </button>";
+				echo "<a href='saveUpdateCliente.php?id_cliente=". $id_cliente ."'><button class='btn btn-default' type='submit'> Siguiente </button>";
 
 			?>                        
                    </form>
-		<a href="readAdopcion.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+		<a href="readCliente.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>

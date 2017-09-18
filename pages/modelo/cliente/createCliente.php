@@ -5,6 +5,9 @@ session_start();
 <?php
 include_once("clienteCollector.php");
 $clienteCollectorObj = new clienteCollector();
+
+include_once("../persona/PersonaCollector.php");
+$personaCollectorObj = new personaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -85,9 +88,14 @@ $clienteCollectorObj = new clienteCollector();
             <div class="block"><center>
               <form action="saveCliente.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  C L I E N T E</h1>
-                        <div class="form-group">
-                          <input type="text" name="id_persona" class="form-control" placeholder="Id de la persona">
-			</div>                        
+                     <select name="id_persona">
+                       <?php
+                        foreach ($personaCollectorObj->showPersonas() as $c){
+                            echo "<option>" . $c->getIdPersona() . "</option>";
+                        }
+                        ?>
+                     </select>
+		     </select>                        
 			<div class="form-group">
                           <input type="date" name="fecha_registro" class="form-control" placeholder="Fecha de registro del cliente">
 			</div>
