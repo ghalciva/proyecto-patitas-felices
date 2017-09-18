@@ -18,29 +18,29 @@ class receta
 	$this->cantidad = $cantidad;
      }
 
-    function setid_receta($id_receta){
+    function setId_receta($id_receta){
        $this->id_receta = $id_receta;
      } 
-     function getiid_receta(){
+     function getId_receta(){
        return $this->id_receta;
      } 
 
-function setid_consulta($id_consulta){
+function setId_consulta($id_consulta){
        $this->id_consulta = $id_consulta;
      } 
-     function getid_consulta(){
+     function getId_consulta(){
        return $this->id_consulta;
      } 
-function setdescripcion($descripcion){
+function setDescripcion($descripcion){
        $this->descripcion = $descripcion;
      } 
-     function getdescripcion(){
+     function getDescripcion(){
        return $this->descripcion;
      } 
-function setcantidad($cantidad){
+function setCantidad($cantidad){
        $this->cantidad = $cantidad;
      } 
-     function getcantidad(){
+     function getCantidad(){
        return $this->cantidad;
      } 
 

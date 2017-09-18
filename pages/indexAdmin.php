@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -79,7 +79,7 @@
                   <a class="btn btn-default btn-call-to-action" href="modelo/mascota/readAnimal.php">Mascota</a>	      	      
                   <a class="btn btn-default btn-call-to-action" href="modelo/cliente/readCliente.php">Cliente</a>	      
                   <a class="btn btn-default btn-call-to-action" href="modelo/reserva/readReserva.php">Reserva</a>  
-                  <a class="btn btn-default btn-call-to-action" href="modelo/fichamedica/readFichaMedica.php">Ficha médica</a>	     
+                  <a class="btn btn-default btn-call-to-action" href="modelo/fichamedica/readfichamedica.php">Ficha médica</a>	     
                   <a class="btn btn-default btn-call-to-action" href="modelo/rol/readRol.php">Rol</a><br>
                   <a class="btn btn-default btn-call-to-action" href="modelo/administrador/readAdministrador.php">Administrador</a>	 
                   <a class="btn btn-default btn-call-to-action" href="modelo/persona/readPersona.php">Persona</a>	               

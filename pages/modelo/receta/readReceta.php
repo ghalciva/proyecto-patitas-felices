@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-include_once("estadoCollector.php");
+include_once("recetaCollector.php");
 //$usuario = $_SESSION['MiSesion'];
 
-$estadoCollectorObj = new estadoCollector();
+$recetaCollectorObj = new recetaCollector();
 
 ?>
 
@@ -13,7 +13,7 @@ $estadoCollectorObj = new estadoCollector();
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Estado Adopción - Patitas Felices</title>
+<title>Receta - Patitas Felices</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -86,23 +86,27 @@ $estadoCollectorObj = new estadoCollector();
 <div class="row">
 <div class="col-md-10 col-md-offset-2">
 <div class="block">
-<h1>Tabla Estado</h1>
-<a href="createEstado.php"><button class="btn btn-default btn-call-to-action">Crear Estado</button></a> <br>
+<h1>Tabla Receta médica</h1>
+<a href="createReceta.php"><button class="btn btn-default btn-call-to-action">Crear Receta médica</button></a> <br>
 <table id="tabla">
 <tr>
-<th>&nbsp;&nbsp;Id-Estado&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;Id-Receta&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;Id-Consulta&nbsp;&nbsp;</th>
 <th>&nbsp;&nbsp;Descripción&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;Cantidad&nbsp;&nbsp;</th>
 
 </tr>
 <?php
-foreach ($estadoCollectorObj->showEstados() as $c){
+foreach ($recetaCollectorObj->showRecetas() as $c){
 echo "<tr>";
-echo "<td>" . $c->getIdEstado() . "</td>";
+echo "<td>" . $c->getId_receta() . "</td>";
+echo "<td>" . $c->getId_consulta() . "</td>";
 echo "<td>" . $c->getDescripcion() . "</td>";
+echo "<td>" . $c->getCantidad() . "</td>";
 
 
-echo "<td><a href='updateEstado.php?id_estado=" . $c->getIdEstado() . "&descripcion=" . $c->getDescripcion() . "'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
-echo "<td><a href='deleteEstado.php?id_estado=". $c->getIdEstado() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
+echo "<td><a href='updateReceta.php?id_receta=" . $c->getId_receta() . "&descripcion=" . $c->getDescripcion() . "&cantidad=" . $c->getCantidad() . "'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
+echo "<td><a href='deleteReceta.php?id_receta=" . $c->getId_receta() . "&descripcion=" . $c->getDescripcion() . "&cantidad=" . $c->getCantidad() . "'> <button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
 echo "</tr>";
 
 }
