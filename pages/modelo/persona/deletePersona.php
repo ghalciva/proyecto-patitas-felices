@@ -2,10 +2,10 @@
 session_start();
 include_once("PersonaCollector.php");
 
-$id_produccion = $_GET['id_produccion'];
+$id_persona = $_GET['id_persona'];
 
 
-$produccioncollectorObj = new produccioncollector();
+$PersonaCollectorObj = new PersonaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -13,19 +13,19 @@ $produccioncollectorObj = new produccioncollector();
     <head>
         <meta charset="utf-8">
         <title>Login</title>
-        <link href="../estilo.css" rel="stylesheet">
-    	
-    
+       
     </head>
     <body>
         <?php
-		  if (isset($_SESSION['mineria'])){
-        echo "<p>Se eliminó el índice #" . $id_produccion ."?</p>";
-        $produccioncollectorObj->deleteproduccion($id_produccion);
-      echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=read_produccion.php'>";
-                            }else{   
-                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
-                             } 
+       
+		  ///if (isset($_SESSION['MiSesion'])){
+   
+        echo "<p>Se elimino la tabla #" . $id_persona ."?</p>";
+        $PersonaCollectorObj->deletePersona($id_persona);
+        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readPersona.php'>";
+                          //  }else{   
+                            //   echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
+                             //} 
                         ?>
   
     </body>

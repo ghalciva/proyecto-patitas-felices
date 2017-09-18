@@ -132,7 +132,7 @@ $PersonaCollectorObj = new PersonaCollector();
 				echo "<div class='form-group'>";
 				echo "<input type='text' class='form-control' value='". $id_rol . "' name='id_rol'>";
 				echo "</div>";
-				echo "<a href='saveupdatePersona.php?id_persona=". $id_persona ."'><button class='btn btn-default' type='submit'> Siguiente </button>";
+				echo "<a href='saveUpdatePersona.php?id_persona=". $id_persona ."'><button class='btn btn-default' type='submit'> Siguiente </button>";
 
 			?>                        
                    </form>

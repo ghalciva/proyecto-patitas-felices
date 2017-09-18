@@ -1,12 +1,15 @@
 <?php
 session_start();
 ?>
+
 <?php
-include_once("RolCollector.php");
-//$usuario = $_SESSION['MiSesion'];
+include_once("fichamedicaCollector.php");
+$usuario = $_SESSION['MiSesion'];
 
-$RolCollectorObj = new RolCollector();
-
+$fichamedicaCollectorObj = new fichamedicaCollector();
+$id_fichamedica =$_GET["id_fichamedica"];
+$id_mascota =$_GET["id_mascota"];
+$detalle =$_GET["detalle"];
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +17,7 @@ $RolCollectorObj = new RolCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Rol</title>
+    <title>Administrador - Mascota- Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -31,24 +34,20 @@ $RolCollectorObj = new RolCollector();
    </head>
   <body>
     <!--  -->
-   <?php
-	//if (isset($_SESSION['MiSesion'])){
-	//	$usuario = $_SESSION['MiSesion'];
-  ?>
-
-<!-- Header Start -->
+   
+   
+  <!-- Header Start -->
   <header>
     <div class="container">
          <div id="user">
        		 <ul class="login">
-                <li class="loginu"><a href="../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido </a></li>
-            </ul>
-	 </div>	
-            <div class="row">
+             <li class="loginu col-md-2 col-md-offset-10"><a href="../../iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+       		 </ul>
+       	 </div>
+      <div class="row">
         <div class="col-md-12">
          
-            <!-- header Nav Start -->
+          <!-- header Nav Start -->
           <nav class="navbar navbar-default">
             <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
@@ -81,48 +80,50 @@ $RolCollectorObj = new RolCollector();
       </div>
     </header><!-- header close -->
        
-           
-       <!-- Slider Start -->
+        
+    <!-- Slider Start -->
     <section id="slider">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-                 <h1>Tabla Rol</h1>
-    <a href="createRol.php"><button class="btn btn-default btn-call-to-action">Crear Rol</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;IdRol&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;Descripción&nbsp;&nbsp;</th>
 
-        </tr>
-        <?php
-            foreach ($RolCollectorObj->showRols() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getIdRol() . "</td>";
-            echo "<td>" . $c->getDescripcion() . "</td>";               
-            
-            echo "<td><a href='updateRol.php?id_rol=" . $c->getIdRol() . "&descripcion=" . $c->getDescripcion()  ."'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
-            echo "<td><a href='deleteRol.php?id_rol=". $c->getIdRol() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
-            echo "</tr>"; 
-                
-        }
 
-        ?>
+		<?php
+			$fichamedicaCollectorObj = new fichamedicaCollector();
 
-    </table> 	  
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>         
+			//if (isset($_SESSION['MiSesion'])){
+				echo "<p>Se han modificado los cambios en la tabla ficha medica!</p>";
+			        $fichamedicaCollectorObj->updatefichamedica($id_fichamedica,$id_mascota,$detalle);
+		        		//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAnimal.php'>";
+                            	//}else{   
+                               		//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../indexAdmin.php'>";
+                             	//} 
+                        ?>
+              
+
+    </table>
+		<a href="readfichamedica.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
       </div>
     </section>
-       
-   <?php
-                         /* }else{   
-                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../indexAdmin.php'>";
-                             } */
-                        ?>
-
-</body>
+           
+    <!-- footer Start -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Todos los derechos reservados. By: WebDesign. 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+            
+            
+  
+            
+    
+    </body>
 </html>

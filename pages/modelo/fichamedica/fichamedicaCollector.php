@@ -29,7 +29,7 @@ class fichamedicaCollector extends Collector
     
 //actualizar mascota
   function updatefichamedica($id_fichamedica,$id_mascota,$detalle) {
-    $rows = self::$db->insertRow("UPDATE fichamedica SET id_fichamedica= ? ,id_mascota= ? ,detalle= ?  WHERE id_fichamedica= ? ", array("{$id_fichamedica}","{$id_mascota}","{$detalle}"));        
+    $rows = self::$db->insertRow("UPDATE fichamedica SET id_mascota= ? ,detalle= ?  WHERE id_fichamedica= ? ", array("{$id_mascota}","{$detalle}","{$id_fichamedica}"));        
   }
     
 

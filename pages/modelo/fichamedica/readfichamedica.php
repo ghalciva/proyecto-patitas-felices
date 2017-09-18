@@ -104,11 +104,13 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
                       
                      
             
-            echo "<td><a href='updateFichamedica.php?id_fichamedica=" . $c->getId_fichamedica() . "&id_mascota=" . $c->getId_mascota() . "&detalle=" . $c->getDetalle() ."'> 
+            echo "<td><a href='updatefichamedica.php?id_fichamedica=" . $c->getId_fichamedica() . "&id_mascota=" . $c->getId_mascota() . "&detalle=" . $c->getDetalle()."'><button class='btn btn-default btn-call-to-action'>Editar</button></a>  </td>"	;
 
-<button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 
-            echo "<td><a href='deleteFichamedica.php?id_fichamedica=". $c->getId_fichamedica() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
+
+            echo "<td> <a href='deletefichamedica.php?id_fichamedica=". $c->getId_fichamedica() ."'>
+		<button class='btn btn-default btn-call-to-action'>Eliminar</button></a>  </td>"	;
+
             echo "</tr>"; 
                 
         }

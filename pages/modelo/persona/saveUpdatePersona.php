@@ -2,16 +2,15 @@
 session_start();
 include_once("PersonaCollector.php");
 
-$id = $_POST['id_persona'];
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$email = $_POST['email'];
-$usuario = $_POST['usuario'];
-$clave = $_POST['clave'];
-$ruc = $_POST['ruc'];
-$id_empresa = $_POST['id_empresa'];
-$id_licencia = $_POST['id_licencia'];
-$fecha_nacimiento = $_POST['fecha'];
+$id_persona = $_GET['id_persona'];
+$nombre = $_GET['nombre'];
+$apellido = $_GET['apellido'];
+$correo = $_GET['correo'];
+$direccion = $_GET['direccion'];
+$user = $_GET['user'];
+$pass = $_GET['pass'];
+$fecha_nacimiento = $_GET['fecha_nacimiento'];
+$id_rol = $_GET['id_rol'];
 
 $PersonaCollectorObj = new PersonaCollector();
 ?>
@@ -26,15 +25,15 @@ $PersonaCollectorObj = new PersonaCollector();
     </head>
     <body>
         <?php
-		  if (isset($_SESSION['mineria'])){
+		  //if (isset($_SESSION['MiSesion'])){
    
-        echo "<p>Se modifico una nueva mina</p>";
-        $PersonaCollectorObj->updatePersona($id,$nombre,$apellido,$email,$usuario,$clave,$ruc,$id_empresa,$id_licencia,$fecha_nacimiento);
+        echo "<p>Se modifico una nueva persona</p>";
+        $PersonaCollectorObj->updatePersona($id_administrador,$nombre,$apellido,$correo,$direccion,$user,$pass,$fecha_nacimiento,$id_rol);
        
-        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=read_persona.php'>";
-                            }else{   
-                               echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
-                             } 
+        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readPersona.php'>";
+                            //}else{   
+                              // echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
+                             //} 
                         ?>
   
     </body>
