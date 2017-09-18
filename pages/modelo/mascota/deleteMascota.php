@@ -1,17 +1,11 @@
 <?php
 session_start();
-?>
 
-<?php
+$id_mascota=$_GET["id_mascota"];
+
 include_once("mascotaCollector.php");
-$nombre=$_GET["nombre"];
-$raza=$_GET["raza"];
-$color=$_GET["color"];
-$sexo=$_GET["sexo"];
-$fecha_nacimiento=$_GET["fecha_nacimiento"];
-$imagen=$_GET["imagen"];
-$id_estado=$_GET["id_estado"];
 $mascotaCollectorObj = new mascotaCollector();
+
 ?>
 
 <!DOCTYPE html>
@@ -89,12 +83,12 @@ $mascotaCollectorObj = new mascotaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1 class="animated fadeInUp">Guardado!</h1>
-		<?php
-        		$mascotaCollectorObj->createMascota($nombre,$raza,$color,$sexo,$fecha_nacimiento,$imagen,$id_estado);
-        		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";
-                ?>
-		<a href="../../readMascota.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>	           
+              <?php
+        	echo "<p>Se eliminó el id No." . $id_mascota ."!</p>";
+        	$mascotaCollectorObj->deleteMascota($id_mascota);
+		echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readMascota.php'>";	
+              ?>
+		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
