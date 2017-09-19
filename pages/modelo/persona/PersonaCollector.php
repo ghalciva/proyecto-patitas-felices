@@ -27,7 +27,7 @@ function updatePersona($id_persona,$nombre,$direccion,$apellido,$usuario,$pass,$
  }
 
 function deletePersona($id_persona) {
-   $insertrow = self::$db->deleteRow("DELETE FROM persona WHERE id_persona= ? ", array("{$id_persona}"));        
+   $rows = self::$db->deleteRow("DELETE FROM persona WHERE id_persona= ? ", array("{$id_persona}"));        
  }
 
 
