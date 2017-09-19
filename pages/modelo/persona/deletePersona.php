@@ -5,7 +5,7 @@ if (isset($_SESSION['user'])){
 
             include_once("PersonaCollector.php");
 
-            $id_persona = $_GET['id_persona'];
+            $id_persona = $_GET["id_persona"];
 
 
             $PersonaCollectorObj = new PersonaCollector();
@@ -103,7 +103,7 @@ if (isset($_SESSION['user'])){
 
                       ///if (isset($_SESSION['MiSesion'])){
 
-                    echo "<p>Se elimino la tabla #" . $id_persona ."?</p>";
+                    echo "<p>Se elimino el id #" . $id_persona ."! </p>";
                     $PersonaCollectorObj->deletePersona($id_persona);
                     echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readPersona.php'>";
                                       
