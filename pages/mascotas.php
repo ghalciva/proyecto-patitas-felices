@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -12,6 +15,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <!-- Js -->
     <script src="../js/vendor/jquery-1.10.2.min.js"></script>
@@ -26,7 +30,16 @@
     <div class="container">
          <div id="user">
        		 <ul class="login">
-             <li class="loginu col-md-2 col-md-offset-10"><a href="iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+               <?php
+                if (!isset($_SESSION['user'])){
+                    echo "<li class='loginu col-md-2 col-md-offset-10'><a href='iniciarsesion.php'><span class='glyphicon glyphicon-log-in'></span> Iniciar sesión</a></li>";
+                }else{
+                    if($_SESSION['rol']==2){
+                        echo "<li class='loginu col-md-2 col-md-offset-10'><a href='indexAdmin.php'><span class='glyphicon glyphicon-log-in'></span>Menu</a></li>";
+                    }
+                    echo "<li class='loginu col-md-2 col-md-offset-10'><a href='logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>";
+                }
+                 ?>
        		 </ul>
        	 </div>
       <div class="row">
@@ -51,9 +64,9 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../index.php" class="above">Inicio</a></li>
+                    <li><a href="../index.php">Inicio</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
-                    <li><a href="mascotas.php">Mascotas</a></li>
+                    <li><a href="mascotas.php"class="above">Mascotas</a></li>
                     <li><a href="agenda.php">Agenda</a></li>
                     <li><a href="contactenos.php">Contáctenos</a></li>
                   </ul>
@@ -70,47 +83,40 @@
         <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <div class="block">
-                  <h2>PASOS PARA ADOPTAR</h2>
-                  <p>Adopta a tu nueva mascota en tres sencillos pasos:</p>
-                </div>
-              </div>
-            </div>
+                <div class="block" id="alineacion">
+                  <h1>PASOS PARA ADOPTAR</h1>
           
-                    	<div class="col-sm-6 col-md-4">
-           <h4>Encuentra a tu mascota favorita</h4>
-            <img src="../img/search.png">
-			</div>        
+            <div class="col-sm-6 col-md-4">
+            <img src="../img/search.png" width="260" height="180" alt="Img">
+            <h4>Encuentra a tu mascota favorita</h4>
+	    </div>        
                      
            <div class="col-sm-6 col-md-4">
+              <img src="../img/cursor.png" width="260" height="180" alt="Img">
               <h4>Selecciona tu próxima mascota e infómate</h4>
-              <img src="../img/cursor.png">
             </div>
             
             <div class="col-sm-6 col-md-4">
+              <img src="../img/check.png" width="260" height="180" alt="Img">
               <h4>Listo. Tu nueva mascota quiere conocerte.</h4>
-              <img src="../img/check.png">
             </div>
-                    	
                     </div>
                 </div>
             </div>
         </div>
     </section>
        
-       
-       
-
+    <br><br><br>
     <!-- Clients Logo Section Start -->
     <section id="clients-logo-section">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="block">
+            <div class="block" id="alineacion">
              <div class="col-sm-6 col-md-3">
              <img src="../img/pet1.jpg">
-           <h5>Capu</h5>
-			</div>        
+           	<h5>Capu</h5>
+		</div>        
                      
            <div class="col-sm-6 col-md-3">
              <img src="../img/pet2.jpg">
@@ -132,7 +138,7 @@
           
            <div class="row">
           <div class="col-md-12">
-            <div class="block">
+            <div class="block"id="alineacion">
                      
             <div class="col-sm-6 col-md-3">
              <img src="../img/pet5.jpg">
@@ -159,7 +165,7 @@
        
        <div class="row">
           <div class="col-md-12">
-            <div class="block">
+            <div class="block"id="alineacion">
             
             
              <div class="col-sm-6 col-md-3">
@@ -183,7 +189,7 @@
         
       </div>
     </section>
-
+    <br><br>
   
 <!-- Call to action Start -->
     <section id="call-to-action">

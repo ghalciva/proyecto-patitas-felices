@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -12,6 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <!-- Js -->
     <script src="js/vendor/jquery-1.10.2.min.js"></script>
@@ -26,7 +30,18 @@
     <div class="container">
          <div id="user">
        		 <ul class="login">
-             <li class="loginu col-md-2 col-md-offset-10"><a href="pages/iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+            
+            <?php
+                if (!isset($_SESSION['user'])){
+                    echo "<li class='loginu col-md-2 col-md-offset-10'><a href='pages/iniciarsesion.php'><span class='glyphicon glyphicon-log-in'></span> Iniciar sesión</a></li>";
+                }else{
+                    if($_SESSION['rol']==2){
+                        echo "<li class='loginu col-md-2 col-md-offset-10'><a href='pages/indexAdmin.php'><span class='glyphicon glyphicon-log-in'></span>Menu</a></li>";
+                    }
+                    echo "<li class='loginu col-md-2 col-md-offset-10'><a href='pages/logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>";
+                }
+                 ?>
+             
        		 </ul>
        	 </div>
       <div class="row">
@@ -72,7 +87,7 @@
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>PATITAS FELICES <br> <br> <br> 
+              <h1>PATITAS FELICES </h1> <br> <br> <br> 
               <p class="animated fadeInUp">Nuestros angelitos esperan por tí</p>
             </div>
           </div>
@@ -84,13 +99,12 @@
       <section id="feature">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-md-offset-6">
-         
+        <div class="col-md-6 col-md-offset-6" id="fondo">
           <h2>¿POR QUÉ ADOPTAR?</h2>
          <p> Cuando vas por la calle y logras ver a algún perro o gato caminando sin rumbo alguno, ¿no te has puesto a pensar qué será de su vida? <br>
           Las mascotas no son objetos inanimados sin sentimientos ni juguetes para divertirse un rato y luego ser relegados al olvido, son seres vivos con derechos que deben ser respetados y tratados con toda la consideración posible.<br>
           Las mascotas adoptadas suelen ser muy agradecidos y nobles por haber sido rescatados y reintegrados a una nueva familia, así que encontrarás un amigo fiel y muy cariñoso cada vez que entres por la puerta <br> </p>
-			<a href="pages/mascotas.php" class="btn btn-view-works">Ver mascotas</a>
+	  <a href="pages/mascotas.php" class="btn btn-view-works">Ver mascotas</a>
         </div>
       </div>
     </div>
