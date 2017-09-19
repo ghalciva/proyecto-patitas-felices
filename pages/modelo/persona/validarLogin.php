@@ -1,7 +1,8 @@
 <?php
 include_once("PersonaCollector.php");
 session_start();
-$user = $_POST['user'];
+$usuario = $_POST['user'];
+
 $pass = $_POST['pass'];
 
 $PersonaCollectorObj = new PersonaCollector();
@@ -19,9 +20,11 @@ $PersonaCollectorObj = new PersonaCollector();
         <?php
 
         foreach ($PersonaCollectorObj->showPersonas() as $c){
-            if($c->getUser() == $user && $c->getPass() == $pass){
+
+            if($c->getUsuario() == $usuario && $c->getPass() == $pass){
                
-                $_SESSION['user']= $user;
+                $_SESSION['user']= $usuario;
+
                 $_SESSION['rol']= $c->getIdRol() ;
                  
 		        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../indexAdmin.php'>";
