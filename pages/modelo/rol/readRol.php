@@ -26,6 +26,7 @@ if (isset($_SESSION['user'])){
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
                 <!-- Js -->
+                
                 <script src="../../../js/vendor/jquery-1.10.2.min.js"></script>
                 <script src="../../../js/bootstrap.min.js"></script>
                </head>

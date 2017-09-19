@@ -7,17 +7,17 @@ class Persona
     private $apellido;
     private $correo;
     private $direccion;
-    private $user;
+    private $usuario;
     private $pass;
     private $fecha_nacimiento;
     private $id_rol;
 
-    function __construct($id_persona, $nombre, $direccion, $apellido, $user, $pass, $correo, $fecha_nacimiento, $id_rol) {
+    function __construct($id_persona, $nombre, $direccion, $apellido, $usuario, $pass, $correo, $fecha_nacimiento, $id_rol) {
        $this->id_persona = $id_persona;
        $this->nombre = $nombre;
        $this->direccion = $direccion;
        $this->apellido = $apellido;
-       $this->user = $user;
+       $this->usuario = $usuario;
        $this->pass = $pass;
        $this->correo = $correo;
        $this->fecha_nacimiento = $fecha_nacimiento;
@@ -55,11 +55,11 @@ class Persona
      function getDireccion(){
        return $this->direccion;
      } 
-     function setUser($user){
-       $this->user = $user;
+     function setUsuario($usuario){
+       $this->usuario = $usuario;
      } 
-     function getUser(){
-       return $this->user;
+     function getUsuario(){
+       return $this->usuario;
      } 
      function setPass($pass){
        $this->pass = $pass;

@@ -94,21 +94,17 @@ if (isset($_SESSION['user'])){
 
 
                 <form action="savefichamedica.php" method="post">
-                                      <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  F I C H A M E D I C A</h1>
+                    <div class="form-group">
+                        <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  F I C H A M E D I C A</h1>
+                        <select name='id_mascota'>
+                        <?php
+                            foreach ($mascotaCollectorObj->showMascotas() as $c){
+                                 echo "<option>" . $c->getId_mascota() . "</option>";
+                                }
+                            ?>
 
-            <?php
-
-
-                    echo "<select name='id_mascota'>"."!</select>";
-                    foreach ($mascotaCollectorObj->showMascotas() as $c){
-                         echo "<option>" . $c->getId_mascota() . "</option>";
-                        }
-
-
-
-                    ?>
-
-
+                                </select>
+                        </div>
                                     <div class="form-group">
                                       <input type="text" name="detalle" class="form-control" placeholder="detalle">
                                     </div>

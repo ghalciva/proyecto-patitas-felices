@@ -9,7 +9,7 @@ if (isset($_SESSION['user'])){
             $nombre=$_GET["nombre"];
             $direccion=$_GET["direccion"];
             $apellido=$_GET["apellido"];
-            $user=$_GET["user"];
+            $usuario=$_GET["usuario"];
             $pass=$_GET["pass"];
             $correo=$_GET["correo"];
             $fecha_nacimiento=$_GET["fecha_nacimiento"];
@@ -101,7 +101,7 @@ if (isset($_SESSION['user'])){
                         <?php
                             echo "<label>IdPersona</label>";
                             echo "<div class='form-group'>";
-                            echo "<input type='text' class='form-control' value='". $id_persona . "' name='id_persona'>";				
+                            echo "<input type='text' class='form-control' value='". $id_persona . "' name='id_persona' readonly>";				
                             echo "</div>";
                             echo "<label>Nombre</label>";
                             echo "<div class='form-group'>";
@@ -117,7 +117,7 @@ if (isset($_SESSION['user'])){
                             echo "</div>";
                             echo "<label>User</label>";
                             echo "<div class='form-group'>";
-                            echo "<input type='text' class='form-control' value='". $user . "' name='user'>";
+                            echo "<input type='text' class='form-control' value='". $usuario . "' name='usuario'>";
                             echo "</div>";
                             echo "<label>Password</label>";
                             echo "<div class='form-group'>";

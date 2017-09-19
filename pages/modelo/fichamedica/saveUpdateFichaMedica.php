@@ -4,8 +4,7 @@ if (isset($_SESSION['user'])){
     if($_SESSION['rol']==2){
 
             include_once("fichamedicaCollector.php");
-            $usuario = $_SESSION['MiSesion'];
-
+           
             $fichamedicaCollectorObj = new fichamedicaCollector();
             $id_fichamedica =$_GET["id_fichamedica"];
             $id_mascota =$_GET["id_mascota"];
@@ -58,8 +57,8 @@ if (isset($_SESSION['user'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.php">
-                              <img src="../img/logo.png" alt="Logo">
+                            <a class="navbar-brand" href="../../../index.php">
+                              <img src="../../../img/logo.png" alt="Logo">
                             </a>
                           </div>
 
@@ -96,14 +95,13 @@ if (isset($_SESSION['user'])){
                         //if (isset($_SESSION['MiSesion'])){
                             echo "<p>Se han modificado los cambios en la tabla ficha medica!</p>";
                                 $fichamedicaCollectorObj->updatefichamedica($id_fichamedica,$id_mascota,$detalle);
-                                    //echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAnimal.php'>";
+                                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readfichamedica.php'>";
                                             //}else{   
                                                 //echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../indexAdmin.php'>";
                                             //} 
                                     ?>
 
-
-                    <a href="readfichamedica.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+      
                         </div>
                       </div>
                     </div>

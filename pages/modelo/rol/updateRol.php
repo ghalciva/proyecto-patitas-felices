@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['user'])){
-    if($_SESSION['rol']==2){\
+    if($_SESSION['rol']==2){
 
 
                 $id_rol=$_GET["id_rol"];

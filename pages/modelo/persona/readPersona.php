@@ -103,13 +103,13 @@ if (isset($_SESSION['user'])){
                         echo "<td>" . $c->getNombre() . "</td>";   
                         echo "<td>" . $c->getDireccion() . "</td>";
                         echo "<td>" . $c->getApellido() . "</td>";            
-                        echo "<td>" . $c->getUser() . "</td>";            
+                        echo "<td>" . $c->getUsuario() . "</td>";            
                         echo "<td>" . $c->getPass() . "</td>";                        
                         echo "<td>" . $c->getCorreo() . "</td>";            
                         echo "<td>" . $c->getFechaNacimiento() . "</td>";   
                     echo "<td>" . $c->getIdRol() . "</td>";            
 
-                        echo "<td><a href='updatePersona.php?id_persona=" . $c->getIdPersona() . "&nombre=" . $c->getNombre() . "&direccion=" . $c->getDireccion() . "&apellido=" . $c->getApellido() . "&user=" . $c->getUser() . "&pass=" . $c->getPass() . "&correo=" . $c->getCorreo() . "&fecha_nacimiento=" . $c->getFechaNacimiento() . "&id_rol=" . $c->getIdRol() ."'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
+                        echo "<td><a href='updatePersona.php?id_persona=" . $c->getIdPersona() . "&nombre=" . $c->getNombre() . "&direccion=" . $c->getDireccion() . "&apellido=" . $c->getApellido() . "&usuario=" . $c->getUsuario() . "&pass=" . $c->getPass() . "&correo=" . $c->getCorreo() . "&fecha_nacimiento=" . $c->getFechaNacimiento() . "&id_rol=" . $c->getIdRol() ."'> <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
                         echo "<td><a href='deletePersona.php?id_persona=". $c->getIdPersona() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
                         echo "</tr>";
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['user'])){
-    if($_SESSION['rol']==2){\
+    if($_SESSION['rol']==2){
 
             include_once("RolCollector.php");
             $RolCollectorObj = new RolCollector();

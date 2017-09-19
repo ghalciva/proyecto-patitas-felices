@@ -4,8 +4,7 @@ if (isset($_SESSION['user'])){
     if($_SESSION['rol']==2){
 
             include_once("fichamedicaCollector.php");
-            //$usuario = $_SESSION['MiSesion'];
-
+            
             $fichamedicaCollectorObj = new fichamedicaCollector();
             $id_mascota=$_POST["id_mascota"];
             $detalle=$_POST["detalle"];
@@ -91,13 +90,12 @@ if (isset($_SESSION['user'])){
                          <?php
 
                         $fichamedicaCollectorObj->createfichamedica($id_mascota,$detalle);
-                        //echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAnimal.php'>";
+                        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readfichamedica.php'>";
 
                                     ?>
 
 
 
-                    <a href="readfichamedica.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
                         </div>
                       </div>
                     </div>

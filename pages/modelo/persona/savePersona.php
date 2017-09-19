@@ -3,18 +3,7 @@ session_start();
 if (isset($_SESSION['user'])){
     if($_SESSION['rol']==2){
 
-            include_once("PersonaCollector.php");
-            $nombre=$_GET["nombre"];
-            $direccion=$_GET["direccion"];
-            $apellido=$_GET["apellido"];
-            $user=$_GET["user"];
-            $pass=$_GET["pass"];
-            $correo=$_GET["correo"];
-            $fecha_nacimiento=$_GET["fecha_nacimiento"];
-            $id_rol=$_GET["id_rol"];
-
-
-            $PersonaCollectorObj = new PersonaCollector();
+            
             ?>
 
             <!DOCTYPE html>
@@ -94,7 +83,21 @@ if (isset($_SESSION['user'])){
                         <div class="block">
                           <h1 class="animated fadeInUp">Guardado!</h1>
                     <?php
-                            $PersonaCollectorObj->createPersona($nombre,$direccion,$apellido,$user,$pass,$correo,$fecha_nacimiento,$id_rol);
+        
+        
+                            include_once("PersonaCollector.php");
+                            $nombre=$_GET["nombre"];
+                            $direccion=$_GET["direccion"];
+                            $apellido=$_GET["apellido"];
+                            $usuario=$_GET["usuario"];
+                            $pass=$_GET["pass"];
+                            $correo=$_GET["correo"];
+                            $fecha_nacimiento=$_GET["fecha_nacimiento"];
+                            $id_rol=$_GET["id_rol"];
+
+
+                            $PersonaCollectorObj = new PersonaCollector();
+                            $PersonaCollectorObj->createPersona($nombre,$direccion,$apellido,$usuario,$pass,$correo,$fecha_nacimiento,$id_rol);
                             echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readPersona.php'>";
                             ?>	           
                         </div>

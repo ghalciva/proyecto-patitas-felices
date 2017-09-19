@@ -106,9 +106,7 @@ if (isset($_SESSION['user'])){
                     echo "<p>Se elimino la tabla #" . $id_persona ."?</p>";
                     $PersonaCollectorObj->deletePersona($id_persona);
                     echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readPersona.php'>";
-                                      //  }else{   
-                                        //   echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";
-                                         //} 
+                                      
                                     ?>
 
                     </div>

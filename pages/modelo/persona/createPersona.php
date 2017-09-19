@@ -100,23 +100,37 @@ if (isset($_SESSION['user'])){
                                     <div class="form-group">
                                       <input type="text" name="direccion" class="form-control" placeholder="direccion">
                                     </div>
-            <div class="form-group">
+                                    <div class="form-group">
                                       <input type="text" name="apellido" class="form-control" placeholder="apellido">
                                     </div>
                                     <div class="form-group">
-                                      <input type="text" name="user" class="form-control" placeholder="user">
+                                      <input type="text" name="usuario" class="form-control" placeholder="user">
                                     </div>
-            <div class="form-group">
+                                    <div class="form-group">
                                       <input type="text" name="pass" class="form-control" placeholder="pass">
                                     </div>
                                     <div class="form-group">
-                                      <input type="text" name="correo" class="form-control" placeholder="correo">
-                                    </div>
-            <div class="form-group">
-                                      <input type="text" name="fecha_nacimiento" class="form-control" placeholder="fecha de nacimiento">
+                                      <input type="email" name="correo" class="form-control" placeholder="Correo">
                                     </div>
                                     <div class="form-group">
-                                      <input type="text" name="id_rol" class="form-control" placeholder="rol de la persona">
+                                      <input type="date" name="fecha_nacimiento" class="form-control" placeholder="fecha de nacimiento">
+                                    </div>
+                                    <?php
+                                     include_once("../rol/RolCollector.php");
+            
+                                    $RolCollectorObj = new RolCollector();
+                                    ?>
+                                    <div class="form-group">
+                                         <label>Rol</label>
+                                       <select name='id_rol'>
+                                        <?php
+
+                                        foreach ($RolCollectorObj->showRols() as $c){
+                                             echo "<option>" . $c->getIdRol() . "</option>";
+                                            }
+        
+                                        ?>
+                                        </select>
                                     </div>
 
 
