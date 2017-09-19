@@ -92,10 +92,11 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
 
 	<form action="savefichamedica.php" method="post">
                           <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  F I C H A M E D I C A</h1>
-                <?php
+
+<?php
 
 		
-		echo "<select name='id_mascota'>";
+		echo "<select name='id_mascota'>"."!</select>";
  		foreach ($mascotaCollectorObj->showMascotas() as $c){
            	 echo "<option>" . $c->getId_mascota() . "</option>";
            	}
@@ -103,7 +104,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
 
 
 		?>
-			</select>
+
                        
                         <div class="form-group">
                           <input type="text" name="detalle" class="form-control" placeholder="detalle">
