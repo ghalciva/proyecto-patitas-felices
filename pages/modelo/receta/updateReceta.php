@@ -17,7 +17,7 @@ $recetaCollectorObj = new recetaCollector();
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Editar receta - Patitas felices</title>
+    <title>Editar receta médica - Patitas felices</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     

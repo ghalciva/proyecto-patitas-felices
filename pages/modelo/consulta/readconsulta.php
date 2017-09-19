@@ -122,6 +122,7 @@ $consultaCollectorObj = new consultaCollector();
         </div>
       </div>
     </section>
+
            
     <!-- footer Start -->
     <footer>

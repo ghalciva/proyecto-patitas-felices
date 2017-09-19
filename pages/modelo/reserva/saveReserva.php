@@ -1,16 +1,16 @@
 <?php
 //session_start();
 
-include_once("fichamedicaCollector.php");
+include_once("reservaCollector.php");
 //$usuario = $_SESSION['MiSesion'];
-include_once("../mascota/mascotaCollector.php");
-		
 
-$mascotaCollectorObj = new mascotaCollector();
-
-$fichamedicaCollectorObj = new fichamedicaCollector();
+$reservaCollectorObj = new reservaCollector();
+$id_cliente=$_POST["id_cliente"];
+$id_veterinario=$_POST["id_veterinario"];
+$fecha_consulta=$_POST["fecha_consulta"];
 
 ?>
+
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -87,42 +87,23 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla ficha medica</h1>
-
-  
-
-	<form action="savefichamedica.php" method="post">
-                          <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  F I C H A M E D I C A</h1>
-
-<?php
-
-		
-		echo "<select name='id_mascota'>"."!</select>";
- 		foreach ($mascotaCollectorObj->showMascotas() as $c){
-           	 echo "<option>" . $c->getId_mascota() . "</option>";
-           	}
-
-
-
-		?>
-
-                       
-                        <div class="form-group">
-                          <input type="text" name="detalle" class="form-control" placeholder="detalle">
-                        </div>
-                
-                        <button class="btn btn-default" type="submit"> GUARDAR </button>
-                   </form>
+ 		<h1 class="animated fadeInUp">Guardado!</h1>
+             <?php
+		 
+			$reservaCollectorObj->createreserva($id_cliente,$id_veterinario,$fecha_consulta);
+			//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAnimal.php'>";
+                             
+                        ?>
 
       
 	  
-		<a href="readfichamedica.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+		<a href="readReserva.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
       </div>
     </section>
-    </section>
+ </section>
            
     <!-- footer Start -->
     <footer>

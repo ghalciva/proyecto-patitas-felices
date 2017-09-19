@@ -1,14 +1,18 @@
 <?php
 //session_start();
 
-include_once("fichamedicaCollector.php");
+include_once("reservaCollector.php");
+
+include_once("../veterinario/veterinarioCollector.php");
 //$usuario = $_SESSION['MiSesion'];
-include_once("../mascota/mascotaCollector.php");
+include_once("../cliente/clienteCollector.php");
 		
 
-$mascotaCollectorObj = new mascotaCollector();
+$clienteCollectorObj = new clienteCollector();
+$veterinarioCollectorObj = new VeterinarioCollector();
 
-$fichamedicaCollectorObj = new fichamedicaCollector();
+
+$reservaCollectorObj = new reservaCollector();
 
 ?>
 
@@ -87,42 +91,53 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla ficha medica</h1>
+              <h1>Tabla  reserva</h1>
+	<form action="saveReserva.php" method="post">
+                          <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  R E S E R V A</h1>
+                <?php
+		echo "<select name='id_cliente'>";
+		echo"<h3> escoja el id de cliente</h3>";
 
-  
-
-	<form action="savefichamedica.php" method="post">
-                          <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  F I C H A M E D I C A</h1>
-
-<?php
-
-		
-		echo "<select name='id_mascota'>"."!</select>";
- 		foreach ($mascotaCollectorObj->showMascotas() as $c){
-           	 echo "<option>" . $c->getId_mascota() . "</option>";
+ 		foreach ($clienteCollectorObj->showClientes() as $c){
+           	 echo "<option>" . $c->getId_cliente() . "</option>";
            	}
 
 
 
 		?>
+		</select>
+		<?php
+		echo "<select name='id_veterinario'>";
+		echo"<h3> escoja el id de veterinario</h3>";
 
+ 		foreach ($veterinarioCollectorObj->showVeterinarios() as $c){
+           	 echo "<option>" . $c->getId_veterinario() . "</option>";
+           	}
+
+
+
+		?>
+		</select>
                        
-                        <div class="form-group">
-                          <input type="text" name="detalle" class="form-control" placeholder="detalle">
-                        </div>
-                
-                        <button class="btn btn-default" type="submit"> GUARDAR </button>
-                   </form>
+                 <div class="form-group">
 
+			<h3>ESCOJA la FECHA CONSULTA</h3>
+			<div class="form-group">
+                          <input type="text" name="fecha_consulta" class="form-control" placeholder="fecha_consulta">
+                        </div>
+ 		
+
+ 
+                       
       
 	  
-		<a href="readfichamedica.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+		<a href="readReserva.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
       </div>
     </section>
-    </section>
+</section>
            
     <!-- footer Start -->
     <footer>
