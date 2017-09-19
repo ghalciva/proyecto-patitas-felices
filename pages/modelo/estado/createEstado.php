@@ -83,17 +83,16 @@ $estadoCollectorObj = new estadoCollector();
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <div class="block"><center>
+            <div class="block" id="alineacion">
               <form action="saveEstado.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  E S T A D O  DE  A D O P C I Ó N</h1>
                         <div class="form-group">
                           <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
                         </div>
-                        <button class="btn btn-default" type="submit"> Siguiente </button>
-                        </form>
-            </center>        
+                        <a class="button" href="saveEstado.php"> Siguiente </a>
+			<a class="button" href="../../indexAdmin.php">Regresar</a>  
+                        </form>       
             </div> <br>
-		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
           </div>
         </div>
       </div>

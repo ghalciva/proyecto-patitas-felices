@@ -61,7 +61,7 @@ $mascotaCollectorObj = new mascotaCollector();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../../../index.php">
                   <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
@@ -84,14 +84,14 @@ $mascotaCollectorObj = new mascotaCollector();
     </header><!-- header close -->
        
         
-    <!-- Slider Start -->
+  <!-- Slider Start -->
     <section id="slider">
      <section id="contact-form">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <div class="block" id="alineacion">
-              <form action="saveAdopcion.php" method="get">
+            <div class="block">
+              <form action="saveAdopcion.php" method="get" id="alineacion">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D O P C I O N </h1>
                      <select name="id_cliente">
                        <?php
@@ -108,7 +108,7 @@ $mascotaCollectorObj = new mascotaCollector();
                         ?>
 		     </select>
                      <div class="form-group">
-                          <input type="date" name="fecha_adopcion" class="form-control" placeholder="Fecha de la adopcion">
+                          <input type="date" name="fecha_adopcion" class="form-control" value="Fecha de la adopcion">
                         </div>
                         <button class="btn btn-default" type="submit"> Siguiente </button>
                 </form>        

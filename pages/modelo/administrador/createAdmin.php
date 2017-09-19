@@ -5,6 +5,8 @@ session_start();
 <?php
 include_once("AdministradorCollector.php");
 $AdministradorCollectorObj = new AdministradorCollector();
+include_once("../persona/PersonaCollector.php");
+$personaCollectorObj = new personaCollector();
 ?>
 
 <!DOCTYPE html>
@@ -42,9 +44,21 @@ $AdministradorCollectorObj = new AdministradorCollector();
     <div class="container">
          <div id="user">
        		 <ul class="login">
-                <li class="loginu"><a href="../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido  </a></li>
-            </ul>
+            <?php
+                if (!isset($_SESSION['user'])){
+                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
+                }else{
+                    if($_SESSION['rol']==2){
+                        echo "<li class='loginu col-md-2 col-md-offset-10'><a href='logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>";
+                    }else{
+                        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
+                    }
+                        
+                    
+                }
+	           ?>
+             
+       		 </ul>
 	 </div>	
             <div class="row">
         <div class="col-md-12">
@@ -86,29 +100,35 @@ $AdministradorCollectorObj = new AdministradorCollector();
 <!-- contact form start -->
     <section id="slider">
         <section id="contact-form">
-          <div class="container"><center>
+          <div class="container">
               <div class="col-md-12">
                     <div class="block">
                     <form action="saveadmin.php" method="post">
                           <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  A D M I N I S T R A D O R</h1>
-                        <div class="form-group">
-                          <input type="text" name="id_persona" class="form-control" placeholder="id_persona">
-                        </div>
+			<div class="form-group">	                       
+			<select name="id_persona">
                        
-                        <button class="btn btn-default" type="submit"> Siguiente </button>
+                       <?php
+                        foreach ($personaCollectorObj->showPersonas() as $c){
+                            echo "<option>" . $c->getIdPersona() . "</option>";
+
+                        }
+                        ?>
+			
+                        </select>
+</div>                    
+<div class="form-group">
+                                                  </div>    
+<button class="btn btn-default" type="submit"> Siguiente </button>
                          </form>
               </div>
             </div>
-        </center></div>
+       </div>
         </section> 
     </section>
 
     
-      <?php
-                         // }else{   
-                           //    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../indexAdmin.php'>";
-                             //} 
-                        ?>
+     
  
     </body>
 </html>

@@ -48,7 +48,7 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../../../index.php">
                   <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>

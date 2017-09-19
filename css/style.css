@@ -41,8 +41,13 @@ a:active {
   text-decoration: none !important;
 }
 .above:hover {
-	background: #F9DBAB;
+	color: tan;
 }
+
+.above {
+	background-color: tan;
+}
+
 .section-title {
   margin-bottom: 70px;
 }
@@ -260,13 +265,21 @@ font header .navbar-default .navbar-nav li a:hover {
 #feature p {
   color: #868686;
   margin-bottom: 20px;
-  background-color:beige;
 }
 #feature .btn-view-works {
-  background: #868686;
+  background: tan;
   color: #fff;
   padding: 10px 20px;
+  position: relative;
+  left: 35%;
 }
+
+#fondo {
+	background-color: white;
+	opacity: 0.7;
+	
+	}
+	
 
 /*---------------------------------------------
 					NOSOTROS
@@ -590,4 +603,34 @@ footer a {
 #alineacion{
     text-align: center;
 }
+
+/*----BOTONES---*/
+.button{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    color: #1C1C1C;
+    background-color:#E6E6E6;
+    border-radius: 4px;
+  }
+ul.login{
+position: absolute;
+right: 0%;
+top: 1%;
+}
+li.loginu a{
+text-decoration: none;
+color: black;
+}
+li.loginu a:hover{
+text-decoration: none;
+color: tan;
+}
+
+
+
+
+
+
 

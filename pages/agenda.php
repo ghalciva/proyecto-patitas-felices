@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <!-- Js -->
     <script src="../js/vendor/jquery-1.10.2.min.js"></script>
@@ -51,10 +52,10 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../index.php" class="above">Inicio</a></li>
+                    <li><a href="../index.php">Inicio</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="mascotas.php">Mascotas</a></li>
-                    <li><a href="agenda.php">Agenda</a></li>
+                    <li><a href="agenda.php"class="above">Agenda</a></li>
                     <li><a href="contactenos.php">Contáctenos</a></li>
                   </ul>
                 </div><!-- /.navbar-collapse -->
@@ -71,43 +72,28 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <div class="block">
+                <div class="block" id="alineacion">
                   <h2>Agenda</h2>
                   <p>Importantes actividades que se realizan a favor de las mascotas.</p>
                   <p>¡Súmate a la noble causa!</p>
-				  </div> 
-            
-             <div class="row">           
-                   <div class="col-sm-6 col-md-4">
+                    
+                  <div class="col-sm-6 col-md-4">
                  <img src="../img/agendaSeptiembre1.jpg">
-					   </div>
-					
+		 </div>
 				           
                    <div class="col-sm-6 col-md-4">
                  <img src="../img/agendaSeptiembre2.jpg">
-					   </div>
+		   </div>
 			        
                    <div class="col-sm-6 col-md-4">
                  <img src="../img/agendaSeptiembre3.jpg">
-					   </div>
-					</div>
-					
-				  </div>
-                  
-                  
-              
-		  </div>
+		 </div>
+	  </div>
+	 </div>
         </div>
       </div>
     </section>
-                    
-                    
-             
                   
-               
-       
-      
-     
     <!-- Call to action Start -->
     <section id="call-to-action">
       <div class="container">

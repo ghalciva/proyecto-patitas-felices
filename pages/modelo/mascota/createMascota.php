@@ -53,7 +53,7 @@ $mascotaCollectorObj = new mascotaCollector();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../../../index.php">
                   <img src="../../../img/logo.png" alt="Logo">
                 </a>
               </div>
@@ -82,8 +82,8 @@ $mascotaCollectorObj = new mascotaCollector();
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <div class="block">
-              <form action="saveMascota.php" method="get" id="alineacion">
+            <div class="block"><center>
+              <form action="saveMascota.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  M A S C O T A</h1>
                         <div class="form-group">
                           <input type="text" name="nombre" class="form-control" placeholder="Nombre de la mascota">
@@ -107,9 +107,10 @@ $mascotaCollectorObj = new mascotaCollector();
                           <input type="text" name="id_estado" class="form-control" placeholder="Estado de la mascota">
                         </div>
                         <button class="btn btn-default" type="submit"> Siguiente </button>
-                         </form>       
+                         </form>
+		</center>        
             </div> <br>
-	    <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 
+		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
           </div>
         </div>
       </div>

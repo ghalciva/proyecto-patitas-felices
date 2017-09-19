@@ -43,10 +43,24 @@ $RolCollectorObj = new RolCollector();
 <!-- Header Start -->
   <header>
         <div class="container">
-            <ul class="login">
-                <li class="loginu"><a href="../../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido </a></li>
-            </ul>
+            <div id="user">
+       		 <ul class="login">
+            <?php
+                if (!isset($_SESSION['user'])){
+                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
+                }else{
+                    if($_SESSION['rol']==2){
+                        echo "<li class='loginu col-md-2 col-md-offset-10'><a href='logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>";
+                    }else{
+                        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
+                    }
+                        
+                    
+                }
+	           ?>
+             
+       		 </ul>
+       	 </div>
             <div class="row">
                 <div class="col-md-12">
                             <!-- header Nav Start -->
@@ -84,7 +98,7 @@ $RolCollectorObj = new RolCollector();
 <!-- contact form start -->
     <section id="slider">
         <section id="contact-form">
-          <div class="container"><center>
+          <div class="container">
               <div class="col-md-12">
                     <div class="block">
                     <form action="saveUpdateRol.php" method="get">
@@ -105,7 +119,7 @@ $RolCollectorObj = new RolCollector();
                    </form>
               </div>
             </div>
-        </center></div>
+       </div>
         </section> 
     </section>
 
