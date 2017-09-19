@@ -42,19 +42,7 @@ if (isset($_SESSION['user'])){
                 <div class="container">
                      <div id="user">
                          <ul class="login">
-                        <?php
-                            if (!isset($_SESSION['user'])){
-                                echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
-                            }else{
-                                if($_SESSION['rol']==2){
-                                    echo "<li class='loginu col-md-2 col-md-offset-10'><a href='logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>";
-                                }else{
-                                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
-                                }
-
-
-                            }
-                           ?>
+                       <li class='loginu col-md-2 col-md-offset-10'><a href='../../logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>
 
                          </ul>
                  </div>	

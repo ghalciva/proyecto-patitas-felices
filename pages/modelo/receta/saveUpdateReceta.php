@@ -97,7 +97,7 @@ if (isset($_SESSION['user'])){
                     echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readReceta.php'>";
 
                 ?>                        
-                <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+               
                     </div>
                   </div>
                 </div>

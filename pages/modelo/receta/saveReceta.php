@@ -90,7 +90,7 @@ if (isset($_SESSION['user'])){
                     $recetaCollectorObj->createReceta($id_consulta,$descripcion,$cantidad);
                         echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readReceta.php'>";
                         ?>
-                <a href="../../readReceta.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>	           
+             
                     </div>
                   </div>
                 </div>

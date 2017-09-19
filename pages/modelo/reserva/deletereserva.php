@@ -3,14 +3,9 @@ session_start();
 if (isset($_SESSION['user'])){
     if($_SESSION['rol']==2){
 
+            $id_reserva=$_GET["id_reserva"];
             include_once("reservaCollector.php");
-          
-
             $reservaCollectorObj = new reservaCollector();
-            $id_reserva =$_GET["id_reserva"];
-            $id_cliente =$_GET["id_cliente"];
-            $id_veterinario =$_GET["id_veterinario"];
-            $fecha_consulta =$_GET["fecha_consulta"];
             ?>
 
             <!DOCTYPE html>
@@ -18,7 +13,7 @@ if (isset($_SESSION['user'])){
               <head>
                 <meta charset="utf-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <title>Administrador - Mascota- Patitas felices</title>
+                <title>Eliminar receta - Patitas felices</title>
                 <meta name="description" content="">
                 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -59,8 +54,8 @@ if (isset($_SESSION['user'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.php">
-                              <img src="../img/logo.png" alt="Logo">
+                            <a class="navbar-brand" href="../../../index.php">
+                              <img src="../../../img/logo.png" alt="Logo">
                             </a>
                           </div>
 
@@ -84,28 +79,20 @@ if (isset($_SESSION['user'])){
 
                 <!-- Slider Start -->
                 <section id="slider">
-                 <section id="contact-form">
                   <div class="container">
                     <div class="row">
                       <div class="col-md-10 col-md-offset-2">
                         <div class="block">
-
-
-                    <?php
-                        $reservaCollectorObj = new reservaCollector();
-
-                        //if (isset($_SESSION['MiSesion'])){
-                            echo "<p>Se han modificado los cambios en la tabla reserva!</p>";
-                                $reservaCollectorObj->updatereserva($id_reserva,$id_cliente,$id_veterinario,$fecha_consulta);
-
-                                    ?>
-
-                    <a href="readReserva.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+                          <?php
+                        echo "<p>Se eliminó el id No." . $id_reserva ."!</p>";
+                        $reservaCollectorObj->deleteReserva($id_reserva);
+                        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readReserva.php'>";	
+                          ?>
+                     
                         </div>
                       </div>
                     </div>
                   </div>
-                </section>
                 </section>
 
                 <!-- footer Start -->
@@ -125,7 +112,7 @@ if (isset($_SESSION['user'])){
 
                 </body>
             </html>
-<?php
+ <?php
         
     }else{
         echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../../../index.php'>";

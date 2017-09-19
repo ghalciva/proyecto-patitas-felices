@@ -28,8 +28,8 @@ $rows = self::$db->insertRow("INSERT INTO public.reserva (id_cliente, id_veterin
   } 
     
 //actualizar 
-  function updatereserva($id_reserva,$id_cliente,$id_mascota,$fecha,$id_veterinario) {
-    $rows = self::$db->insertRow("UPDATE reserva SET id_cliente= ? ,id_mascota = ? ,fecha= ?,id_veterinario = ?,  WHERE id_reserva= ? ", array("{$id_cliente}","{$id_mascota}","{$fecha}","{$id_veterinario}","{$id_reserva}"));        
+  function updatereserva($id_reserva,$id_cliente,$id_veterinario,$fecha) {
+    $rows = self::$db->insertRow("UPDATE reserva SET id_cliente= ? ,fecha_consulta= ?,id_veterinario = ? WHERE id_reserva= ? ", array("{$id_cliente}","{$fecha}","{$id_veterinario}","{$id_reserva}"));        
   }
     
 

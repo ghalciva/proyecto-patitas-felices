@@ -4,8 +4,7 @@ if (isset($_SESSION['user'])){
     if($_SESSION['rol']==2){
 
             include_once("reservaCollector.php");
-            $usuario = $_SESSION['MiSesion'];
-
+         
             $reservaCollectorObj = new reservaCollector();
 
             $id_reserva =$_GET["id_reserva"];
@@ -44,7 +43,7 @@ if (isset($_SESSION['user'])){
                 <div class="container">
                      <div id="user">
                          <ul class="login">
-                         <li class="loginu col-md-2 col-md-offset-10"><a href="../../iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+                          <li class='loginu col-md-2 col-md-offset-10'><a href='../../logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>
                          </ul>
                      </div>
                   <div class="row">
@@ -61,7 +60,7 @@ if (isset($_SESSION['user'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.php">
+                            <a class="navbar-brand" href="../../../index.php">
                               <img src="../img/logo.png" alt="Logo">
                             </a>
                           </div>
@@ -108,11 +107,11 @@ if (isset($_SESSION['user'])){
 
                             echo "<label>id_veterinario</label>";
                             echo "<div class='form-group'>";
-                            echo "<input type='text' name='id_veterinario' class='form-control' value='". $id_veterinario . "'readonly>";
+                            echo "<input type='text' name='id_veterinario' class='form-control' value='". $id_veterinario . "'>";
                             echo "</div>";
 
 
-                            echo "<label>fecha_consulta</label>";
+                            echo "<label>fecha_consulta(año-mes-dia)</label>";
                             echo "<div class='form-group'>";
                             echo "<input type='text' name='fecha_consulta' class='form-control' value='". $fecha_consulta . "'>";
                             echo "</div>";

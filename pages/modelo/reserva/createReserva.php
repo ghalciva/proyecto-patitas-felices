@@ -46,7 +46,7 @@ if (isset($_SESSION['user'])){
                 <div class="container">
                      <div id="user">
                          <ul class="login">
-                         <li class="loginu col-md-2 col-md-offset-10"><a href="../../iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+                         <li class='loginu col-md-2 col-md-offset-10'><a href='../../logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>
                          </ul>
                      </div>
                   <div class="row">
@@ -94,47 +94,50 @@ if (isset($_SESSION['user'])){
                       <div class="col-md-10 col-md-offset-2">
                         <div class="block">
                           <h1>Tabla  reserva</h1>
-                <form action="saveReserva.php" method="post">
-                                      <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  R E S E R V A</h1>
+                    <form action="saveReserva.php" method="post">
+                            <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  R E S E R V A</h1>
+                            <div class="form-group">
+                                    <label>Cliente</label>
+                                    <select name='id_cliente'>       
+                                    <?php
+
+                                    echo"<h3> escoja el id de cliente</h3>";
+
+                                    foreach ($clienteCollectorObj->showClientes() as $c){
+                                         echo "<option>" . $c->getId_cliente() . "</option>";
+                                        }
+
+                                    ?>
+                                    </select>
+                            </div>
+                            <div class="form-group">
+                                    <label>Veterinario</label>
+                                    <select name='id_veterinario'>
+                                    <?php
+                                    echo"<h3> escoja el id de veterinario</h3>";
+
+                                    foreach ($veterinarioCollectorObj->showVeterinarios() as $c){
+                                         echo "<option>" . $c->getId_veterinario() . "</option>";
+                                        }
+
+
+
+                                    ?>
+                                    </select>
+                             </div>
+                            <div class="form-group">
+
+                                <h3>ESCOJA la FECHA CONSULTA(año-mes-dia)</h3>
                                
-                    <select name='id_cliente'>       
-                    <?php
-                 
-                    echo"<h3> escoja el id de cliente</h3>";
+                                    <input type="date" name="fecha_consulta" class="form-control" placeholder="fecha_consulta">
+                              
+                            </div>
+                            <button type="submit">GUARDAR</button>          
 
-                    foreach ($clienteCollectorObj->showClientes() as $c){
-                         echo "<option>" . $c->getId_cliente() . "</option>";
-                        }
-
-
-
-                    ?>
-                    </select>
-                    <select name='id_veterinario'>
-                    <?php
-                    echo"<h3> escoja el id de veterinario</h3>";
-
-                    foreach ($veterinarioCollectorObj->showVeterinarios() as $c){
-                         echo "<option>" . $c->getId_veterinario() . "</option>";
-                        }
-
-
-
-                    ?>
-                    </select>
-
-                    <div class="form-group">
-
-                        <h3>ESCOJA la FECHA CONSULTA</h3>
-                        <div class="form-group">
-                                    <input type="text" name="fecha_consulta" class="form-control" placeholder="fecha_consulta">
-                        </div>
-                                   
-                    </div>
-                    <button type="submit">GUARDAR</button>          
-                    <a href="readReserva.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	
-                            </form>
+                    </form>
+                            
                        </div>
+                       <a href="readReserva.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	
                     </div>
                   </div>  </div>
                 </section>

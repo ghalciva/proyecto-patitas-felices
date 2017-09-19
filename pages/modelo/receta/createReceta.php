@@ -41,7 +41,7 @@ if (isset($_SESSION['user'])){
                     <div class="container">
                          <div id="user">
                              <ul class="login">
-                             <li class="loginu col-md-2 col-md-offset-10"><a href="../../iniciarsesion.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a></li>
+                              <li class='loginu col-md-2 col-md-offset-10'><a href='../../logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>
                              </ul>
                          </div>
                       <div class="row">
@@ -90,25 +90,26 @@ if (isset($_SESSION['user'])){
                             <div class="block"><center>
                               <form action="saveReceta.php" method="get">
                                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  R E C E T A </h1>
+                                    <div class="form-group">
+                                           <label>Consulta</label>
+                                           <select name="id_consulta">
 
-                                   <select name="id_consulta">
+                                              
+                                               <?php
+                                                foreach ($consultaCollectorObj->showconsulta() as $c){
+                                                    echo "<option>" . $c->getId_consulta() . "</option>";
+                                                }
+                                                ?>
+                                                </select>
 
 
-                                       <?php
-                                        foreach ($consultaCollectorObj->showconsulta() as $c){
-                                            echo "<option>" . $c->getId_consulta() . "</option>";
-                                        }
-                                        ?>
-                                        </select>
-
-
-
+                                        </div>
 
                                         <div class="form-group">
                                           <input type="text" name="descripcion" class="form-control" placeholder="Descripción">
                                         </div>
                             <div class="form-group">
-                                          <input type="text" name="cantidad" class="form-control" placeholder="Cantidad">
+                                          <input type="number" name="cantidad" class="form-control" placeholder="Cantidad">
                                         </div>
                                         <button class="btn btn-default" type="submit"> GUARDAR </button>
                                         </form>

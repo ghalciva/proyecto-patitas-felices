@@ -108,7 +108,7 @@ if (isset($_SESSION['user'])){
 
                 <button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 
-                            echo "<td><a href='deletereserva.php?id_consulta=". $c->getId_reserva() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
+                            echo "<td><a href='deletereserva.php?id_reserva=". $c->getId_reserva() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
                             echo "</tr>"; 
 
                         }
