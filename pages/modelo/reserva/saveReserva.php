@@ -8,7 +8,6 @@ $reservaCollectorObj = new reservaCollector();
 $id_cliente=$_POST["id_cliente"];
 $id_veterinario=$_POST["id_veterinario"];
 $fecha_consulta=$_POST["fecha_consulta"];
-
 ?>
 
 
