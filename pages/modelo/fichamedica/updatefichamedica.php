@@ -4,8 +4,7 @@ if (isset($_SESSION['user'])){
     if($_SESSION['rol']==2){
 
                 include_once("fichamedicaCollector.php");
-                $usuario = $_SESSION['MiSesion'];
-
+                
                 $fichamedicaCollectorObj = new fichamedicaCollector();
                 $id_fichamedica =$_GET["id_fichamedica"];
                 $id_mascota =$_GET["id_mascota"];
@@ -58,8 +57,8 @@ if (isset($_SESSION['user'])){
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="index.php">
-                                  <img src="../img/logo.png" alt="Logo">
+                                <a class="navbar-brand" href="../../../index.php">
+                                  <img src="../../../img/logo.png" alt="Logo">
                                 </a>
                               </div>
 
