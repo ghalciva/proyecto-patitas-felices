@@ -23,8 +23,8 @@ class reservaCollector extends Collector
   }   
 
 //insertar 
-  function createreserva($id_reserva,$id_cliente,$id_mascota,$fecha,$id_veterinario) {
-    $rows = self::$db->insertRow("INSERT INTO public.reserva (id_reserva, id_cliente, id_mascota ,fecha,id_veterinario) VALUES (?,?,?,?,?) ", array("{$id_reserva}","{$id_cliente}","{$id_mascota}","{$fecha}","{'$id_veterinario'}"));        
+  function createreserva($id_cliente,$id_veterinario,$fecha_consulta) {
+$rows = self::$db->insertRow("INSERT INTO public.reserva (id_cliente, id_veterinario,fecha_consulta ) VALUES (?,?,?) ", array("{$id_cliente}","{$id_veterinario}","{$fecha_consulta}"));        
   } 
     
 //actualizar 

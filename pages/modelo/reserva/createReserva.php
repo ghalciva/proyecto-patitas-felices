@@ -1,12 +1,18 @@
 <?php
-session_start();
-?>
+//session_start();
 
-<?php
-include_once("consultaCollector.php");
-$usuario = $_SESSION['MiSesion'];
+include_once("reservaCollector.php");
 
-$consultaCollectorObj = new consultaCollector();
+include_once("../veterinario/veterinarioCollector.php");
+//$usuario = $_SESSION['MiSesion'];
+include_once("../cliente/clienteCollector.php");
+		
+
+$clienteCollectorObj = new clienteCollector();
+$veterinarioCollectorObj = new VeterinarioCollector();
+
+
+$reservaCollectorObj = new reservaCollector();
 
 ?>
 
@@ -31,7 +37,6 @@ $consultaCollectorObj = new consultaCollector();
     <script src="../../../js/bootstrap.min.js"></script>
    </head>
   <body>
-    <!--  -->
    
    
   <!-- Header Start -->
@@ -81,48 +86,58 @@ $consultaCollectorObj = new consultaCollector();
         
     <!-- Slider Start -->
     <section id="slider">
+     <section id="contact-form">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla consulta</h1>
-    <a href="createconsulta.php"><button class="btn btn-default btn-call-to-action">Crear consulta</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;id_consulta&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;id_reserva&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;hora&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>a
-        </tr>
-        <?php
+              <h1>Tabla  reserva</h1>
+	<form action="saveReserva.php" method="post">
+                          <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  R E S E R V A</h1>
+                <?php
+		echo "<select name='id_cliente'>";
+		echo"<h3> escoja el id de cliente</h3>";
 
-            foreach ($consultaCollectorObj->showconsulta() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getId_consulta() . "</td>";
-            echo "<td>" . $c->getId_reserva() . "</td>";   
-            echo "<td>" . $c->getHora_consulta() . "</td>";
-            echo "<td>" . $c->getDescripcion() . "</td>";            
-                     
-            
-            echo "<td><a href='updateconsulta.php?id_consulta=" . $c->getId_consulta() . "&id_reserva=" . $c->getId_reserva() . "&hora_consulta=" . $c->getHora_consulta() . "&descripcion=" . $c->getDescripcion() ."'> 
+ 		foreach ($clienteCollectorObj->showClientes() as $c){
+           	 echo "<option>" . $c->getId_cliente() . "</option>";
+           	}
 
-<button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
 
-            echo "<td><a href='deleteconsulta.php?id_consulta=". $c->getId_consulta() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
-            echo "</tr>"; 
-                
-        }
 
-        ?>
+		?>
+		</select>
+		<?php
+		echo "<select name='id_veterinario'>";
+		echo"<h3> escoja el id de veterinario</h3>";
 
-    </table> 	  
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+ 		foreach ($veterinarioCollectorObj->showVeterinarios() as $c){
+           	 echo "<option>" . $c->getId_veterinario() . "</option>";
+           	}
+
+
+
+		?>
+		</select>
+                       
+                 <div class="form-group">
+
+			<h3>ESCOJA la FECHA CONSULTA</h3>
+			<div class="form-group">
+                          <input type="text" name="fecha_consulta" class="form-control" placeholder="fecha_consulta">
+                        </div>
+ 		
+
+ 
+                       
+      
+	  
+		<a href="readReserva.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
       </div>
     </section>
-
+</section>
            
     <!-- footer Start -->
     <footer>

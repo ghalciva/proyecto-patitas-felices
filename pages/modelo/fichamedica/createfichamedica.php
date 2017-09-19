@@ -82,12 +82,13 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
         
     <!-- Slider Start -->
     <section id="slider">
+     <section id="contact-form">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
               <h1>Tabla ficha medica</h1>
-    <a href="createfichamedica.php"><button class="btn btn-default btn-call-to-action">Crear ficha Medica</button></a> <br>
+
   
 
 	<form action="savefichamedica.php" method="post">
@@ -119,6 +120,7 @@ $fichamedicaCollectorObj = new fichamedicaCollector();
           </div>
         </div>
       </div>
+    </section>
     </section>
            
     <!-- footer Start -->

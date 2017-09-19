@@ -1,14 +1,16 @@
 <?php
-session_start();
+//session_start();
+
+include_once("reservaCollector.php");
+//$usuario = $_SESSION['MiSesion'];
+
+$reservaCollectorObj = new reservaCollector();
+$id_cliente=$_POST["id_cliente"];
+$id_veterinario=$_POST["id_veterinario"];
+$fecha_consulta=$_POST["fecha_consulta"];
+
 ?>
 
-<?php
-include_once("consultaCollector.php");
-$usuario = $_SESSION['MiSesion'];
-
-$consultaCollectorObj = new consultaCollector();
-
-?>
 
 <!DOCTYPE html>
 <html class="no-js">
@@ -31,7 +33,6 @@ $consultaCollectorObj = new consultaCollector();
     <script src="../../../js/bootstrap.min.js"></script>
    </head>
   <body>
-    <!--  -->
    
    
   <!-- Header Start -->
@@ -81,48 +82,28 @@ $consultaCollectorObj = new consultaCollector();
         
     <!-- Slider Start -->
     <section id="slider">
+     <section id="contact-form">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
-              <h1>Tabla consulta</h1>
-    <a href="createconsulta.php"><button class="btn btn-default btn-call-to-action">Crear consulta</button></a> <br>
-    <table id="tabla">
-        <tr>    
-            <th>&nbsp;&nbsp;id_consulta&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;id_reserva&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;hora&nbsp;&nbsp;</th>
-            <th>&nbsp;&nbsp;detalle&nbsp;&nbsp;</th>a
-        </tr>
-        <?php
+ 		<h1 class="animated fadeInUp">Guardado!</h1>
+             <?php
+		 
+			$reservaCollectorObj->createreserva($id_cliente,$id_veterinario,$fecha_consulta);
+			//echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=readAnimal.php'>";
+                             
+                        ?>
 
-            foreach ($consultaCollectorObj->showconsulta() as $c){
-            echo "<tr>";
-            echo "<td>" . $c->getId_consulta() . "</td>";
-            echo "<td>" . $c->getId_reserva() . "</td>";   
-            echo "<td>" . $c->getHora_consulta() . "</td>";
-            echo "<td>" . $c->getDescripcion() . "</td>";            
-                     
-            
-            echo "<td><a href='updateconsulta.php?id_consulta=" . $c->getId_consulta() . "&id_reserva=" . $c->getId_reserva() . "&hora_consulta=" . $c->getHora_consulta() . "&descripcion=" . $c->getDescripcion() ."'> 
-
-<button class='btn btn-default btn-call-to-action'>Editar</button></a></td>";
-
-            echo "<td><a href='deleteconsulta.php?id_consulta=". $c->getId_consulta() ."'><button class='btn btn-default btn-call-to-action'>Eliminar</button></a></td>";
-            echo "</tr>"; 
-                
-        }
-
-        ?>
-
-    </table> 	  
-		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
+      
+	  
+		<a href="readReserva.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
             </div>
           </div>
         </div>
       </div>
     </section>
-
+ </section>
            
     <!-- footer Start -->
     <footer>

@@ -8,6 +8,7 @@ $usuario = $_SESSION['MiSesion'];
 
 $reservaCollectorObj = new reservaCollector();
 
+
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +87,7 @@ $reservaCollectorObj = new reservaCollector();
           <div class="col-md-10 col-md-offset-2">
             <div class="block">
               <h1>Tabla reserva</h1>
-    <a href="createMascota.php"><button class="btn btn-default btn-call-to-action">Crear reserva</button></a> <br>
+    <a href="createReserva.php"><button class="btn btn-default btn-call-to-action">Crear reserva</button></a> <br>
     <table id="tabla">
         <tr>    
             <th>&nbsp;&nbsp;id_reserva&nbsp;&nbsp;</th>
