@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html class="no-js">
   <head>
@@ -73,13 +76,13 @@
           <div class="container">
               <div class="col-md-12">
                     <div class="block">
-                    <form>
+                    <form action="modelo/persona/validarLogin.php" method="post">
                           <h2>INICIAR SESIÓN</h2>
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="usuario">
+                          <input type="text" class="form-control" placeholder="usuario" name="user">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control" placeholder="contraseña">
+                          <input type="text" class="form-control" placeholder="contraseña" name="pass">
                         </div>
                         <button class="btn btn-default" type="submit">Ingresar</button>
                          </form>
