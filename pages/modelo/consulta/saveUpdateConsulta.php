@@ -5,8 +5,7 @@ if (isset($_SESSION['user'])){
     if($_SESSION['rol']==2){
         
                 include_once("consultaCollector.php");
-                $usuario = $_SESSION['MiSesion'];
-
+              
                 $consultaCollectorObj = new consultaCollector();
                 $id_consulta =$_GET["id_consulta"];
                 $id_reserva =$_GET["id_reserva"];

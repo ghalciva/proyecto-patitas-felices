@@ -56,7 +56,7 @@ if (isset($_SESSION['user'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.php">
+                            <a class="navbar-brand" href="../../../index.php">
                               <img src="../../../img/logo.png" alt="Logo">
                             </a>
                           </div>
@@ -88,6 +88,8 @@ if (isset($_SESSION['user'])){
                         <div class="block"><center>
                           <form action="saveVeterinario.php" method="get">
                               <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  V E T E R I N A R I O</h1>
+                                   <div class="form-group">
+                                   <label >Persona</label>
                                     <select name="id_persona">
 
                                    <?php
@@ -96,6 +98,7 @@ if (isset($_SESSION['user'])){
                                     }
                                     ?>
                                     </select>
+                                     </div>
                                     <div class="form-group">
                                       <input type="text" name="titulo" class="form-control" placeholder="Título">
                                     </div>

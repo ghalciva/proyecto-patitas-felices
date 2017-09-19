@@ -59,7 +59,7 @@ if (isset($_SESSION['user'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="index.php">
+                            <a class="navbar-brand" href="../../../index.php">
                               <img src="../img/logo.png" alt="Logo">
                             </a>
                           </div>
@@ -90,42 +90,38 @@ if (isset($_SESSION['user'])){
                       <div class="col-md-10 col-md-offset-2">
                         <div class="block">
                           <h1>Tabla  Consulta</h1>
-                <form action="saveconsulta.php" method="post">
-                                      <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  C O N S U L T A</h1>
-                            <?php
+                            <form action="saveconsulta.php" method="post">
+                                    <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  C O N S U L T A</h1>
+                                    <br><br>
 
-                    echo"<h3> escoja el id de reserva</h3>";
-                    echo "<select name='id_reserva'>";
-                    foreach ($reservaCollectorObj->showreserva() as $c){
-                         echo "<option>" . $c->getId_reserva() . "</option>";
-                        }
-                    ?>
+                                    <div class="form-group">
+                                    <label>Id Reserva</label>
+                                    <select name='id_reserva'>
+                                    <?php
+
+                                    foreach ($reservaCollectorObj->showreserva() as $c){
+                                         echo "<option>" . $c->getId_reserva() . "</option>";
+                                        }
+                                    ?>
+                                    </select>
+                                    </div>
                                     <div class="form-group">
 
-                    <h3>escoja la hora de conuslta</h3>
+                                        <label>Hora consulta</label>
 
-                    <input type="time" name="hora_consulta" list="hora_consulta" step="0.001">
-
-
-
-                <datalist id="hora_consulta">
-                <option value="06:40">
-                <option value="08:24">
-                <option value="12:31:30">
-                <option value="23:59:59.999">
-                </datalist>
+                                        <input type="time"  style="color:black" name="hora_consulta">
 
 
                                     </div>
 
-                        <div class="form-group">
-                                      <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
+                                    <div class="form-group">
+                                              <input type="text" name="descripcion" class="form-control" placeholder="descripcion">
                                     </div>
 
-                                     <input type="submit" value="Enviar datos">
+                                    <button type="submit">GUARDAR</button>
 
-                               </form>
-
+                            </form>
+<BR></BR>
 
 
                     <a href="readconsulta.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a> 	           
