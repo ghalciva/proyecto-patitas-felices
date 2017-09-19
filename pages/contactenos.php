@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
     <!-- Js -->
     <script src="../js/vendor/jquery-1.10.2.min.js"></script>
@@ -51,11 +52,11 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href="../index.php" class="above">Inicio</a></li>
+                    <li><a href="../index.php">Inicio</a></li>
                     <li><a href="nosotros.php">Nosotros</a></li>
                     <li><a href="mascotas.php">Mascotas</a></li>
                     <li><a href="agenda.php">Agenda</a></li>
-                    <li><a href="contactenos.php">Contáctenos</a></li>
+                    <li><a href="contactenos.php"class="above">Contáctenos</a></li>
                   </ul>
                 </div><!-- /.navbar-collapse -->
               </div><!-- /.container-fluid -->
@@ -66,14 +67,13 @@
     </header><!-- header close -->
        
         <!-- Slider Start -->
-        <section id="global-header">
+        <section id="global-header" id="alineacion">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <div class="block">
+                <div class="block" id="alineacion">
                   <h2>Contáctenos</h2>
                   <p>Damos tu opinión, sugerencia. Califica nuestra página.</p>
-                  
                   <form>
                     <div class="form-group">
                       <input type="text" class="form-control" placeholder="Nombre">
@@ -88,76 +88,65 @@
                       <input type="text" class="form-control" placeholder="Ciudad">
                     </div>
                   </form>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="block">
-                  <form>
-                    <div class="form-group-2">
-                      <textarea class="form-control" rows="3" placeholder="Comentario"></textarea>
-                    </div>
-                    <button class="btn btn-default" type="submit">Enviar</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div id="contact-box" class="row">
-              <div class="col-md-6 col-sm-12">
-                <div class="block">
-                  <h2>Localización</h2>
-                  <ul class="address-block">
-                    <li>
-                      <i class="fa fa-map-marker"></i>Guayaquil, Ecuador
-                    </li>
-                    <li>
-                      <i class="fa fa-envelope-o"></i>Correro: pfelices@gmail.com
-                    </li>
-                    <li>
-                      <i class="fa fa-phone"></i>Phone:+593 912 34567
-                    </li>
-                  </ul>
-
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="block">
-                  <h2>Conoce nuestro equipo</h2>
-                    <div class="col-sm-6 col-md-3">
-           <h4>Gloria</h4>
-           <h4>Alcívar</h4>
-            <img src="../img/gloria.png">
+                    <div class="col-md-6 col-sm-12">
+                      <div class="block">
+                        <form>
+                          <div class="form-group-2">
+                            <textarea class="form-control" rows="3" placeholder="Comentario"></textarea>
+                          </div>
+                          <button class="btn btn-default" type="submit">Enviar</button>
+                        </form>
+                     </div>
+                   </div>
+                   <div id="contact-box" class="row">
+                     <div class="col-md-6 col-sm-12">
+                       <div class="block">
+                         <h2>Localización</h2>
+                         <ul class="address-block">
+                           <li>
+                             <i class="fa fa-map-marker"></i>Guayaquil, Ecuador
+                           </li>
+                           <li>
+                             <i class="fa fa-envelope-o"></i>Correro: pfelices@gmail.com
+                           </li>
+                           <li>
+                             <i class="fa fa-phone"></i>Phone:+593 912 34567
+                           </li>
+                         </ul>
+                      </div>
+                   </div>
+                   <div class="col-md-6 col-sm-12">
+                     <div class="block">
+                        <h2>Conoce nuestro equipo</h2>
+                        <div class="col-sm-6 col-md-3">
+                           <h4>Gloria</h4>
+                           <h4>Alcívar</h4>
+                           <img src="../img/gloria.png">
 			</div>        
-                     
-           <div class="col-sm-6 col-md-3">
-              <h4>Nancy</h4>
-              <h4>Chalén</h4>
-              <img src="../img/nancy.png">
-            </div>
-            
-            <div class="col-sm-6 col-md-3">
-              <h4>Jéssica</h4>
-              <h4>Gaibor</h4>
-              <img src="../img/jessica.png">
-            </div>
-          
-          <div class="col-sm-6 col-md-3">
-              <h4>Andrea</h4>
-               <h4>Jurado</h4>
-              <img src="../img/andrea.png">
-            </div>
-          </div>
-		  </div>
+                        <div class="col-sm-6 col-md-3">
+                           <h4>Nancy</h4>
+                           <h4>Chalén</h4>
+                           <img src="../img/nancy.png">
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                           <h4>Jéssica</h4>
+                           <h4>Gaibor</h4>
+                           <img src="../img/jessica.png">
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                           <h4>Andrea</h4>
+                           <h4>Jurado</h4>
+                           <img src="../img/andrea.png">
+                        </div>
+                    </div>
+	          </div>
+		</div>
+	      </div>
+	    </div>
         </div>
       </div>
     </section>
-                    
-                    
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-                  
+       
                
        
       
