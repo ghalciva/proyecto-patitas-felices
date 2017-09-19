@@ -33,19 +33,28 @@ $RolCollectorObj = new RolCollector();
 
   </head>
 <body>
-<?php
-	//if (isset($_SESSION['MiSesion'])){
-	//	$usuario = $_SESSION['MiSesion'];
-  ?>
+
        
 <!-- Header Start -->
   <header>
     <div class="container">
          <div id="user">
        		 <ul class="login">
-                <li class="loginu"><a href="../../salir.php"><span class="glyphicon glyphicon-user"></span> Cerrar Sesión</a></li>
-                <li class="loginu"></span> Bienvenido  </a></li>
-            </ul>
+            <?php
+                if (!isset($_SESSION['user'])){
+                    echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
+                }else{
+                    if($_SESSION['rol']==2){
+                        echo "<li class='loginu col-md-2 col-md-offset-10'><a href='logout.php'><span class='glyphicon glyphicon-log-in'></span>Cerrar Sesión</a></li>";
+                    }else{
+                        echo "<meta HTTP-EQUIV='REFRESH' CONTENT='1;URL=../index.php'>";
+                    }
+                        
+                    
+                }
+	           ?>
+             
+       		 </ul>
 	 </div>	
             <div class="row">
         <div class="col-md-12">
@@ -89,7 +98,7 @@ $RolCollectorObj = new RolCollector();
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <div class="block"><center>
+            <div class="block">
               <form action="savePersona.php" method="get">
                   <h1 class="form-group">C R E A R &nbsp;&nbsp;&nbsp;  P E R S O N A</h1>
 
@@ -123,9 +132,9 @@ $RolCollectorObj = new RolCollector();
                        
                         <button class="btn btn-default" type="submit"> GUARDAR </button>
                          </form>
-		</center>        
+	      
             </div> <br>
-		<center> <a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>   </center>
+		<a href="../../indexAdmin.php"><button class="btn btn-default btn-call-to-action">Regresar</button></a>  
           </div>
         </div>
       </div>
